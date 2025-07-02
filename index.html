@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A F Computer - IT Hardware & Networking</title>
+  <style>
+    :root {
+      --primary-color: #ff7a00;
+      --primary-dark: #222;
+      --bg-light: #f4f4f4;
+      --text-dark: #fff;
+      --card-bg: #333;
+      --shadow: rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--primary-color), var(--primary-dark));
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+    }
+
+    nav {
+      background: var(--primary-dark);
+      padding: 15px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      text-align: center;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: var(--primary-color);
+      margin-bottom: 40px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .service-box {
+      background: var(--card-bg);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: #eee;
+    }
+
+    .service-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 18px var(--shadow);
+    }
+
+    .service-box h3 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .service-box p {
+      color: #ccc;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 30px auto;
+      background: #222;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px var(--shadow);
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #555;
+      border-radius: 6px;
+      font-size: 1rem;
+      background: #444;
+      color: white;
+    }
+
+    form button {
+      background: var(--primary-color);
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background: #cc6200;
+    }
+
+    .map iframe {
+      border: none;
+      width: 100%;
+      height: 300px;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>A F Computer</h1>
+    <p>Computer Hardware, Networking & IT Support</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p style="text-align:center; max-width:800px; margin:auto; color:#222;">A F Computer is a trusted IT service provider located in Pimpri-Chinchwad, Maharashtra. We specialize in computer hardware repairs, desktop support, networking setup, firewall configuration, and also provide computer/laptop sales along with all types of IT accessories. Our commitment is to deliver fast, affordable, and reliable solutions to both homes and businesses.</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service-box">
+        <h3>Computer Hardware Repair</h3>
+        <p>Expert repair and replacement services for desktops, laptops, and components.</p>
+      </div>
+      <div class="service-box">
+        <h3>Networking & Router Setup</h3>
+        <p>LAN, Wi-Fi, router installation, configuration, and troubleshooting support.</p>
+      </div>
+      <div class="service-box">
+        <h3>Firewall Configuration</h3>
+        <p>We help protect your digital environment with strong firewall setup and tuning.</p>
+      </div>
+      <div class="service-box">
+        <h3>Desktop Support</h3>
+        <p>Remote and on-site support for day-to-day tech issues and IT maintenance.</p>
+      </div>
+      <div class="service-box">
+        <h3>Computer & Laptop Sales</h3>
+        <p>We offer a wide range of computers, laptops, and accessories for personal and professional use.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p style="text-align:center; color:#222;">28, near Bharati Technical Institute, Nigdi Gaothan, Nigdi,<br>Pimpri-Chinchwad, Maharashtra - 411044</p>
+    <p style="text-align:center; color:#222;"><strong>Phone:</strong> 7420806178<br><strong>Email:</strong> avinash29asf@gmail.com</p>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3781.1120291621635!2d73.7768629!3d18.6625528!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDM5JzQ1LjIiTiA3M8KwNDYnMzYuNyJF!5e0!3m2!1sen!2sin!4v1718889999999!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 A F Computer | IT Hardware, Networking & Sales | Phone: 7420806178 | Email: avinash29asf@gmail.com</p>
+  </footer>
+</body>
+</html>
