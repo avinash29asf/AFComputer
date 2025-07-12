@@ -20,6 +20,8 @@
 
     html, body {
       height: 100%;
+      display: flex;
+      flex-direction: column;
       font-family: 'Segoe UI', sans-serif;
       color: var(--light);
     }
@@ -28,7 +30,6 @@
       background: url('service.jpg') no-repeat center center fixed;
       background-size: cover;
       position: relative;
-      min-height: 100vh;
     }
 
     body::before {
@@ -37,7 +38,7 @@
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.65);
+      background-color: rgba(0, 0, 0, 0.7);
       z-index: 0;
     }
 
@@ -48,8 +49,11 @@
       justify-content: space-between;
       align-items: center;
       padding: 12px 20px;
-      position: relative;
-      z-index: 2;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
     }
 
     .nav-left {
@@ -96,43 +100,38 @@
     }
 
     main {
+      flex: 1;
       position: relative;
       z-index: 2;
-      padding: 60px 20px;
+      padding: 80px 20px 40px;
       max-width: 1100px;
-      margin: auto;
+      margin: 100px auto 0;
     }
 
-    h2 {
+    h1 {
+      font-size: 2.6rem;
       text-align: center;
       color: var(--primary-color);
       margin-bottom: 30px;
     }
 
-    .services-grid {
+    .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
     }
 
     .service-box {
       background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255,255,255,0.15);
       padding: 20px;
-      border-radius: 12px;
-      color: #f0f0f0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
+      border-radius: 10px;
       text-align: center;
-    }
-
-    .service-box:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      animation: fadeIn 1s ease;
     }
 
     .service-box img {
-      max-width: 100%;
+      width: 100%;
       height: 150px;
       object-fit: cover;
       border-radius: 8px;
@@ -145,7 +144,8 @@
     }
 
     .service-box p {
-      font-size: 1rem;
+      font-size: 0.95rem;
+      color: #ddd;
     }
 
     footer {
@@ -154,16 +154,15 @@
       text-align: center;
       padding: 20px;
       font-size: 0.9rem;
-      position: relative;
       z-index: 2;
     }
-
-    a { color: var(--primary-color); }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    a { color: var(--primary-color); }
   </style>
 </head>
 <body>
@@ -176,51 +175,53 @@
     <div class="dropdown" id="dropdownMenu">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
       <a href="product.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="gallery.html">Gallery</a>
       <a href="about.html">About</a>
     </div>
   </nav>
 
   <main>
-    <h2>Our Services</h2>
-    <div class="services-grid">
+    <h1>Our Services</h1>
+    <div class="services">
       <div class="service-box">
-        <img src="repair.jpg" alt="Computer Repair">
-        <h3>Computer & Laptop Repair</h3>
-        <p>Hardware and software solutions for desktops and laptops.</p>
+        <img src="laptop.jpg" alt="Laptop Repair">
+        <h3>Laptop Repair</h3>
+        <p>Quick laptop diagnostics, chip-level repair, screen and battery replacement.</p>
       </div>
       <div class="service-box">
-        <img src="sales.jpg" alt="Laptop Sales">
-        <h3>Old/New Laptop Sales</h3>
-        <p>Branded laptops for home, business, and students.</p>
+        <img src="computer.jpg" alt="Computer Sales">
+        <h3>Computer Sales</h3>
+        <p>New and refurbished desktops with complete configuration support.</p>
       </div>
       <div class="service-box">
-        <img src="printer.jpg" alt="Printer">
-        <h3>Printer Repair & Toner</h3>
-        <p>Printer maintenance and toner cartridge sales for all brands.</p>
+        <img src="printer.jpg" alt="Printer Services">
+        <h3>Printer Services</h3>
+        <p>Repair and servicing of inkjet, laser and dot-matrix printers.</p>
       </div>
       <div class="service-box">
-        <img src="network.jpg" alt="Network">
-        <h3>Networking & Router Setup</h3>
-        <p>LAN, Wi-Fi, and router installation with configuration support.</p>
+        <img src="network.jpg" alt="Networking">
+        <h3>Networking</h3>
+        <p>Router, Wi-Fi setup, LAN cabling, firewall setup and remote configuration.</p>
       </div>
       <div class="service-box">
-        <img src="firewall.jpg" alt="Firewall">
-        <h3>Firewall Configuration</h3>
-        <p>Secure your systems with custom firewall rules and tuning.</p>
+        <img src="support.jpg" alt="IT Support">
+        <h3>IT Support</h3>
+        <p>On-site and remote desktop support for homes and small businesses.</p>
       </div>
       <div class="service-box">
         <img src="accessories.jpg" alt="Accessories">
-        <h3>IT Accessories</h3>
-        <p>All types of computer peripherals, cables, adapters, and more.</p>
+        <h3>Accessories Sales</h3>
+        <p>Keyboards, mice, cables, RAM, hard drives and other computer accessories.</p>
       </div>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 A F Computer | Phone: 7420806178 | Email: <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a></p>
+    <p>&copy; 2025 A F Computer | Phone: 7420806178 | Email: 
+      <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a>
+    </p>
   </footer>
 
   <script>

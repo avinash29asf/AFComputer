@@ -10,15 +10,36 @@
       --primary-color: #ff7a00;
       --dark: #000;
       --light: #fff;
-      --shadow: rgba(0, 0, 0, 0.1);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--light);
+    }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: var(--light);
-      color: var(--dark);
+      background: url('home.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.65);
+      z-index: 0;
     }
 
     nav {
@@ -28,8 +49,10 @@
       justify-content: space-between;
       align-items: center;
       padding: 12px 20px;
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 1000;
     }
 
@@ -61,7 +84,7 @@
       flex-direction: column;
       min-width: 200px;
       padding: 10px 0;
-      box-shadow: 0 4px 12px var(--shadow);
+      z-index: 3;
     }
 
     .dropdown a {
@@ -76,44 +99,66 @@
       color: #fff;
     }
 
-    .hero {
-      background-image: url('home.jpg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
+    main {
+      flex: 1;
       position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      z-index: 2;
+      padding: 60px 20px;
+      margin-top: 80px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h1 {
       text-align: center;
-      color: #fff;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 0;
-    }
-
-    .hero-content {
-      z-index: 1;
-      position: relative;
-      padding: 0 20px;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
       color: var(--primary-color);
-      animation: slideDown 1s ease;
+      animation: fadeIn 1.5s ease-out;
     }
 
-    .hero p {
+    p {
+      text-align: center;
       font-size: 1.2rem;
-      animation: fadeIn 2s ease;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+      animation: slideUp 1.2s ease-out;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .service-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      animation: zoomIn 1s ease;
+    }
+
+    .service-box img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .service-box h3 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .service-box p {
+      font-size: 0.95rem;
+      color: #ddd;
     }
 
     footer {
@@ -122,19 +167,25 @@
       text-align: center;
       padding: 20px;
       font-size: 0.9rem;
-    }
-
-    a { color: var(--primary-color); }
-
-    @keyframes slideDown {
-      from { transform: translateY(-20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+      z-index: 2;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    a { color: var(--primary-color); }
   </style>
 </head>
 <body>
@@ -147,22 +198,43 @@
     <div class="dropdown" id="dropdownMenu">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
       <a href="product.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="gallery.html">Gallery</a>
       <a href="about.html">About</a>
     </div>
   </nav>
 
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Welcome to A F Computer</h1>
-      <p>Your Trusted Partner for IT Hardware, Repairs, and Networking Solutions in Pimpri-Chinchwad</p>
+  <main>
+    <h1>Welcome to A F Computer</h1>
+    <p>
+      We provide expert solutions in hardware repair, sales, and IT services.
+      Our mission is to deliver quality support for desktops, laptops, printers, and accessories.
+    </p>
+
+    <div class="services">
+      <div class="service-box">
+        <img src="laptop.jpg" alt="Laptop">
+        <h3>Laptop Sales & Repair</h3>
+        <p>Wide range of new/refurbished laptops and quick repair support.</p>
+      </div>
+      <div class="service-box">
+        <img src="computer.jpg" alt="Computer">
+        <h3>Computer Services</h3>
+        <p>Desktop hardware upgrades, software support, and full setups.</p>
+      </div>
+      <div class="service-box">
+        <img src="printer.jpg" alt="Printer">
+        <h3>Printer Sales & Service</h3>
+        <p>All brands of printers with installation and repair facilities.</p>
+      </div>
     </div>
-  </header>
+  </main>
 
   <footer>
-    <p>&copy; 2025 A F Computer | Phone: 7420806178 | Email: <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a></p>
+    <p>&copy; 2025 A F Computer | Phone: 7420806178 | Email: 
+      <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a>
+    </p>
   </footer>
 
   <script>

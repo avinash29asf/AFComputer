@@ -20,6 +20,8 @@
 
     html, body {
       height: 100%;
+      display: flex;
+      flex-direction: column;
       font-family: 'Segoe UI', sans-serif;
       color: var(--light);
     }
@@ -28,7 +30,6 @@
       background: url('contact.jpg') no-repeat center center fixed;
       background-size: cover;
       position: relative;
-      min-height: 100vh;
     }
 
     body::before {
@@ -37,7 +38,7 @@
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.65);
+      background-color: rgba(0, 0, 0, 0.75);
       z-index: 0;
     }
 
@@ -48,8 +49,11 @@
       justify-content: space-between;
       align-items: center;
       padding: 12px 20px;
-      position: relative;
-      z-index: 2;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
     }
 
     .nav-left {
@@ -96,71 +100,64 @@
     }
 
     main {
+      flex: 1;
       position: relative;
       z-index: 2;
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
+      padding: 80px 20px 40px;
+      max-width: 800px;
+      margin: 100px auto 0;
     }
 
-    h2 {
+    h1 {
+      font-size: 2.6rem;
       text-align: center;
       color: var(--primary-color);
       margin-bottom: 30px;
     }
 
-    .contact-info {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 1.1rem;
+    .info {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      color: #ddd;
     }
 
-    .contact-info a {
-      color: var(--primary-color);
+    .info p {
+      margin: 10px 0;
     }
 
     form {
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(255, 255, 255, 0.08);
       padding: 25px;
       border-radius: 10px;
-      color: var(--light);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
-    form input, form textarea {
+    input, textarea {
       width: 100%;
       padding: 12px;
       margin: 10px 0;
-      font-size: 1rem;
-      border: none;
       border-radius: 6px;
-      background: #333;
+      border: none;
+      background: #111;
       color: #fff;
+      font-size: 1rem;
     }
 
-    form button {
+    button {
       background: var(--primary-color);
       color: #fff;
+      padding: 12px 20px;
       border: none;
-      padding: 12px 25px;
-      font-size: 1rem;
       border-radius: 6px;
+      font-size: 1rem;
       cursor: pointer;
+      margin-top: 10px;
     }
 
-    form button:hover {
-      background: #e36400;
-    }
-
-    .map {
-      margin-top: 30px;
-    }
-
-    .map iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 10px;
+    button:hover {
+      background: #cc6200;
     }
 
     footer {
@@ -169,7 +166,6 @@
       text-align: center;
       padding: 20px;
       font-size: 0.9rem;
-      position: relative;
       z-index: 2;
     }
 
@@ -186,36 +182,35 @@
     <div class="dropdown" id="dropdownMenu">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
       <a href="product.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="gallery.html">Gallery</a>
       <a href="about.html">About</a>
     </div>
   </nav>
 
   <main>
-    <h2>Contact Us</h2>
-    <div class="contact-info">
-      <p><strong>Address:</strong> 28, Near Bharati Technical Institute, Nigdi Gaothan, Nigdi,<br>Pimpri-Chinchwad, Maharashtra - 411044</p>
+    <h1>Contact Us</h1>
+
+    <div class="info">
+      <p><strong>Address:</strong> 28, near Bharati Technical Institute, Nigdi Gaothan, Nigdi, Pimpri-Chinchwad, Maharashtra - 411044</p>
       <p><strong>Phone:</strong> 7420806178</p>
       <p><strong>Email:</strong> <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a></p>
-      <p><strong>Location:</strong> <a href="https://www.google.com/maps/place/A+F+Computer/@18.6650074,73.7756536" target="_blank">View on Google Maps</a></p>
+      <p><strong>Google Map:</strong> <a href="https://www.google.com/maps/place/A+F+Computer/@18.6650074,73.7756536,15z/data=!4m6!3m5!1s0x3bc2b73c61797b95:0x4d0a9c6d200b1ca6!8m2!3d18.662592!4d73.7764931!16s%2Fg%2F11yfq5_xb2?authuser=0" target="_blank">View Location</a></p>
     </div>
 
     <form action="mailto:avinash29asf@gmail.com" method="POST" enctype="text/plain">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <textarea name="message" rows="5" placeholder="Your Message"></textarea>
       <button type="submit">Send Message</button>
     </form>
-
-    <div class="map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3781.1120291621635!2d73.7768629!3d18.6625528!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDM5JzQ1LjIiTiA3M8KwNDYnMzYuNyJF!5e0!3m2!1sen!2sin!4v1718889999999!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
-    </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 A F Computer | Phone: 7420806178 | Email: <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a></p>
+    <p>&copy; 2025 A F Computer | Phone: 7420806178 | Email: 
+      <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a>
+    </p>
   </footer>
 
   <script>

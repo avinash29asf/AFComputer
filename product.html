@@ -10,8 +10,6 @@
       --primary-color: #ff7a00;
       --dark: #000;
       --light: #fff;
-      --card-bg: rgba(255, 255, 255, 0.1);
-      --shadow: rgba(0, 0, 0, 0.5);
     }
 
     * {
@@ -22,6 +20,8 @@
 
     html, body {
       height: 100%;
+      display: flex;
+      flex-direction: column;
       font-family: 'Segoe UI', sans-serif;
       color: var(--light);
     }
@@ -30,7 +30,6 @@
       background: url('product.jpg') no-repeat center center fixed;
       background-size: cover;
       position: relative;
-      min-height: 100vh;
     }
 
     body::before {
@@ -39,7 +38,7 @@
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.65);
+      background-color: rgba(0, 0, 0, 0.75);
       z-index: 0;
     }
 
@@ -50,8 +49,11 @@
       justify-content: space-between;
       align-items: center;
       padding: 12px 20px;
-      position: relative;
-      z-index: 2;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
     }
 
     .nav-left {
@@ -98,68 +100,66 @@
     }
 
     main {
+      flex: 1;
       position: relative;
       z-index: 2;
-      padding: 60px 20px;
+      padding: 80px 20px 40px;
       max-width: 1100px;
-      margin: auto;
+      margin: 100px auto 0;
     }
 
-    h2 {
+    h1 {
+      font-size: 2.6rem;
       text-align: center;
       color: var(--primary-color);
       margin-bottom: 30px;
     }
 
-    .product-grid {
+    .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 25px;
     }
 
-    .product-card {
-      background: var(--card-bg);
+    .product-box {
+      background: rgba(255, 255, 255, 0.08);
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 4px 12px var(--shadow);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
       text-align: center;
-      transition: transform 0.3s;
+      color: #ddd;
     }
 
-    .product-card:hover {
-      transform: scale(1.03);
-    }
-
-    .product-card img {
+    .product-box img {
       width: 100%;
-      height: 180px;
+      height: 160px;
       object-fit: cover;
       border-radius: 8px;
       margin-bottom: 15px;
     }
 
-    .product-card h3 {
+    .product-box h3 {
       color: var(--primary-color);
       margin-bottom: 10px;
     }
 
-    .product-card p {
-      font-size: 0.95rem;
-      color: #ddd;
+    .product-box p {
+      font-size: 0.9rem;
     }
 
-    .product-card button {
+    .product-box button {
       margin-top: 12px;
-      padding: 10px 20px;
       background: var(--primary-color);
-      color: white;
       border: none;
+      color: #fff;
+      padding: 10px 18px;
       border-radius: 6px;
+      font-size: 1rem;
       cursor: pointer;
     }
 
-    .product-card button:hover {
-      background: #e36400;
+    .product-box button:hover {
+      background: #cc6200;
     }
 
     footer {
@@ -168,7 +168,6 @@
       text-align: center;
       padding: 20px;
       font-size: 0.9rem;
-      position: relative;
       z-index: 2;
     }
 
@@ -185,46 +184,53 @@
     <div class="dropdown" id="dropdownMenu">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
       <a href="product.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="gallery.html">Gallery</a>
       <a href="about.html">About</a>
-      
     </div>
   </nav>
 
   <main>
-    <h2>Our Products</h2>
-    <div class="product-grid">
-      <div class="product-card">
+    <h1>Our Products</h1>
+    <div class="products">
+      <div class="product-box">
         <img src="laptop.jpg" alt="Laptop">
         <h3>Laptops</h3>
-        <p>New and refurbished laptops available for business and personal use.</p>
-        <button>Buy Now</button>
+        <p>New and refurbished laptops for home, office, and business use.</p>
+        <button onclick="location.href='order.html'">Order Now</button>
       </div>
-      <div class="product-card">
+      <div class="product-box">
+        <img src="computer.jpg" alt="Computer">
+        <h3>Desktops</h3>
+        <p>Assembled & branded desktops with full hardware support.</p>
+        <button onclick="location.href='order.html'">Order Now</button>
+      </div>
+      <div class="product-box">
         <img src="printer.jpg" alt="Printer">
         <h3>Printers</h3>
-        <p>Affordable and branded printers for all needs. Repair and sales support.</p>
-        <button>Buy Now</button>
+        <p>Inkjet and LaserJet printers for home and office use.</p>
+        <button onclick="location.href='order.html'">Order Now</button>
       </div>
-      <div class="product-card">
-        <img src="toner.jpg" alt="Toner">
-        <h3>Toner Cartridges</h3>
-        <p>All brands of toner and ink cartridges available at the best price.</p>
-        <button>Buy Now</button>
-      </div>
-      <div class="product-card">
+      <div class="product-box">
         <img src="accessories.jpg" alt="Accessories">
         <h3>Accessories</h3>
-        <p>Keyboards, mice, cables, hard drives, routers, and much more.</p>
-        <button>Buy Now</button>
+        <p>Mouse, keyboards, cables, webcams, and more.</p>
+        <button onclick="location.href='order.html'">Order Now</button>
+      </div>
+      <div class="product-box">
+        <img src="toner.jpg" alt="Toner">
+        <h3>Toner Cartridges</h3>
+        <p>Original and compatible toner cartridges for all brands.</p>
+        <button onclick="location.href='order.html'">Order Now</button>
       </div>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 A F Computer | Phone: 7420806178 | Email: <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a></p>
+    <p>&copy; 2025 A F Computer | Phone: 7420806178 | Email:
+      <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a>
+    </p>
   </footer>
 
   <script>
