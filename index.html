@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="google-site-verification" content="googlea75de922b485a323.html">
-  <title>Gallery - A F Computer</title>
+  <title>A F Computer - Home</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     :root {
@@ -28,7 +28,7 @@
     }
 
     body {
-      background: url('gallery.jpg') no-repeat center center fixed;
+      background: url('home.jpg') no-repeat center center fixed;
       background-size: cover;
       position: relative;
     }
@@ -39,7 +39,7 @@
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.75);
+      background-color: rgba(0, 0, 0, 0.65);
       z-index: 0;
     }
 
@@ -104,36 +104,62 @@
       flex: 1;
       position: relative;
       z-index: 2;
-      padding: 80px 20px 40px;
-      max-width: 1200px;
-      margin: 100px auto 0;
+      padding: 60px 20px;
+      margin-top: 80px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     h1 {
-      font-size: 2.6rem;
       text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
       color: var(--primary-color);
-      margin-bottom: 30px;
+      animation: fadeIn 1.5s ease-out;
     }
 
-    .gallery {
+    p {
+      text-align: center;
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+      animation: slideUp 1.2s ease-out;
+    }
+
+    .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      animation: fadeIn 1.2s ease;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
     }
 
-    .gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
+    .service-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      transition: transform 0.3s ease;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      animation: zoomIn 1s ease;
     }
 
-    .gallery img:hover {
-      transform: scale(1.05);
+    .service-box img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .service-box h3 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .service-box p {
+      font-size: 0.95rem;
+      color: #ddd;
     }
 
     footer {
@@ -146,8 +172,18 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
+      from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
 
     a { color: var(--primary-color); }
@@ -171,14 +207,28 @@
   </nav>
 
   <main>
-    <h1>Our Work Gallery</h1>
-    <div class="gallery">
-      <img src="repair.jpg" alt="Repair Work">
-      <img src="laptop.jpg" alt="Laptop Sales">
-      <img src="printer.jpg" alt="Printer Service">
-      <img src="accessories.jpg" alt="Accessories">
-      <img src="network.jpg" alt="Networking">
-      <img src="toner.jpg" alt="Toner Cartridge">
+    <h1>Welcome to A F Computer</h1>
+    <p>
+      We provide expert solutions in hardware repair, sales, and IT services.
+      Our mission is to deliver quality support for desktops, laptops, printers, and accessories.
+    </p>
+
+    <div class="services">
+      <div class="service-box">
+        <img src="laptop.jpg" alt="Laptop">
+        <h3>Laptop Sales & Repair</h3>
+        <p>Wide range of new/refurbished laptops and quick repair support.</p>
+      </div>
+      <div class="service-box">
+        <img src="computer.jpg" alt="Computer">
+        <h3>Computer Services</h3>
+        <p>Desktop hardware upgrades, software support, and full setups.</p>
+      </div>
+      <div class="service-box">
+        <img src="printer.jpg" alt="Printer">
+        <h3>Printer Sales & Service</h3>
+        <p>All brands of printers with installation and repair facilities.</p>
+      </div>
     </div>
   </main>
 

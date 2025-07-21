@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="google-site-verification" content="googlea75de922b485a323.html">
-  <title>Gallery - A F Computer</title>
+  <title>Products - A F Computer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     :root {
@@ -28,7 +28,7 @@
     }
 
     body {
-      background: url('gallery.jpg') no-repeat center center fixed;
+      background: url('product.jpg') no-repeat center center fixed;
       background-size: cover;
       position: relative;
     }
@@ -105,7 +105,7 @@
       position: relative;
       z-index: 2;
       padding: 80px 20px 40px;
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 100px auto 0;
     }
 
@@ -116,24 +116,51 @@
       margin-bottom: 30px;
     }
 
-    .gallery {
+    .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      animation: fadeIn 1.2s ease;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
     }
 
-    .gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
+    .product-box {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      transition: transform 0.3s ease;
+      text-align: center;
+      color: #ddd;
     }
 
-    .gallery img:hover {
-      transform: scale(1.05);
+    .product-box img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .product-box h3 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .product-box p {
+      font-size: 0.9rem;
+    }
+
+    .product-box button {
+      margin-top: 12px;
+      background: var(--primary-color);
+      border: none;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .product-box button:hover {
+      background: #cc6200;
     }
 
     footer {
@@ -143,11 +170,6 @@
       padding: 20px;
       font-size: 0.9rem;
       z-index: 2;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     a { color: var(--primary-color); }
@@ -171,19 +193,43 @@
   </nav>
 
   <main>
-    <h1>Our Work Gallery</h1>
-    <div class="gallery">
-      <img src="repair.jpg" alt="Repair Work">
-      <img src="laptop.jpg" alt="Laptop Sales">
-      <img src="printer.jpg" alt="Printer Service">
-      <img src="accessories.jpg" alt="Accessories">
-      <img src="network.jpg" alt="Networking">
-      <img src="toner.jpg" alt="Toner Cartridge">
+    <h1>Our Products</h1>
+    <div class="products">
+      <div class="product-box">
+        <img src="laptop.jpg" alt="Laptop">
+        <h3>Laptops</h3>
+        <p>New and refurbished laptops for home, office, and business use.</p>
+        <button onclick="location.href='order.html'">Order Now</button>
+      </div>
+      <div class="product-box">
+        <img src="computer.jpg" alt="Computer">
+        <h3>Desktops</h3>
+        <p>Assembled & branded desktops with full hardware support.</p>
+        <button onclick="location.href='order.html'">Order Now</button>
+      </div>
+      <div class="product-box">
+        <img src="printer.jpg" alt="Printer">
+        <h3>Printers</h3>
+        <p>Inkjet and LaserJet printers for home and office use.</p>
+        <button onclick="location.href='order.html'">Order Now</button>
+      </div>
+      <div class="product-box">
+        <img src="accessories.jpg" alt="Accessories">
+        <h3>Accessories</h3>
+        <p>Mouse, keyboards, cables, webcams, and more.</p>
+        <button onclick="location.href='order.html'">Order Now</button>
+      </div>
+      <div class="product-box">
+        <img src="toner.jpg" alt="Toner">
+        <h3>Toner Cartridges</h3>
+        <p>Original and compatible toner cartridges for all brands.</p>
+        <button onclick="location.href='order.html'">Order Now</button>
+      </div>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 A F Computer | Phone: 7420806178 | Email: 
+    <p>&copy; 2025 A F Computer | Phone: 7420806178 | Email:
       <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a>
     </p>
   </footer>

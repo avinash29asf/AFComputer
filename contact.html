@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="google-site-verification" content="googlea75de922b485a323.html">
-  <title>Gallery - A F Computer</title>
+  <title>Contact - A F Computer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     :root {
@@ -28,7 +28,7 @@
     }
 
     body {
-      background: url('gallery.jpg') no-repeat center center fixed;
+      background: url('contact.jpg') no-repeat center center fixed;
       background-size: cover;
       position: relative;
     }
@@ -105,7 +105,7 @@
       position: relative;
       z-index: 2;
       padding: 80px 20px 40px;
-      max-width: 1200px;
+      max-width: 800px;
       margin: 100px auto 0;
     }
 
@@ -116,24 +116,49 @@
       margin-bottom: 30px;
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      animation: fadeIn 1.2s ease;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
+    .info {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 25px;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      transition: transform 0.3s ease;
+      margin-bottom: 30px;
+      color: #ddd;
     }
 
-    .gallery img:hover {
-      transform: scale(1.05);
+    .info p {
+      margin: 10px 0;
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: none;
+      background: #111;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    button {
+      background: var(--primary-color);
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #cc6200;
     }
 
     footer {
@@ -143,11 +168,6 @@
       padding: 20px;
       font-size: 0.9rem;
       z-index: 2;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     a { color: var(--primary-color); }
@@ -171,15 +191,21 @@
   </nav>
 
   <main>
-    <h1>Our Work Gallery</h1>
-    <div class="gallery">
-      <img src="repair.jpg" alt="Repair Work">
-      <img src="laptop.jpg" alt="Laptop Sales">
-      <img src="printer.jpg" alt="Printer Service">
-      <img src="accessories.jpg" alt="Accessories">
-      <img src="network.jpg" alt="Networking">
-      <img src="toner.jpg" alt="Toner Cartridge">
+    <h1>Contact Us</h1>
+
+    <div class="info">
+      <p><strong>Address:</strong> 28, near Bharati Technical Institute, Nigdi Gaothan, Nigdi, Pimpri-Chinchwad, Maharashtra - 411044</p>
+      <p><strong>Phone:</strong> 7420806178</p>
+      <p><strong>Email:</strong> <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a></p>
+      <p><strong>Google Map:</strong> <a href="https://www.google.com/maps/place/A+F+Computer/@18.6650074,73.7756536,15z/data=!4m6!3m5!1s0x3bc2b73c61797b95:0x4d0a9c6d200b1ca6!8m2!3d18.662592!4d73.7764931!16s%2Fg%2F11yfq5_xb2?authuser=0" target="_blank">View Location</a></p>
     </div>
+
+    <form action="mailto:avinash29asf@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </main>
 
   <footer>
