@@ -1,279 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="googlea75de922b485a323.html">
-  <title>A F Computer – Computer, Laptop & Printer Repair in Pune</title>
-  <meta name="description" content="A F Computer provides affordable and professional repair services for computers, laptops, and printers in Pune. Fast service and trusted support.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="googlea75de922b485a323.html">
+<title>A F Computer – Computer, Laptop & Printer Repair in Pune</title>
+<meta name="description" content="A F Computer provides affordable and professional repair services for computers, laptops, and printers in Pune. Fast service and trusted support.">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
-  <style>
-  :root {
-    --primary: #ff7a00;
-    --dark: #000;
-    --light: #fff;
-  }
+<style>
+:root {
+  --primary: #ff7a00;
+  --dark: #000;
+  --light: #fff;
+  --bg-color: #000;
+  --text-color: #fff;
+}
 
-  * {margin:0; padding:0; box-sizing:border-box;}
+body.light {
+  --bg-color: #fff;
+  --text-color: #000;
+}
 
-  html, body {
-    height:100%;
-    font-family:'Segoe UI', sans-serif;
-    color:var(--light);
-    scroll-behavior:smooth;
-  }
+* {margin:0; padding:0; box-sizing:border-box;}
+html, body {height:100%; font-family:'Segoe UI', sans-serif; color:var(--text-color); scroll-behavior:smooth;}
+body {
+  background:url('laptop.jpg') no-repeat center center fixed;
+  background-size:cover;
+  position:relative;
+  transition: background 0.5s, color 0.5s;
+}
 
-  body {
-    background:url('laptop.jpg') no-repeat center center fixed;
-    background-size:cover;
-    position:relative;
-  }
+body::before {
+  content:"";
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.65);
+  z-index:0;
+  transition: background 0.5s;
+}
 
-  body::before {
-    content:"";
-    position:fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background:rgba(0,0,0,0.65);
-    z-index:0;
-  }
+body.light::before {
+  background:rgba(255,255,255,0.65);
+}
 
-  /* ---------- NAVBAR ---------- */
-  nav {
-    position:fixed;
-    top:0; left:0; right:0;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:12px 20px;
-    background:rgba(0,0,0,0.6);
-    backdrop-filter:blur(5px);
-    z-index:1000;
-  }
+/* ---------- NAVBAR ---------- */
+nav {
+  position:fixed;
+  top:0; left:0; right:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 20px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(5px);
+  z-index:1000;
+  transition: background 0.5s;
+}
 
-  .menu-btn {
-    font-size:1.6rem;
-    color:var(--primary);
-    cursor:pointer;
-  }
+body.light nav {background:rgba(168, 167, 167, 0.8);}
 
-  .logo {
-    font-size:1.6rem;
-    font-weight:bold;
-    color:var(--light);
-  }
+.menu-btn, .theme-btn {
+  font-size:1.6rem;
+  color:white;
+  cursor:pointer;
+  margin-left:12px;
+}
 
-  /* ---------- DROPDOWN MENU ---------- */
-  .dropdown {
-    position:absolute;
-    top:60px;
-    left:20px;
-    background:rgba(0,0,0,0.9);
-    border-radius:10px;
-    display:none;
-    flex-direction:column;
-    min-width:200px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.5);
-    overflow:hidden;
-  }
+.logo {
+  font-size:1.6rem;
+  font-weight:bold;
+  color:var(--text-color);
+}
 
-  .dropdown a {
-    color:var(--primary);
-    font-weight:bold;
-    padding:12px 20px;
-    text-decoration:none;
-    transition:all 0.3s ease;
-  }
+/* ---------- SLIDE-IN MENU ---------- */
+.dropdown {
+  position:fixed;
+  top:0; left:-250px;
+  width:250px; height:100%;
+  background:rgba(0,0,0,0.95);
+  display:flex; flex-direction:column;
+  transition:left 0.3s ease;
+  z-index:999;
+  padding-top:60px;
+}
 
-  .dropdown a:hover {
-    background:#111;
-    color:var(--light);
-  }
+body.light .dropdown {background:rgba(124, 123, 123, 0.95);}
 
-  /* ---------- MAIN CONTENT ---------- */
-  main {
-    position:relative;
-    z-index:2;
-    padding:100px 20px 60px;
-    max-width:1100px;
-    margin:auto;
-  }
+.dropdown.show {left:0;}
 
-  h1 {
-    text-align:center;
-    font-size:2.8rem;
-    color:var(--primary);
-    margin-bottom:20px;
-    animation:fadeIn 1.5s ease;
-  }
+.dropdown a {
+  color:white;
+  font-weight:bold;
+  padding:20px;
+  text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
 
-  p {
-    text-align:center;
-    font-size:1.2rem;
-    max-width:800px;
-    margin:auto;
-    line-height:1.6;
-    animation:slideUp 1.2s ease;
-  }
+body.light .dropdown a {color:white;}
+.dropdown a:hover {background:#111; color:var(--light);}
+body.light .dropdown a:hover {background:#ddd; color:#000;}
 
-  /* ---------- SERVICES ---------- */
-  .services {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:30px;
-    margin-top:50px;
-  }
+/* ---------- MAIN CONTENT ---------- */
+main {
+  position:relative; z-index:2;
+  padding:100px 20px 60px;
+  max-width:2000px; margin:auto;
+}
 
-  .service-box {
-    background:rgba(255,255,255,0.1);
-    padding:20px;
-    border-radius:12px;
-    text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,0.5);
-    transition:transform 0.3s, box-shadow 0.3s;
-    opacity:0;
-    transform:translateY(40px);
-  }
+h1 {
+  text-align:center;
+  font-size:2.8rem;
+  color:var(--primary);
+  margin-bottom:20px;
+  min-height:3.5rem;
+}
 
-  .service-box.visible {
-    opacity:1;
-    transform:translateY(0);
-    transition:opacity 0.8s ease, transform 0.8s ease;
-  }
+p {
+  text-align:center;
+  font-size:1.2rem;
+  max-width:800px;
+  margin:auto;
+  line-height:1.6;
+}
 
-  .service-box img {
-    width:100%;
-    height:150px;
-    object-fit:cover;
-    border-radius:8px;
-    margin-bottom:15px;
-  }
+/* ---------- SERVICES ---------- */
+.services {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  margin-top:50px;
+}
 
-  .service-box h3 {
-    color:var(--primary);
-    margin-bottom:10px;
-  }
+.service-box {
+  background:rgba(255,255,255,0.1);
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+  box-shadow:0 4px 12px rgba(0,0,0,0.5);
+  transition:transform 0.3s, box-shadow 0.3s;
+  opacity:0;
+  transform:translateY(40px);
+}
 
-  .service-box p {
-    color:#ddd;
-    font-size:0.95rem;
-  }
+.service-box.visible {opacity:1; transform:translateY(0); transition:0.8s;}
+.service-box img {
+  width:100%;
+  
+  object-fit:cover;
+  border-radius:8px;
+  margin-bottom:15px;
+}
+.service-box h3 {color:var(--primary); margin-bottom:10px;}
+.service-box p {color:#ddd; font-size:0.95rem;}
+.service-box:hover {transform:translateY(-5px); box-shadow:0 6px 16px rgba(0,0,0,0.6);}
 
-  .service-box:hover {
-    transform:translateY(-5px);
-    box-shadow:0 6px 16px rgba(0,0,0,0.6);
-  }
+.service-box button {
+  background: var(--primary);
+  color: var(--light);
+  padding:10px 20px;
+  border:none; border-radius:6px;
+  cursor:pointer;
+  margin-top:10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.service-box button:hover {transform: scale(1.05); box-shadow: 0 6px 16px rgba(255,122,0,0.6);}
 
-  /* ---------- FOOTER ---------- */
-  footer {
-    background:rgba(0,0,0,0.6);
-    backdrop-filter:blur(4px);
-    color:var(--light);
-    text-align:center;
-    padding:20px;
-    font-size:0.9rem;
-    position:relative;
-    z-index:2;
-  }
+/* ---------- FOOTER ---------- */
+footer {
+  background:rgba(0,0,0,0.6); backdrop-filter:blur(4px);
+  color:var(--text-color);
+  text-align:center;
+  padding:20px;
+  font-size:0.9rem;
+  position:relative;
+  z-index:2;
+}
 
-  footer a {color:var(--primary); text-decoration:none;}
-  footer a:hover {color:#fff;}
+footer a {color:var(--primary); text-decoration:none;}
+footer a:hover {color:#fff;}
 
-  /* ---------- ANIMATIONS ---------- */
-  @keyframes fadeIn {
-    from {opacity:0; transform:translateY(-20px);}
-    to {opacity:1; transform:translateY(0);}
-  }
+.social-icons a {color: var(--primary); margin: 0 8px; font-size:1.2rem;}
+.social-icons a:hover {color:#fff;}
 
-  @keyframes slideUp {
-    from {opacity:0; transform:translateY(40px);}
-    to {opacity:1; transform:translateY(0);}
-  }
-
-  /* ---------- RESPONSIVE ---------- */
-  @media(max-width:600px){
-    h1{font-size:2.2rem;}
-    p{font-size:1rem;}
-    .service-box img{height:120px;}
-  }
-  </style>
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:600px){
+  h1{font-size:2.2rem;}
+  p{font-size:1rem;}
+  .service-box img{height:120px;}
+}
+</style>
 </head>
 
 <body>
-  <nav>
-    <div class="menu-btn" onclick="toggleDropdown()">
-      <i class="fas fa-ellipsis-v"></i>
+<nav>
+  <div style="display:flex; align-items:center;">
+    <div class="menu-btn" onclick="toggleDropdown()"><i class="fas fa-bars"></i></div>
+    <div class="logo" style="margin-left:12px;">A F Computer</div>
+  </div>
+  <div class="theme-btn" onclick="toggleTheme()"><i class="fas fa-moon" id="theme-icon"></i></div>
+</nav>
+
+<div class="dropdown" id="dropdownMenu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="product.html">Products</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+</div>
+
+<main>
+  <h1>Welcome to A F Computer</h1>
+  <p>We provide expert solutions in hardware repair, sales, and IT services.
+     Our mission is to deliver quality support for desktops, laptops, printers, and accessories.</p>
+
+  <!-- SERVICES -->
+  <div class="services" id="services">
+    <div class="service-box">
+      <img src="laptop repair.jpg" alt="Laptop Sales & Repair" loading="lazy">
+      <h3>Laptop Sales & Repair</h3>
+      <p>Wide range of new and refurbished laptops with fast repair support.</p>
+      
     </div>
-    <div class="logo">A F Computer</div>
-
-    <div class="dropdown" id="dropdownMenu">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="product.html">Products</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-      <a href="about.html">About</a>
+    <div class="service-box">
+      <img src="computer repair.jpg" alt="Computer Services" loading="lazy">
+      <h3>Computer Services</h3>
+      <p>Upgrades, software troubleshooting, and full desktop setup solutions.</p>
+      
     </div>
-  </nav>
-
-  <main>
-    <h1>Welcome to A F Computer</h1>
-    <p>We provide expert solutions in hardware repair, sales, and IT services.
-       Our mission is to deliver quality support for desktops, laptops, printers, and accessories.</p>
-
-    <div class="services">
-      <div class="service-box">
-        <img src="laptop.jpg" alt="Laptop Sales & Repair">
-        <h3>Laptop Sales & Repair</h3>
-        <p>Wide range of new and refurbished laptops with fast repair support.</p>
-      </div>
-      <div class="service-box">
-        <img src="computer.jpg" alt="Computer Services">
-        <h3>Computer Services</h3>
-        <p>Upgrades, software troubleshooting, and full desktop setup solutions.</p>
-      </div>
-      <div class="service-box">
-        <img src="printer.jpg" alt="Printer Sales & Service">
-        <h3>Printer Sales & Service</h3>
-        <p>All printer brands – installation, repair, and maintenance.</p>
-      </div>
+    <div class="service-box">
+      <img src="printer repair.jpg" alt="Printer Sales & Service" loading="lazy">
+      <h3>Printer Sales & Service</h3>
+      <p>All printer brands – installation, repair, and maintenance.</p>
+      
     </div>
-  </main>
+  </div>
 
-  <footer>
-    <p>&copy; 2025 A F Computer | Phone: 7420806178 | Email: 
-      <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a></p>
-  </footer>
+  <!-- PRODUCTS -->
+  <h1 style="margin-top:80px;">Our Products</h1>
+  <div class="services" id="products">
+    <div class="service-box">
+      <img src="lenovo laptop.jpg" alt="Product 1" loading="lazy">
+      <h3>Gaming Laptop</h3>
+      <p>High-performance gaming laptop with latest graphics and processor.</p>
+      <button>Order Now</button>
+    </div>
+    <div class="service-box">
+      <img src="hp desktop.jpg" alt="Product 2" loading="lazy">
+      <h3>All-in-One PC</h3>
+      <p>Compact desktop PC with integrated display and powerful performance.</p>
+      <button>Order Now</button>
+    </div>
+    <div class="service-box">
+      <img src="hp printer.jpg" alt="Product 3" loading="lazy">
+      <h3>Laser Printer</h3>
+      <p>Reliable printer for home or office use with high-speed printing.</p>
+      <button>Order Now</button>
+    </div>
+    <div class="service-box">
+      <img src="network setup.jpg" alt="Product 4" loading="lazy">
+      <h3>Networking Kit</h3>
+      <p>Routers, switches, and cables for seamless home or office networking.</p>
+      <button>Order Now</button>
+    </div>
+  </div>
 
-  <script>
-  // Toggle Dropdown
-  function toggleDropdown(){
-    const menu=document.getElementById('dropdownMenu');
-    menu.style.display=menu.style.display==='flex'?'none':'flex';
+
+<footer>
+  <p>&copy; 2025 A F Computer | Phone: 7420806178 | Email: <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a></p>
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-whatsapp"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div>
+</footer>
+
+<script>
+// ---------- Slide-in Menu ----------
+function toggleDropdown(){
+  document.getElementById('dropdownMenu').classList.toggle('show');
+}
+document.addEventListener('click', e => {
+  const menu = document.getElementById('dropdownMenu');
+  const btn = document.querySelector('.menu-btn');
+  if(!menu.contains(e.target) && !btn.contains(e.target)){
+    menu.classList.remove('show');
   }
+});
 
-  // Close when click outside
-  document.addEventListener('click',e=>{
-    const menu=document.getElementById('dropdownMenu');
-    const btn=document.querySelector('.menu-btn');
-    if(!menu.contains(e.target)&&!btn.contains(e.target)){
-      menu.style.display='none';
+// ---------- Dark/Light Theme Toggle with Persistence ----------
+const themeIcon = document.getElementById('theme-icon');
+
+// Load saved theme from localStorage
+if(localStorage.getItem('theme') === 'light'){
+  document.body.classList.add('light');
+  themeIcon.className = 'fas fa-sun';
+} else {
+  themeIcon.className = 'fas fa-moon';
+}
+
+function toggleTheme(){
+  document.body.classList.toggle('light');
+  if(document.body.classList.contains('light')){
+    themeIcon.className = 'fas fa-sun';
+    localStorage.setItem('theme', 'light');
+  } else {
+    themeIcon.className = 'fas fa-moon';
+    localStorage.setItem('theme', 'dark');
+  }
+}
+
+// ---------- Scroll animation for services ----------
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
     }
   });
+}, {threshold:0.3});
+document.querySelectorAll('.service-box').forEach(box => observer.observe(box));
+</script>
 
-  // Scroll animation for services
-  const observer=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  },{threshold:0.3});
-  document.querySelectorAll('.service-box').forEach(box=>observer.observe(box));
-  </script>
 </body>
 </html>
-
