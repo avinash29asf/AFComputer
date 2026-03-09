@@ -64,9 +64,9 @@ body.light .dropdown a:hover {background:#ddd; color:#000;}
 /* ---------- MAIN ---------- */
 main {
   position:relative; z-index:2;
-  padding:100px 20px 60px; max-width:1200px; margin:auto;
+  padding:100px 16px 60px; max-width:1200px; margin:auto;
 }
-h1 {text-align:center; font-size:2.6rem; color:var(--primary); margin-bottom:10px;}
+h1 {text-align:center; font-size:2.6rem; color:var(--primary); margin-bottom:8px;}
 .subtitle {
   text-align:center; color:var(--text-color); opacity:0.75;
   font-size:1rem; margin-bottom:36px;
@@ -75,9 +75,28 @@ h1 {text-align:center; font-size:2.6rem; color:var(--primary); margin-bottom:10p
 /* ---------- GALLERY GRID ---------- */
 .gallery {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:25px;
+  grid-template-columns: repeat(3, 1fr);
+  gap:16px;
   animation: fadeIn 1.2s ease;
+}
+
+/* Tablet */
+@media(max-width:900px){
+  .gallery { grid-template-columns: repeat(2, 1fr); gap:12px; }
+}
+
+/* Mobile */
+@media(max-width:500px){
+  h1 { font-size:1.8rem; }
+  .subtitle { font-size:0.9rem; margin-bottom:20px; }
+  main { padding:80px 10px 50px; }
+  .gallery { grid-template-columns: repeat(2, 1fr); gap:10px; }
+  .gallery-item img { height:130px; }
+  .gallery-item .caption {
+    font-size:0.75rem; padding:18px 6px 7px;
+    opacity:1 !important;
+  }
+  .gallery-item .zoom-icon { display:none; }
 }
 
 .gallery-item {
@@ -85,8 +104,10 @@ h1 {text-align:center; font-size:2.6rem; color:var(--primary); margin-bottom:10p
   border-radius:10px; overflow:hidden;
   box-shadow:0 4px 12px rgba(0,0,0,0.5);
   transition: transform 0.3s, box-shadow 0.3s;
+  -webkit-tap-highlight-color: transparent;
 }
 .gallery-item:hover {transform:scale(1.04); box-shadow:0 6px 20px rgba(255,122,0,0.4);}
+.gallery-item:active {transform:scale(0.96);}
 
 .gallery-item img {
   width:100%; height:200px; object-fit:cover;
@@ -117,40 +138,75 @@ h1 {text-align:center; font-size:2.6rem; color:var(--primary); margin-bottom:10p
 .lightbox {
   display:none; position:fixed;
   top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,0.92);
+  background:rgba(0,0,0,0.95);
   z-index:9999; justify-content:center; align-items:center;
   flex-direction:column;
-  animation: fadeIn 0.3s ease;
 }
-.lightbox.active { display:flex; }
+.lightbox.active { display:flex; animation: fadeIn 0.3s ease; }
+
 .lightbox img {
-  max-width:90%; max-height:80vh;
+  max-width:92%; max-height:75vh;
   border-radius:10px;
-  box-shadow:0 0 40px rgba(255,122,0,0.4);
+  box-shadow:0 0 40px rgba(255,122,0,0.35);
+  transition: opacity 0.2s;
+  pointer-events:none;
 }
 .lightbox .lb-caption {
-  color:#fff; margin-top:14px;
-  font-size:1.1rem; font-weight:600;
-  color:var(--primary);
+  color:var(--primary); margin-top:14px;
+  font-size:1.05rem; font-weight:600;
+  text-align:center; padding:0 20px;
+}
+.lb-counter {
+  color:rgba(255,255,255,0.45);
+  font-size:0.85rem; margin-top:5px;
 }
 .lightbox .close-btn {
-  position:absolute; top:20px; right:28px;
+  position:absolute; top:14px; right:18px;
   font-size:2.4rem; color:#fff; cursor:pointer;
-  line-height:1; transition: color 0.2s;
+  line-height:1; z-index:10;
+  width:48px; height:48px;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:50%;
+  transition: color 0.2s, background 0.2s;
+  -webkit-tap-highlight-color: transparent;
 }
-.lightbox .close-btn:hover { color:var(--primary); }
+.lightbox .close-btn:hover, .lightbox .close-btn:active { color:var(--primary); }
 
 .lightbox .nav-btn {
-  position:absolute; top:50%; font-size:2.5rem;
+  position:absolute; top:50%; font-size:1.8rem;
   color:#fff; cursor:pointer; user-select:none;
   transform:translateY(-50%);
-  background:rgba(0,0,0,0.4);
-  padding:8px 14px; border-radius:8px;
-  transition: background 0.2s, color 0.2s;
+  background:rgba(255,255,255,0.1);
+  width:48px; height:48px;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:50%;
+  transition: background 0.2s;
+  -webkit-tap-highlight-color: transparent;
 }
-.lightbox .nav-btn:hover { background:var(--primary); }
-.lightbox .prev-btn { left:16px; }
-.lightbox .next-btn { right:16px; }
+.lightbox .nav-btn:hover, .lightbox .nav-btn:active { background:var(--primary); }
+.lightbox .prev-btn { left:12px; }
+.lightbox .next-btn { right:12px; }
+
+/* Mobile lightbox */
+@media(max-width:500px){
+  .lightbox img { max-height:62vh; border-radius:8px; }
+  .lightbox .nav-btn { width:40px; height:40px; font-size:1.3rem; }
+  .lightbox .prev-btn { left:6px; }
+  .lightbox .next-btn { right:6px; }
+  .lightbox .lb-caption { font-size:0.9rem; }
+  .lb-counter { font-size:0.8rem; }
+}
+
+/* ---------- SWIPE HINT (mobile only) ---------- */
+.swipe-hint {
+  display:none;
+  text-align:center;
+  color:rgba(255,255,255,0.4);
+  font-size:0.8rem;
+  margin-top:8px;
+  letter-spacing:0.5px;
+}
+@media(max-width:600px){ .swipe-hint { display:block; } }
 
 /* ---------- FOOTER ---------- */
 footer {
@@ -160,8 +216,6 @@ footer {
   position:relative; z-index:2;
 }
 a { color: var(--primary); }
-
-@media(max-width:600px){ h1{font-size:2rem;} }
 </style>
 </head>
 <body>
@@ -190,37 +244,37 @@ a { color: var(--primary); }
   <div class="gallery" id="gallery">
 
     <div class="gallery-item" onclick="openLightbox(0)">
-      <img src="dell desktop.jpg" alt="Dell Desktop">
+      <img src="dell desktop.jpg" alt="Dell Desktop" loading="lazy">
       <div class="caption">Dell Desktop</div>
       <i class="fas fa-search-plus zoom-icon"></i>
     </div>
 
     <div class="gallery-item" onclick="openLightbox(1)">
-      <img src="hp laptop.jpg" alt="HP Laptop">
+      <img src="hp laptop.jpg" alt="HP Laptop" loading="lazy">
       <div class="caption">HP Laptop Sales</div>
       <i class="fas fa-search-plus zoom-icon"></i>
     </div>
 
     <div class="gallery-item" onclick="openLightbox(2)">
-      <img src="printer repair.jpg" alt="Printer Repair">
+      <img src="printer repair.jpg" alt="Printer Repair" loading="lazy">
       <div class="caption">Printer Repair</div>
       <i class="fas fa-search-plus zoom-icon"></i>
     </div>
 
     <div class="gallery-item" onclick="openLightbox(3)">
-      <img src="accessories.jpg" alt="Accessories">
+      <img src="accessories.jpg" alt="Accessories" loading="lazy">
       <div class="caption">Computer Accessories</div>
       <i class="fas fa-search-plus zoom-icon"></i>
     </div>
 
     <div class="gallery-item" onclick="openLightbox(4)">
-      <img src="network design.png" alt="Networking">
+      <img src="network design.png" alt="Networking" loading="lazy">
       <div class="caption">Network Setup</div>
       <i class="fas fa-search-plus zoom-icon"></i>
     </div>
 
     <div class="gallery-item" onclick="openLightbox(5)">
-      <img src="toner.jpg" alt="Toner Cartridge">
+      <img src="toner.jpg" alt="Toner Cartridge" loading="lazy">
       <div class="caption">Toner Cartridge</div>
       <i class="fas fa-search-plus zoom-icon"></i>
     </div>
@@ -234,6 +288,8 @@ a { color: var(--primary); }
   <span class="nav-btn prev-btn" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></span>
   <img id="lb-img" src="" alt="">
   <div class="lb-caption" id="lb-caption"></div>
+  <div class="lb-counter" id="lb-counter"></div>
+  <div class="swipe-hint">← Swipe to navigate →</div>
   <span class="nav-btn next-btn" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></span>
 </div>
 
@@ -260,7 +316,7 @@ function toggleTheme(){
   else{themeIcon.className='fas fa-moon';localStorage.setItem('theme','dark');}
 }
 
-// Lightbox
+// Lightbox data
 const images = [
   { src:'dell desktop.jpg',   cap:'Dell Desktop' },
   { src:'hp laptop.jpg',      cap:'HP Laptop Sales' },
@@ -271,10 +327,20 @@ const images = [
 ];
 let current = 0;
 
+function updateLightbox(){
+  const lb = document.getElementById('lb-img');
+  lb.style.opacity = '0';
+  setTimeout(()=>{
+    lb.src = images[current].src;
+    lb.alt = images[current].cap;
+    lb.style.opacity = '1';
+  }, 150);
+  document.getElementById('lb-caption').textContent = images[current].cap;
+  document.getElementById('lb-counter').textContent = (current + 1) + ' / ' + images.length;
+}
 function openLightbox(index){
   current = index;
-  document.getElementById('lb-img').src = images[current].src;
-  document.getElementById('lb-caption').textContent = images[current].cap;
+  updateLightbox();
   document.getElementById('lightbox').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
@@ -284,20 +350,39 @@ function closeLightbox(){
 }
 function changeImage(dir){
   current = (current + dir + images.length) % images.length;
-  document.getElementById('lb-img').src = images[current].src;
-  document.getElementById('lb-caption').textContent = images[current].cap;
+  updateLightbox();
 }
+
 // Close on background click
 document.getElementById('lightbox').addEventListener('click', function(e){
   if(e.target === this) closeLightbox();
 });
-// Keyboard navigation
+
+// Keyboard
 document.addEventListener('keydown', e=>{
   if(!document.getElementById('lightbox').classList.contains('active')) return;
   if(e.key==='ArrowLeft') changeImage(-1);
   if(e.key==='ArrowRight') changeImage(1);
   if(e.key==='Escape') closeLightbox();
 });
+
+// Touch swipe for mobile
+let touchStartX = 0;
+let touchStartY = 0;
+const lb = document.getElementById('lightbox');
+lb.addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+  touchStartY = e.changedTouches[0].screenY;
+}, {passive:true});
+lb.addEventListener('touchend', e => {
+  const dx = touchStartX - e.changedTouches[0].screenX;
+  const dy = touchStartY - e.changedTouches[0].screenY;
+  // Only horizontal swipe
+  if(Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50){
+    if(dx > 0) changeImage(1);
+    else changeImage(-1);
+  }
+}, {passive:true});
 </script>
 
 </body>
