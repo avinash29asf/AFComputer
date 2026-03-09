@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ - A F Computer</title>
+<meta name="description" content="Frequently asked questions about computer repair, laptop service, printer support and IT services at A F Computer, Pune.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#ff7a00;--primary-dark:#cc6000;--primary-glow:rgba(255,122,0,0.22);--surface:rgba(255,255,255,0.05);--border:rgba(255,255,255,0.08);--text:#f0f0f0;--text-muted:rgba(255,255,255,0.5);--nav-bg:rgba(10,10,10,0.85);--overlay:rgba(0,0,0,0.72);--radius:14px;--radius-sm:8px;--transition:0.3s cubic-bezier(0.4,0,0.2,1);}
+body.light{--surface:rgba(0,0,0,0.04);--border:rgba(0,0,0,0.1);--text:#111;--text-muted:rgba(0,0,0,0.5);--nav-bg:rgba(220,220,220,0.92);--overlay:rgba(255,255,255,0.62);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{font-family:'DM Sans',sans-serif;color:var(--text);scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{background:url('computer repair.jpg') no-repeat center center fixed;background-size:cover;position:relative;}
+body::before{content:"";position:fixed;inset:0;background:var(--overlay);z-index:0;transition:background var(--transition);}
+
+nav{position:fixed;top:0;left:0;right:0;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:var(--nav-bg);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:1000;}
+.nav-left{display:flex;align-items:center;gap:14px;}
+.logo{font-family:'Rajdhani',sans-serif;font-size:1.55rem;font-weight:700;color:var(--text);}
+.logo span{color:var(--primary);}
+.menu-btn,.theme-btn{width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-sm);cursor:pointer;font-size:1.2rem;color:var(--primary);background:var(--surface);border:1px solid var(--border);transition:background var(--transition),transform var(--transition);-webkit-tap-highlight-color:transparent;}
+.menu-btn:hover,.theme-btn:hover{background:var(--primary);color:#fff;transform:scale(1.05);}
+.dropdown{position:fixed;top:0;left:-280px;width:260px;height:100%;background:rgba(8,8,8,0.97);backdrop-filter:blur(16px);display:flex;flex-direction:column;transition:left 0.35s cubic-bezier(0.4,0,0.2,1);z-index:1100;padding-top:70px;border-right:1px solid rgba(255,122,0,0.15);}
+body.light .dropdown{background:rgba(30,30,30,0.97);}
+.dropdown.show{left:0;}
+.dropdown-header{padding:0 24px 16px;font-family:'Rajdhani',sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--primary);border-bottom:1px solid rgba(255,122,0,0.2);margin-bottom:8px;}
+.dropdown a{color:#e0e0e0;font-weight:500;font-size:1rem;padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:10px;transition:background var(--transition),color var(--transition),padding-left var(--transition);text-decoration:none;}
+.dropdown a:hover{background:rgba(255,122,0,0.12);color:var(--primary);padding-left:32px;}
+.dropdown a i{width:18px;color:var(--primary);opacity:0.8;}
+.dropdown-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1050;}
+.dropdown-overlay.show{display:block;}
+
+.page-header{position:relative;z-index:2;padding:120px 20px 50px;text-align:center;max-width:800px;margin:0 auto;}
+.page-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,122,0,0.12);border:1px solid rgba(255,122,0,0.3);color:var(--primary);font-size:0.78rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:20px;animation:fadeUp 0.7s ease both;}
+.page-header h1{font-family:'Rajdhani',sans-serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:700;color:var(--text);line-height:1.1;margin-bottom:16px;animation:fadeUp 0.7s 0.1s ease both;}
+.page-header h1 span{color:var(--primary);}
+.page-header p{font-size:clamp(0.95rem,2vw,1.1rem);color:var(--text-muted);line-height:1.7;animation:fadeUp 0.7s 0.2s ease both;}
+
+/* SEARCH */
+.search-wrap{position:relative;z-index:2;max-width:560px;margin:0 auto 20px;padding:0 20px;animation:fadeUp 0.7s 0.3s ease both;}
+.search-wrap input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:13px 48px 13px 20px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.95rem;outline:none;transition:border-color var(--transition);}
+.search-wrap input:focus{border-color:var(--primary);}
+.search-wrap i{position:absolute;right:36px;top:50%;transform:translateY(-50%);color:var(--text-muted);}
+
+main{position:relative;z-index:2;max-width:860px;margin:0 auto;padding:24px 20px 80px;}
+
+/* CATEGORY TABS */
+.cat-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;}
+.cat-tab{padding:7px 18px;border-radius:50px;font-size:0.82rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);transition:background var(--transition),color var(--transition),border-color var(--transition);-webkit-tap-highlight-color:transparent;}
+.cat-tab:hover,.cat-tab.active{background:var(--primary);color:#fff;border-color:var(--primary);}
+
+/* FAQ GROUP */
+.faq-group{margin-bottom:40px;}
+.faq-group-title{font-family:'Rajdhani',sans-serif;font-size:1.2rem;font-weight:700;color:var(--primary);margin-bottom:14px;display:flex;align-items:center;gap:8px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+
+/* ACCORDION */
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:10px;overflow:hidden;transition:border-color var(--transition);opacity:0;transform:translateY(16px);}
+.faq-item.visible{opacity:1;transform:translateY(0);transition:opacity 0.5s ease,transform 0.5s ease,border-color var(--transition);}
+.faq-item.open{border-color:rgba(255,122,0,0.3);}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;gap:12px;-webkit-tap-highlight-color:transparent;}
+.faq-q span{font-size:0.95rem;font-weight:600;color:var(--text);line-height:1.4;}
+.faq-icon{width:28px;height:28px;border-radius:50%;background:rgba(255,122,0,0.1);border:1px solid rgba(255,122,0,0.2);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.75rem;flex-shrink:0;transition:transform var(--transition),background var(--transition);}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--primary);color:#fff;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s ease;}
+.faq-item.open .faq-a{max-height:300px;}
+.faq-a-inner{padding:0 20px 18px;font-size:0.88rem;color:var(--text-muted);line-height:1.7;}
+
+/* CTA */
+.cta-banner{background:linear-gradient(135deg,rgba(255,122,0,0.18),rgba(255,122,0,0.06));border:1px solid rgba(255,122,0,0.25);border-radius:var(--radius);padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:20px;}
+.cta-banner h3{font-family:'Rajdhani',sans-serif;font-size:1.7rem;font-weight:700;color:var(--text);margin-bottom:6px;}
+.cta-banner p{font-size:0.88rem;color:var(--text-muted);}
+.btn-primary{background:var(--primary);color:#fff;padding:13px 28px;border-radius:var(--radius-sm);font-weight:600;font-size:0.95rem;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background var(--transition),transform var(--transition);text-decoration:none;white-space:nowrap;}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);}
+
+footer{position:relative;z-index:2;background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);border-top:1px solid rgba(255,122,0,0.15);padding:28px 20px;text-align:center;}
+.footer-logo{font-family:'Rajdhani',sans-serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:6px;}
+.footer-logo span{color:var(--primary);}
+.footer-info{font-size:0.85rem;color:rgba(255,255,255,0.45);margin-bottom:14px;line-height:1.8;}
+.footer-info a{color:var(--primary);}
+.social-icons{display:flex;gap:10px;justify-content:center;margin-bottom:14px;}
+.social-icons a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);font-size:0.9rem;transition:background var(--transition),color var(--transition);}
+.social-icons a:hover{background:var(--primary);color:#fff;}
+.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.22);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+@media(max-width:600px){.page-header{padding:100px 16px 36px;}main{padding:10px 14px 60px;}.cta-banner{flex-direction:column;text-align:center;padding:24px 20px;}.cta-banner h3{font-size:1.4rem;}.faq-q span{font-size:0.88rem;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <div class="menu-btn" onclick="toggleDropdown()"><i class="fas fa-bars"></i></div>
+    <div class="logo">A F <span>Computer</span></div>
+  </div>
+  <div class="theme-btn" onclick="toggleTheme()"><i class="fas fa-moon" id="theme-icon"></i></div>
+</nav>
+<div class="dropdown-overlay" id="dropdownOverlay" onclick="closeDropdown()"></div>
+<div class="dropdown" id="dropdownMenu">
+  <div class="dropdown-header">Navigation</div>
+  <a href="index.html"><i class="fas fa-home"></i> Home</a>
+  <a href="services.html"><i class="fas fa-tools"></i> Services</a>
+  <a href="product.html"><i class="fas fa-laptop"></i> Products</a>
+  <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
+  <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+  <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+  <a href="reviews.html"><i class="fas fa-star"></i> Reviews</a>
+  <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+  <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
+  <a href="careers.html"><i class="fas fa-briefcase"></i> Careers</a>
+</div>
+
+<div class="page-header">
+  <div class="page-badge"><i class="fas fa-question-circle"></i> Help Center</div>
+  <h1>Frequently Asked <span>Questions</span></h1>
+  <p>Answers to common questions about our repair services, pricing, and support.</p>
+</div>
+
+<div class="search-wrap">
+  <input type="text" id="faqSearch" placeholder="Search questions..." oninput="searchFAQ(this.value)">
+  <i class="fas fa-search"></i>
+</div>
+
+<main>
+  <!-- CATEGORY TABS -->
+  <div class="cat-tabs">
+    <button class="cat-tab active" onclick="filterFAQ('all',this)">All</button>
+    <button class="cat-tab" onclick="filterFAQ('repair',this)">Repairs</button>
+    <button class="cat-tab" onclick="filterFAQ('pricing',this)">Pricing</button>
+    <button class="cat-tab" onclick="filterFAQ('laptop',this)">Laptop</button>
+    <button class="cat-tab" onclick="filterFAQ('printer',this)">Printer</button>
+    <button class="cat-tab" onclick="filterFAQ('general',this)">General</button>
+  </div>
+
+  <!-- REPAIRS -->
+  <div class="faq-group" data-cat="repair">
+    <div class="faq-group-title"><i class="fas fa-tools"></i> Repairs & Service</div>
+
+    <div class="faq-item" data-cat="repair">
+      <div class="faq-q" onclick="toggleFAQ(this)">
+        <span>How long does a laptop repair take?</span>
+        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">Most repairs such as screen replacement, battery change, keyboard fix, or software issues are completed the same day or within 24 hours. Complex motherboard or data recovery jobs may take 2–3 days. We always inform you in advance.</div></div>
+    </div>
+
+    <div class="faq-item" data-cat="repair">
+      <div class="faq-q" onclick="toggleFAQ(this)">
+        <span>Do you offer on-site repair service?</span>
+        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">Yes, we offer on-site support for businesses under our AMC (Annual Maintenance Contract) plans. For home users, most repairs are done at our Nigdi or Chikhali branch. Contact us to discuss your needs.</div></div>
+    </div>
+
+    <div class="faq-item" data-cat="repair">
+      <div class="faq-q" onclick="toggleFAQ(this)">
+        <span>Do you provide warranty on repairs?</span>
+        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">Yes, we provide a warranty on all our repairs. Hardware part replacements come with a minimum 30-day to 6-month warranty depending on the part. Software services carry a 30-day service guarantee.</div></div>
+    </div>
+
+    <div class="faq-item" data-cat="repair">
+      <div class="faq-q" onclick="toggleFAQ(this)">
+        <span>Can you recover data from a damaged hard drive?</span>
+        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">In many cases, yes. We offer data recovery services for damaged, corrupted or accidentally formatted drives. Recovery success depends on the extent of damage. Bring your drive to either branch for a free diagnosis.</div></div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="faq-group" data-cat="pricing">
+    <div class="faq-group-title"><i class="fas fa-tag"></i> Pricing & Payment</div>
+
+    <div class="faq-item" data-cat="pricing">
+      <div class="faq-q" onclick="toggleFAQ(this)">
+        <span>Do you charge for diagnosis / inspection?</span>
+        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">No, basic diagnosis is free of charge. We inspect your device and give you a cost estimate before starting any work. You only pay if you approve the repair.</div></div>
+    </div>
+
+    <div class="faq-item" data-cat="pricing">
+      <div class="faq-q" onclick="toggleFAQ(this)">
+        <span>What payment methods do you accept?</span>
+        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">We accept cash, UPI (GPay, PhonePe, Paytm), and bank transfers. Payments are collected after the job is completed and you are satisfied with the work.</div></div>
+    </div>
+
+    <div class="faq-item" data-cat="pricing">
+      <div class="faq-q" onclick="toggleFAQ(this)">
+        <span>Are your prices fixed or negotiable?</span>
+        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">We offer transparent and competitive pricing. For businesses and bulk orders we have special rates. Contact us to discuss your specific requirements and get the best quote.</div></div>
+    </div>
+  </div>
+
+  <!-- LAPTOP -->
+  <div class="faq-group" data-cat="laptop">
+    <div class="faq-group-title"><i class="fas fa-laptop"></i> Laptops</div>
+
+    <div class="faq-item" data-cat="laptop">
+      <div class="faq-q" onclick="toggleFAQ(this)">
+        <span>Do you sell new and refurbished laptops?</span>
+        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">Yes, we sell both new and certified refurbished laptops. All refurbished laptops are tested, cleaned and come with a warranty. Brands include HP, Dell, Lenovo, Acer and more.</div></div>
+    </div>
+
+    <div class="faq-item" data-cat="laptop">
+      <div class="faq-q" onclick="toggleFAQ(this)">
+        <span>My laptop is not turning on — can you fix it?</span>
+        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">Yes. This could be due to a dead battery, faulty charger, motherboard issue or power IC failure. Bring it to us and we will diagnose it for free and let you know the exact cause and repair cost.</div></div>
+    </div>
+
+    <div class="faq-item" data-cat="laptop">
+      <div class="faq-q" onclick="toggleFAQ(this)">
+        <span>Can you upgrade my old laptop with SSD or RAM?</span>
+        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">Absolutely! Upgrading to an SSD is one of the best ways to speed up an old laptop. We can also upgrade RAM on compatible models. This service is quick, affordable and makes a huge difference in performance.</div></div>
+    </div>
+  </div>
+
+  <!-- PRINTER -->
+  <div class="faq-group" data-cat="printer">
+    <div class="faq-group-title"><i class="fas fa-print"></i> Printers</div>
+
+    <div class="faq-item" data-cat="printer">
+      <div class="faq-q" onclick="toggleFAQ(this)">
+        <span>Which printer brands do you service?</span>
+        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">We service all major printer brands including HP, Canon, Epson, Brother, Samsung and Xerox. Both laser and inkjet printers are handled by our experienced technicians.</div></div>
+    </div>
+
+    <div class="faq-item" data-cat="printer">
+      <div class="faq-q" onclick="toggleFAQ(this)">
+        <span>Do you offer toner refilling and cartridge replacement?</span>
+        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">Yes, we offer toner refilling for laser printers and ink cartridge replacement for inkjet printers. We use quality compatible toners that give excellent print results at lower cost than originals.</div></div>
+    </div>
+  </div>
+
+  <!-- GENERAL -->
+  <div class="faq-group" data-cat="general">
+    <div class="faq-group-title"><i class="fas fa-info-circle"></i> General</div>
+
+    <div class="faq-item" data-cat="general">
+      <div class="faq-q" onclick="toggleFAQ(this)">
+        <span>Where are your branches located?</span>
+        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">We have two branches: (1) 28, near Bharati Technical Institute, Nigdi Gaothan, Nigdi, Pimpri-Chinchwad – 411044. (2) Shine Square Building, Pingle Road, near Imperial Hospital, Chikhali, Vitthal Nagar, Pune – 411062.</div></div>
+    </div>
+
+    <div class="faq-item" data-cat="general">
+      <div class="faq-q" onclick="toggleFAQ(this)">
+        <span>What are your shop working hours?</span>
+        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">We are open Monday to Saturday, 10:00 AM to 8:00 PM. On Sundays we are open from 11:00 AM to 5:00 PM. You can also call or WhatsApp us at 7420806178 any time for urgent support.</div></div>
+    </div>
+
+    <div class="faq-item" data-cat="general">
+      <div class="faq-q" onclick="toggleFAQ(this)">
+        <span>Do you provide AMC for schools and businesses?</span>
+        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">Yes, we offer Annual Maintenance Contracts (AMC) for schools, offices and businesses. AMC includes scheduled preventive maintenance, priority support and discounted repair rates. Contact us for a custom quote.</div></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div>
+      <h3>Still have a question?</h3>
+      <p>Call or WhatsApp us — we reply quickly.</p>
+    </div>
+    <a href="contact.html" class="btn-primary"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-logo">A F <span>Computer</span></div>
+  <div class="footer-info">Phone: <a href="tel:7420806178">7420806178</a> &nbsp;|&nbsp; Email: <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a></div>
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://wa.me/917420806178"><i class="fab fa-whatsapp"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div>
+  <div class="footer-copy">&copy; 2025 A F Computer. All rights reserved.</div>
+</footer>
+
+<script>
+function toggleDropdown(){document.getElementById('dropdownMenu').classList.toggle('show');document.getElementById('dropdownOverlay').classList.toggle('show');}
+function closeDropdown(){document.getElementById('dropdownMenu').classList.remove('show');document.getElementById('dropdownOverlay').classList.remove('show');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDropdown();});
+const themeIcon=document.getElementById('theme-icon');
+if(localStorage.getItem('theme')==='light'){document.body.classList.add('light');themeIcon.className='fas fa-sun';}
+else{themeIcon.className='fas fa-moon';}
+function toggleTheme(){document.body.classList.toggle('light');if(document.body.classList.contains('light')){themeIcon.className='fas fa-sun';localStorage.setItem('theme','light');}else{themeIcon.className='fas fa-moon';localStorage.setItem('theme','dark');}}
+
+function toggleFAQ(el){
+  const item=el.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+
+function filterFAQ(cat,btn){
+  document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.faq-group').forEach(g=>{
+    g.style.display=(cat==='all'||g.dataset.cat===cat)?'block':'none';
+  });
+}
+
+function searchFAQ(val){
+  const q=val.toLowerCase().trim();
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    const text=item.querySelector('.faq-q span').textContent.toLowerCase()+item.querySelector('.faq-a-inner').textContent.toLowerCase();
+    item.style.display=(!q||text.includes(q))?'block':'none';
+  });
+  document.querySelectorAll('.faq-group').forEach(g=>{
+    const visible=[...g.querySelectorAll('.faq-item')].some(i=>i.style.display!=='none');
+    g.style.display=visible?'block':'none';
+  });
+}
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
+},{threshold:0.08});
+document.querySelectorAll('.faq-item').forEach((el,i)=>{el.style.transitionDelay=(i*0.04)+'s';observer.observe(el);});
+</script>
+</body>
+</html>
