@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog & Tech Tips - A F Computer</title>
+<meta name="description" content="Tech tips, how-to guides and computer maintenance advice from A F Computer, Pune.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#ff7a00;--primary-dark:#cc6000;--primary-glow:rgba(255,122,0,0.22);--surface:rgba(255,255,255,0.05);--border:rgba(255,255,255,0.08);--text:#f0f0f0;--text-muted:rgba(255,255,255,0.5);--nav-bg:rgba(10,10,10,0.85);--overlay:rgba(0,0,0,0.72);--radius:14px;--radius-sm:8px;--transition:0.3s cubic-bezier(0.4,0,0.2,1);}
+body.light{--surface:rgba(0,0,0,0.04);--border:rgba(0,0,0,0.1);--text:#111;--text-muted:rgba(0,0,0,0.5);--nav-bg:rgba(220,220,220,0.92);--overlay:rgba(255,255,255,0.62);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{font-family:'DM Sans',sans-serif;color:var(--text);scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{background:url('laptop.jpg') no-repeat center center fixed;background-size:cover;position:relative;}
+body::before{content:"";position:fixed;inset:0;background:var(--overlay);z-index:0;transition:background var(--transition);}
+nav{position:fixed;top:0;left:0;right:0;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:var(--nav-bg);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:1000;}
+.nav-left{display:flex;align-items:center;gap:14px;}
+.logo{font-family:'Rajdhani',sans-serif;font-size:1.55rem;font-weight:700;color:var(--text);}
+.logo span{color:var(--primary);}
+.menu-btn,.theme-btn{width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-sm);cursor:pointer;font-size:1.2rem;color:var(--primary);background:var(--surface);border:1px solid var(--border);transition:background var(--transition),transform var(--transition);-webkit-tap-highlight-color:transparent;}
+.menu-btn:hover,.theme-btn:hover{background:var(--primary);color:#fff;transform:scale(1.05);}
+.dropdown{position:fixed;top:0;left:-280px;width:260px;height:100%;background:rgba(8,8,8,0.97);backdrop-filter:blur(16px);display:flex;flex-direction:column;transition:left 0.35s cubic-bezier(0.4,0,0.2,1);z-index:1100;padding-top:70px;border-right:1px solid rgba(255,122,0,0.15);}
+body.light .dropdown{background:rgba(30,30,30,0.97);}
+.dropdown.show{left:0;}
+.dropdown-header{padding:0 24px 16px;font-family:'Rajdhani',sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--primary);border-bottom:1px solid rgba(255,122,0,0.2);margin-bottom:8px;}
+.dropdown a{color:#e0e0e0;font-weight:500;font-size:1rem;padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:10px;transition:background var(--transition),color var(--transition),padding-left var(--transition);text-decoration:none;}
+.dropdown a:hover{background:rgba(255,122,0,0.12);color:var(--primary);padding-left:32px;}
+.dropdown a i{width:18px;color:var(--primary);opacity:0.8;}
+.dropdown-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1050;}
+.dropdown-overlay.show{display:block;}
+
+.page-header{position:relative;z-index:2;padding:120px 20px 50px;text-align:center;max-width:800px;margin:0 auto;}
+.page-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,122,0,0.12);border:1px solid rgba(255,122,0,0.3);color:var(--primary);font-size:0.78rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:20px;animation:fadeUp 0.7s ease both;}
+.page-header h1{font-family:'Rajdhani',sans-serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:700;color:var(--text);line-height:1.1;margin-bottom:16px;animation:fadeUp 0.7s 0.1s ease both;}
+.page-header h1 span{color:var(--primary);}
+.page-header p{font-size:clamp(0.95rem,2vw,1.1rem);color:var(--text-muted);line-height:1.7;animation:fadeUp 0.7s 0.2s ease both;}
+
+main{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:20px 20px 80px;}
+
+/* FILTER */
+.filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px;animation:fadeUp 0.7s 0.3s ease both;}
+.filter-btn{padding:7px 18px;border-radius:50px;font-size:0.82rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);transition:background var(--transition),color var(--transition),border-color var(--transition);-webkit-tap-highlight-color:transparent;}
+.filter-btn:hover,.filter-btn.active{background:var(--primary);color:#fff;border-color:var(--primary);}
+
+/* FEATURED POST */
+.featured-post{
+  display:grid;grid-template-columns:1.2fr 1fr;gap:0;
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;margin-bottom:36px;
+  opacity:0;transform:translateY(24px);
+  transition:border-color var(--transition),box-shadow var(--transition);
+}
+.featured-post.visible{opacity:1;transform:translateY(0);transition:opacity 0.7s ease,transform 0.7s ease,border-color var(--transition);}
+.featured-post:hover{border-color:rgba(255,122,0,0.3);box-shadow:0 16px 40px rgba(0,0,0,0.4);}
+.featured-img{position:relative;overflow:hidden;}
+.featured-img img{width:100%;height:100%;min-height:280px;object-fit:cover;display:block;transition:transform 0.5s ease;}
+.featured-post:hover .featured-img img{transform:scale(1.05);}
+.featured-label{position:absolute;top:14px;left:14px;background:var(--primary);color:#fff;font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:50px;}
+.featured-body{padding:32px;}
+.post-meta{display:flex;align-items:center;gap:14px;margin-bottom:14px;flex-wrap:wrap;}
+.post-cat{font-size:0.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--primary);background:rgba(255,122,0,0.1);border:1px solid rgba(255,122,0,0.2);padding:3px 10px;border-radius:50px;}
+.post-date{font-size:0.78rem;color:var(--text-muted);display:flex;align-items:center;gap:4px;}
+.post-read{font-size:0.78rem;color:var(--text-muted);display:flex;align-items:center;gap:4px;}
+.featured-body h2{font-family:'Rajdhani',sans-serif;font-size:1.7rem;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:12px;}
+.featured-body p{font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin-bottom:20px;}
+.btn-read{display:inline-flex;align-items:center;gap:7px;color:var(--primary);font-size:0.88rem;font-weight:600;text-decoration:none;transition:gap var(--transition);}
+.btn-read:hover{gap:12px;}
+
+/* BLOG GRID */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.blog-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;opacity:0;transform:translateY(28px);transition:transform var(--transition),box-shadow var(--transition),border-color var(--transition);cursor:pointer;}
+.blog-card.visible{opacity:1;transform:translateY(0);transition:opacity 0.65s ease,transform 0.65s ease,box-shadow var(--transition),border-color var(--transition);}
+.blog-card:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(0,0,0,0.4);border-color:rgba(255,122,0,0.22);}
+.blog-img{position:relative;overflow:hidden;}
+.blog-img img{width:100%;height:160px;object-fit:cover;display:block;transition:transform 0.5s ease;}
+.blog-card:hover .blog-img img{transform:scale(1.07);}
+.blog-cat{position:absolute;top:10px;left:10px;font-size:0.68rem;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;padding:4px 10px;border-radius:50px;background:var(--primary);color:#fff;}
+.blog-body{padding:18px;flex:1;display:flex;flex-direction:column;}
+.blog-meta{display:flex;gap:12px;margin-bottom:10px;flex-wrap:wrap;}
+.blog-meta span{font-size:0.75rem;color:var(--text-muted);display:flex;align-items:center;gap:4px;}
+.blog-body h3{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:8px;}
+.blog-body p{font-size:0.83rem;color:var(--text-muted);line-height:1.6;flex:1;margin-bottom:14px;}
+.blog-link{font-size:0.82rem;font-weight:600;color:var(--primary);display:inline-flex;align-items:center;gap:5px;text-decoration:none;transition:gap var(--transition);margin-top:auto;}
+.blog-link:hover{gap:9px;}
+
+/* NEWSLETTER */
+.newsletter{background:linear-gradient(135deg,rgba(255,122,0,0.15),rgba(255,122,0,0.05));border:1px solid rgba(255,122,0,0.2);border-radius:var(--radius);padding:40px;text-align:center;margin-top:50px;}
+.newsletter h3{font-family:'Rajdhani',sans-serif;font-size:1.7rem;font-weight:700;color:var(--text);margin-bottom:8px;}
+.newsletter p{font-size:0.9rem;color:var(--text-muted);margin-bottom:24px;}
+.newsletter-form{display:flex;gap:10px;max-width:460px;margin:0 auto;flex-wrap:wrap;justify-content:center;}
+.newsletter-form input{flex:1;min-width:200px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:11px 16px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;transition:border-color var(--transition);}
+.newsletter-form input:focus{border-color:var(--primary);}
+.btn-subscribe{background:var(--primary);color:#fff;border:none;border-radius:var(--radius-sm);padding:11px 22px;font-size:0.88rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:background var(--transition),transform var(--transition);}
+.btn-subscribe:hover{background:var(--primary-dark);transform:translateY(-1px);}
+
+footer{position:relative;z-index:2;background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);border-top:1px solid rgba(255,122,0,0.15);padding:28px 20px;text-align:center;}
+.footer-logo{font-family:'Rajdhani',sans-serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:6px;}
+.footer-logo span{color:var(--primary);}
+.footer-info{font-size:0.85rem;color:rgba(255,255,255,0.45);margin-bottom:14px;line-height:1.8;}
+.footer-info a{color:var(--primary);}
+.social-icons{display:flex;gap:10px;justify-content:center;margin-bottom:14px;}
+.social-icons a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);font-size:0.9rem;transition:background var(--transition),color var(--transition);}
+.social-icons a:hover{background:var(--primary);color:#fff;}
+.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.22);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+@media(max-width:900px){.featured-post{grid-template-columns:1fr;}.featured-img img{min-height:200px;}.blog-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.page-header{padding:100px 16px 36px;}main{padding:10px 14px 60px;}.blog-grid{grid-template-columns:1fr;gap:14px;}.featured-body{padding:20px;}.featured-body h2{font-size:1.4rem;}.newsletter{padding:24px 18px;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <div class="menu-btn" onclick="toggleDropdown()"><i class="fas fa-bars"></i></div>
+    <div class="logo">A F <span>Computer</span></div>
+  </div>
+  <div class="theme-btn" onclick="toggleTheme()"><i class="fas fa-moon" id="theme-icon"></i></div>
+</nav>
+<div class="dropdown-overlay" id="dropdownOverlay" onclick="closeDropdown()"></div>
+<div class="dropdown" id="dropdownMenu">
+  <div class="dropdown-header">Navigation</div>
+  <a href="index.html"><i class="fas fa-home"></i> Home</a>
+  <a href="services.html"><i class="fas fa-tools"></i> Services</a>
+  <a href="product.html"><i class="fas fa-laptop"></i> Products</a>
+  <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
+  <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+  <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+  <a href="reviews.html"><i class="fas fa-star"></i> Reviews</a>
+  <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+  <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
+  <a href="careers.html"><i class="fas fa-briefcase"></i> Careers</a>
+</div>
+
+<div class="page-header">
+  <div class="page-badge"><i class="fas fa-blog"></i> Tech Tips</div>
+  <h1>Blog &amp; <span>Tech Guides</span></h1>
+  <p>Helpful tips, how-to guides and tech advice from the A F Computer team.</p>
+</div>
+
+<main>
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterBlog('all',this)">All</button>
+    <button class="filter-btn" onclick="filterBlog('laptop',this)">Laptop</button>
+    <button class="filter-btn" onclick="filterBlog('desktop',this)">Desktop</button>
+    <button class="filter-btn" onclick="filterBlog('printer',this)">Printer</button>
+    <button class="filter-btn" onclick="filterBlog('tips',this)">Tips & Tricks</button>
+    <button class="filter-btn" onclick="filterBlog('security',this)">Security</button>
+  </div>
+
+  <!-- FEATURED -->
+  <div class="featured-post" data-cat="laptop">
+    <div class="featured-img">
+      <img src="laptop repair.jpg" alt="Speed up laptop">
+      <span class="featured-label">Featured</span>
+    </div>
+    <div class="featured-body">
+      <div class="post-meta">
+        <span class="post-cat">Laptop Tips</span>
+        <span class="post-date"><i class="far fa-calendar-alt"></i> Jan 2025</span>
+        <span class="post-read"><i class="far fa-clock"></i> 5 min read</span>
+      </div>
+      <h2>5 Easy Ways to Speed Up Your Old Laptop</h2>
+      <p>Is your laptop running slow? Before spending money on a new one, try these simple upgrades and tips that can make a dramatic difference in performance — many you can do yourself for free.</p>
+      <a href="#" class="btn-read">Read Article <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+
+  <!-- BLOG GRID -->
+  <div class="blog-grid" id="blogGrid">
+
+    <div class="blog-card" data-cat="tips">
+      <div class="blog-img"><img src="computer repair.jpg" alt="PC Maintenance" loading="lazy"><span class="blog-cat">Tips</span></div>
+      <div class="blog-body">
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Feb 2025</span><span><i class="far fa-clock"></i> 4 min</span></div>
+        <h3>10 PC Maintenance Tips Everyone Should Know</h3>
+        <p>Regular maintenance prevents major issues. Learn simple habits that keep your computer healthy and fast for years.</p>
+        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-cat="security">
+      <div class="blog-img"><img src="network design.png" alt="Virus Protection" loading="lazy"><span class="blog-cat">Security</span></div>
+      <div class="blog-body">
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Feb 2025</span><span><i class="far fa-clock"></i> 6 min</span></div>
+        <h3>How to Protect Your PC from Viruses and Malware</h3>
+        <p>Viruses can destroy your data and slow down your system. Here are the best free and paid tools to stay protected in 2025.</p>
+        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-cat="laptop">
+      <div class="blog-img"><img src="hp laptop.jpg" alt="SSD Upgrade" loading="lazy"><span class="blog-cat">Laptop</span></div>
+      <div class="blog-body">
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Jan 2025</span><span><i class="far fa-clock"></i> 5 min</span></div>
+        <h3>SSD vs HDD: Why You Should Upgrade to SSD Today</h3>
+        <p>Switching from HDD to SSD is the single best upgrade you can do for an old laptop. We explain why and how much it costs.</p>
+        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-cat="printer">
+      <div class="blog-img"><img src="printer repair.jpg" alt="Printer Tips" loading="lazy"><span class="blog-cat">Printer</span></div>
+      <div class="blog-body">
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Dec 2024</span><span><i class="far fa-clock"></i> 4 min</span></div>
+        <h3>Why Is My Printer Printing Blank Pages? 6 Easy Fixes</h3>
+        <p>Blank pages from your printer are frustrating. Here are the most common causes and how you can fix them at home quickly.</p>
+        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-cat="desktop">
+      <div class="blog-img"><img src="hp desktop.jpg" alt="Desktop Setup" loading="lazy"><span class="blog-cat">Desktop</span></div>
+      <div class="blog-body">
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Dec 2024</span><span><i class="far fa-clock"></i> 7 min</span></div>
+        <h3>How to Build a Budget Desktop PC for Home or Office</h3>
+        <p>Assembled PCs are cheaper and more powerful than branded options. We guide you through choosing the right components within your budget.</p>
+        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-cat="tips">
+      <div class="blog-img"><img src="accessories.jpg" alt="Battery Tips" loading="lazy"><span class="blog-cat">Tips</span></div>
+      <div class="blog-body">
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Nov 2024</span><span><i class="far fa-clock"></i> 3 min</span></div>
+        <h3>7 Habits That Are Killing Your Laptop Battery</h3>
+        <p>Bad charging habits reduce your battery life faster than you think. Learn what to avoid and how to extend your battery lifespan.</p>
+        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-cat="security">
+      <div class="blog-img"><img src="network setup.jpg" alt="Wi-Fi Security" loading="lazy"><span class="blog-cat">Security</span></div>
+      <div class="blog-body">
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Nov 2024</span><span><i class="far fa-clock"></i> 5 min</span></div>
+        <h3>How to Secure Your Home Wi-Fi Network in 2025</h3>
+        <p>An unsecured Wi-Fi network puts your personal data at risk. Follow these steps to lock down your router and protect your network.</p>
+        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-cat="laptop">
+      <div class="blog-img"><img src="dell desktop.jpg" alt="Windows Tips" loading="lazy"><span class="blog-cat">Laptop</span></div>
+      <div class="blog-body">
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Oct 2024</span><span><i class="far fa-clock"></i> 4 min</span></div>
+        <h3>Top 8 Windows 11 Tips to Boost Your Productivity</h3>
+        <p>Windows 11 has many hidden features most users don't know about. These tips will save you time and make your work easier every day.</p>
+        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-cat="printer">
+      <div class="blog-img"><img src="toner.jpg" alt="Toner Tips" loading="lazy"><span class="blog-cat">Printer</span></div>
+      <div class="blog-body">
+        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> Oct 2024</span><span><i class="far fa-clock"></i> 3 min</span></div>
+        <h3>Laser vs Inkjet Printer: Which One Should You Buy?</h3>
+        <p>Choosing the right printer depends on your usage. We compare the cost per page, speed and quality to help you decide.</p>
+        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter">
+    <h3>Get Tech Tips in Your Inbox</h3>
+    <p>Subscribe for free weekly tips, deals and repair guides from A F Computer.</p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Enter your email address">
+      <button class="btn-subscribe" onclick="subscribe()"><i class="fas fa-paper-plane"></i> Subscribe</button>
+    </div>
+    <div id="subMsg" style="margin-top:12px;font-size:0.85rem;color:#22c55e;display:none;"><i class="fas fa-check-circle"></i> Thank you! You're subscribed.</div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-logo">A F <span>Computer</span></div>
+  <div class="footer-info">Phone: <a href="tel:7420806178">7420806178</a> &nbsp;|&nbsp; Email: <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a></div>
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://wa.me/917420806178"><i class="fab fa-whatsapp"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div>
+  <div class="footer-copy">&copy; 2025 A F Computer. All rights reserved.</div>
+</footer>
+
+<script>
+function toggleDropdown(){document.getElementById('dropdownMenu').classList.toggle('show');document.getElementById('dropdownOverlay').classList.toggle('show');}
+function closeDropdown(){document.getElementById('dropdownMenu').classList.remove('show');document.getElementById('dropdownOverlay').classList.remove('show');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDropdown();});
+const themeIcon=document.getElementById('theme-icon');
+if(localStorage.getItem('theme')==='light'){document.body.classList.add('light');themeIcon.className='fas fa-sun';}
+else{themeIcon.className='fas fa-moon';}
+function toggleTheme(){document.body.classList.toggle('light');if(document.body.classList.contains('light')){themeIcon.className='fas fa-sun';localStorage.setItem('theme','light');}else{themeIcon.className='fas fa-moon';localStorage.setItem('theme','dark');}}
+
+function filterBlog(cat,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.blog-card').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'flex':'none';});
+  const fp=document.querySelector('.featured-post');
+  if(fp)fp.style.display=(cat==='all'||fp.dataset.cat===cat)?'grid':'none';
+}
+function subscribe(){document.getElementById('subMsg').style.display='block';setTimeout(()=>document.getElementById('subMsg').style.display='none',4000);}
+
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.08});
+document.querySelectorAll('.blog-card,.featured-post').forEach((el,i)=>{el.style.transitionDelay=(i*0.07)+'s';observer.observe(el);});
+</script>
+</body>
+</html>
