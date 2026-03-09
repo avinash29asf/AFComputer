@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="google-site-verification" content="googlea75de922b485a323.html">
 <title>Gallery - A F Computer</title>
-<meta name="description" content="View our completed repair work, accessories, and refurbished product photos at A F Computer.">
+<meta name="description" content="View our completed repair work, accessories, and refurbished product photos at A F Computer – Nigdi & Chikhali, Pune.">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
 <style>
@@ -16,26 +16,18 @@
   --bg-color:#000;
   --text-color:#fff;
 }
-
-body.light {
-  --bg-color:#fff;
-  --text-color:#000;
-}
+body.light { --bg-color:#fff; --text-color:#000; }
 
 * {margin:0; padding:0; box-sizing:border-box;}
 html, body {height:100%; font-family:'Segoe UI', sans-serif; color:var(--text-color); scroll-behavior:smooth;}
 body {
   background:url('gallery.jpg') no-repeat center center fixed;
-  background-size:cover;
-  position:relative;
+  background-size:cover; position:relative;
   transition: background 0.5s, color 0.5s;
 }
 body::before {
-  content:"";
-  position:fixed; top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,0.75);
-  z-index:0;
-  transition: background 0.5s;
+  content:""; position:fixed; top:0; left:0; width:100%; height:100%;
+  background:rgba(0,0,0,0.75); z-index:0; transition: background 0.5s;
 }
 body.light::before {background:rgba(255,255,255,0.65);}
 
@@ -43,9 +35,8 @@ body.light::before {background:rgba(255,255,255,0.65);}
 nav {
   position:fixed; top:0; left:0; right:0;
   display:flex; justify-content:space-between; align-items:center;
-  padding:12px 20px;
-  background:rgba(0,0,0,0.7); backdrop-filter:blur(5px);
-  z-index:1000; transition: background 0.5s;
+  padding:12px 20px; background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(5px); z-index:1000; transition: background 0.5s;
 }
 body.light nav {background:rgba(168,167,167,0.8);}
 .logo {font-size:1.6rem; font-weight:bold; color:var(--text-color);}
@@ -75,8 +66,11 @@ main {
   position:relative; z-index:2;
   padding:100px 20px 60px; max-width:1200px; margin:auto;
 }
-
-h1 {text-align:center; font-size:2.6rem; color:var(--primary); margin-bottom:40px;}
+h1 {text-align:center; font-size:2.6rem; color:var(--primary); margin-bottom:10px;}
+.subtitle {
+  text-align:center; color:var(--text-color); opacity:0.75;
+  font-size:1rem; margin-bottom:36px;
+}
 
 /* ---------- GALLERY GRID ---------- */
 .gallery {
@@ -86,24 +80,88 @@ h1 {text-align:center; font-size:2.6rem; color:var(--primary); margin-bottom:40p
   animation: fadeIn 1.2s ease;
 }
 
-.gallery img {
-  width:100%; height:200px; object-fit:cover;
-  border-radius:10px;
+.gallery-item {
+  position:relative; cursor:pointer;
+  border-radius:10px; overflow:hidden;
   box-shadow:0 4px 12px rgba(0,0,0,0.5);
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.gallery img:hover {transform:scale(1.05); box-shadow:0 6px 16px rgba(0,0,0,0.6);}
+.gallery-item:hover {transform:scale(1.04); box-shadow:0 6px 20px rgba(255,122,0,0.4);}
+
+.gallery-item img {
+  width:100%; height:200px; object-fit:cover;
+  display:block; transition: opacity 0.3s;
+}
+
+.gallery-item .caption {
+  position:absolute; bottom:0; left:0; right:0;
+  background:linear-gradient(transparent, rgba(0,0,0,0.85));
+  color:#fff; padding:28px 12px 10px;
+  font-size:0.9rem; font-weight:600;
+  opacity:0; transition: opacity 0.3s;
+}
+.gallery-item:hover .caption { opacity:1; }
+
+.gallery-item .zoom-icon {
+  position:absolute; top:50%; left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  color:#fff; font-size:2rem;
+  transition: transform 0.3s;
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+.gallery-item:hover .zoom-icon { transform:translate(-50%,-50%) scale(1); }
 
 @keyframes fadeIn {from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
 
+/* ---------- LIGHTBOX ---------- */
+.lightbox {
+  display:none; position:fixed;
+  top:0; left:0; width:100%; height:100%;
+  background:rgba(0,0,0,0.92);
+  z-index:9999; justify-content:center; align-items:center;
+  flex-direction:column;
+  animation: fadeIn 0.3s ease;
+}
+.lightbox.active { display:flex; }
+.lightbox img {
+  max-width:90%; max-height:80vh;
+  border-radius:10px;
+  box-shadow:0 0 40px rgba(255,122,0,0.4);
+}
+.lightbox .lb-caption {
+  color:#fff; margin-top:14px;
+  font-size:1.1rem; font-weight:600;
+  color:var(--primary);
+}
+.lightbox .close-btn {
+  position:absolute; top:20px; right:28px;
+  font-size:2.4rem; color:#fff; cursor:pointer;
+  line-height:1; transition: color 0.2s;
+}
+.lightbox .close-btn:hover { color:var(--primary); }
+
+.lightbox .nav-btn {
+  position:absolute; top:50%; font-size:2.5rem;
+  color:#fff; cursor:pointer; user-select:none;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.4);
+  padding:8px 14px; border-radius:8px;
+  transition: background 0.2s, color 0.2s;
+}
+.lightbox .nav-btn:hover { background:var(--primary); }
+.lightbox .prev-btn { left:16px; }
+.lightbox .next-btn { right:16px; }
+
+/* ---------- FOOTER ---------- */
 footer {
   background:rgba(0,0,0,0.7);
-  color:var(--text-color);
-  text-align:center; padding:20px;
-  margin-top:20px; z-index:2;
+  color:var(--text-color); text-align:center;
+  padding:20px; margin-top:20px;
+  position:relative; z-index:2;
 }
-
 a { color: var(--primary); }
+
+@media(max-width:600px){ h1{font-size:2rem;} }
 </style>
 </head>
 <body>
@@ -127,29 +185,119 @@ a { color: var(--primary); }
 
 <main>
   <h1>Our Work Gallery</h1>
-  <div class="gallery">
-    <img src="dell desktop.jpg" alt="Repair Work">
-    <img src="hp laptop.jpg" alt="Laptop Sales">
-    <img src="printer repair.jpg" alt="Printer Service">
-    <img src="accessories.jpg" alt="Accessories">
-    <img src="network design.png" alt="Networking">
-    <img src="toner.jpg" alt="Toner Cartridge">
+  <p class="subtitle">Nigdi &amp; Chikhali, Pune &nbsp;|&nbsp; Repairs · Sales · IT Support</p>
+
+  <div class="gallery" id="gallery">
+
+    <div class="gallery-item" onclick="openLightbox(0)">
+      <img src="dell desktop.jpg" alt="Dell Desktop">
+      <div class="caption">Dell Desktop</div>
+      <i class="fas fa-search-plus zoom-icon"></i>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(1)">
+      <img src="hp laptop.jpg" alt="HP Laptop">
+      <div class="caption">HP Laptop Sales</div>
+      <i class="fas fa-search-plus zoom-icon"></i>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(2)">
+      <img src="printer repair.jpg" alt="Printer Repair">
+      <div class="caption">Printer Repair</div>
+      <i class="fas fa-search-plus zoom-icon"></i>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(3)">
+      <img src="accessories.jpg" alt="Accessories">
+      <div class="caption">Computer Accessories</div>
+      <i class="fas fa-search-plus zoom-icon"></i>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(4)">
+      <img src="network design.png" alt="Networking">
+      <div class="caption">Network Setup</div>
+      <i class="fas fa-search-plus zoom-icon"></i>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(5)">
+      <img src="toner.jpg" alt="Toner Cartridge">
+      <div class="caption">Toner Cartridge</div>
+      <i class="fas fa-search-plus zoom-icon"></i>
+    </div>
+
   </div>
 </main>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="close-btn" onclick="closeLightbox()">&times;</span>
+  <span class="nav-btn prev-btn" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></span>
+  <img id="lb-img" src="" alt="">
+  <div class="lb-caption" id="lb-caption"></div>
+  <span class="nav-btn next-btn" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></span>
+</div>
+
 <footer>
-<p>&copy; 2025 A F Computer | Phone: 7420806178 | Email: <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a></p>
+  <p>&copy; 2025 A F Computer | Phone: 7420806178 | Email: <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a></p>
 </footer>
 
 <script>
+// Dropdown
 function toggleDropdown(){document.getElementById('dropdownMenu').classList.toggle('show');}
-document.addEventListener('click',e=>{const menu=document.getElementById('dropdownMenu');const btn=document.querySelector('.menu-btn');if(!menu.contains(e.target)&&!btn.contains(e.target)){menu.classList.remove('show');}});
+document.addEventListener('click',e=>{
+  const menu=document.getElementById('dropdownMenu');
+  const btn=document.querySelector('.menu-btn');
+  if(!menu.contains(e.target)&&!btn.contains(e.target)){menu.classList.remove('show');}
+});
 
-// Dark/Light Theme
+// Theme
 const themeIcon = document.getElementById('theme-icon');
-if(localStorage.getItem('theme')==='light'){document.body.classList.add('light');themeIcon.className='fas fa-sun';} 
-else {themeIcon.className='fas fa-moon';}
-function toggleTheme(){document.body.classList.toggle('light');if(document.body.classList.contains('light')){themeIcon.className='fas fa-sun'; localStorage.setItem('theme','light');}else{themeIcon.className='fas fa-moon';localStorage.setItem('theme','dark');}}
+if(localStorage.getItem('theme')==='light'){document.body.classList.add('light');themeIcon.className='fas fa-sun';}
+else{themeIcon.className='fas fa-moon';}
+function toggleTheme(){
+  document.body.classList.toggle('light');
+  if(document.body.classList.contains('light')){themeIcon.className='fas fa-sun';localStorage.setItem('theme','light');}
+  else{themeIcon.className='fas fa-moon';localStorage.setItem('theme','dark');}
+}
+
+// Lightbox
+const images = [
+  { src:'dell desktop.jpg',   cap:'Dell Desktop' },
+  { src:'hp laptop.jpg',      cap:'HP Laptop Sales' },
+  { src:'printer repair.jpg', cap:'Printer Repair' },
+  { src:'accessories.jpg',    cap:'Computer Accessories' },
+  { src:'network design.png', cap:'Network Setup' },
+  { src:'toner.jpg',          cap:'Toner Cartridge' }
+];
+let current = 0;
+
+function openLightbox(index){
+  current = index;
+  document.getElementById('lb-img').src = images[current].src;
+  document.getElementById('lb-caption').textContent = images[current].cap;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function changeImage(dir){
+  current = (current + dir + images.length) % images.length;
+  document.getElementById('lb-img').src = images[current].src;
+  document.getElementById('lb-caption').textContent = images[current].cap;
+}
+// Close on background click
+document.getElementById('lightbox').addEventListener('click', function(e){
+  if(e.target === this) closeLightbox();
+});
+// Keyboard navigation
+document.addEventListener('keydown', e=>{
+  if(!document.getElementById('lightbox').classList.contains('active')) return;
+  if(e.key==='ArrowLeft') changeImage(-1);
+  if(e.key==='ArrowRight') changeImage(1);
+  if(e.key==='Escape') closeLightbox();
+});
 </script>
 
 </body>
