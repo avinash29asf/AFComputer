@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /includes/
-Disallow: /data/
-Disallow: /uploads/tmp/
-Sitemap: https://afcomputer.xo.je/sitemap.xml
+
+Sitemap: https://github.com/sitemap.xml
