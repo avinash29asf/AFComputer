@@ -272,11 +272,23 @@ nav {
   background: var(--surface);
 }
 
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #fff;
+  box-shadow: 0 5px 25px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 35px rgba(37, 211, 102, 0.4);
+}
+
 .hero-image {
   flex: 1;
   max-width: 550px;
   position: relative;
 }
+```
 
 .hero-image::before {
   content: "";
@@ -839,14 +851,18 @@ footer {
     </div>
     <h1>Your Trusted <span>IT Solutions</span> Partner in Pune</h1>
     <p>Expert repair, sales & IT support for desktops, laptops, printers and accessories. Fast, affordable, and reliable service with 24/7 customer support.</p>
-    <div class="hero-btns">
+<div class="hero-btns">
       <a href="contact.html" class="btn btn-primary">
         <i class="fas fa-phone-alt"></i> Get in Touch
       </a>
       <a href="services.html" class="btn btn-outline">
         <i class="fas fa-tools"></i> Our Services
       </a>
+      <a href="https://wa.me/917420806178" class="btn btn-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
     </div>
+```
   </div>
   <div class="hero-image">
     <img src="https://images.unsplash.com/photo-1580894908361-f9061b1b1aaa?w=600&auto=format&fit=crop" alt="Computer Repair Service" loading="lazy">
