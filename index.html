@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A F Computer â€“ Computer, Laptop & Printer Repair in Pune</title>
+<title>A F Computer – Computer, Laptop & Printer Repair in Pune</title>
 <meta name="description" content="A F Computer provides affordable and professional repair services for computers, laptops, and printers in Pune. Fast service and trusted support.">
 <meta name="keywords" content="Computer Repair Pune, Laptop Repair Pune, Printer Repair Pune, Desktop Service Pune, A F Computer">
 <meta name="author" content="A F Computer">
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" href="https://avinash29asf.github.io/AFComputer/A F Computer logo.png">
+<link rel="icon" type="image/png" href="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
 
 <!-- Open Graph -->
-<meta property="og:title" content="A F Computer â€“ Computer, Laptop & Printer Repair in Pune">
+<meta property="og:title" content="A F Computer – Computer, Laptop & Printer Repair in Pune">
 <meta property="og:description" content="Affordable and professional repair services for computers, laptops, and printers in Pune.">
 <meta property="og:image" content="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
 <meta property="og:url" content="https://avinash29asf.github.io/AFComputer/">
@@ -169,6 +169,53 @@ nav {
 }
 
 .menu-btn { display: none; }
+
+/* Mobile Dropdown Menu */
+.mobile-dropdown {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  flex-direction: column;
+  padding: 20px;
+  gap: 15px;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--transition);
+}
+
+.mobile-dropdown.active {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobile-dropdown-item {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+  display: block;
+}
+
+.mobile-dropdown-item:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateX(5px);
+}
 
 /* ==============================
    HERO SECTION - MODERN LAYOUT
@@ -841,6 +888,16 @@ footer {
       <i class="fas fa-bars"></i>
     </div>
   </div>
+  
+  <!-- Mobile Dropdown Menu -->
+  <div class="mobile-dropdown" id="mobileDropdown">
+    <a href="index.html" class="mobile-dropdown-item">Home</a>
+    <a href="about.html" class="mobile-dropdown-item">About</a>
+    <a href="services.html" class="mobile-dropdown-item">Services</a>
+    <a href="product.html" class="mobile-dropdown-item">Products</a>
+    <a href="gallery.html" class="mobile-dropdown-item">Gallery</a>
+    <a href="contact.html" class="mobile-dropdown-item">Contact</a>
+  </div>
 </nav>
 
 <!-- ========== HERO SECTION ========== -->
@@ -851,7 +908,7 @@ footer {
     </div>
     <h1>Your Trusted <span>IT Solutions</span> Partner in Pune</h1>
     <p>Expert repair, sales & IT support for desktops, laptops, printers and accessories. Fast, affordable, and reliable service with 24/7 customer support.</p>
-<div class="hero-btns">
+    <div class="hero-btns">
       <a href="contact.html" class="btn btn-primary">
         <i class="fas fa-phone-alt"></i> Get in Touch
       </a>
@@ -862,7 +919,6 @@ footer {
         <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
     </div>
-
   </div>
   <div class="hero-image">
     <img src="https://images.unsplash.com/photo-1580894908361-f9061b1b1aaa?w=600&auto=format&fit=crop" alt="Computer Repair Service" loading="lazy">
@@ -978,7 +1034,7 @@ footer {
   <div class="branches-grid">
     <div class="branch-card">
       <h3><i class="fas fa-store"></i> Nigdi Branch</h3>
-      <p>28, near Bharati Technical Institute,<br>Nigdi Gaothan, Nigdi,<br>Pimpri-Chinchwad, Maharashtra â€“ 411044</p>
+      <p>28, near Bharati Technical Institute,<br>Nigdi Gaothan, Nigdi,<br>Pimpri-Chinchwad, Maharashtra – 411044</p>
       <p><i class="fas fa-phone"></i> <a href="tel:7420806178">7420806178</a></p>
       <a class="branch-link" href="https://www.google.com/maps/place/A+F+Computer/@18.6650074,73.7756536,15z" target="_blank">
         <i class="fas fa-map-marker-alt"></i> View on Google Maps
@@ -987,7 +1043,7 @@ footer {
     
     <div class="branch-card">
       <h3><i class="fas fa-store"></i> Chikhali Branch</h3>
-      <p>Shine Square Building, Pingle Road,<br>near Imperial Hospital, Chikhali,<br>Vitthal Nagar, Pune â€“ 411062</p>
+      <p>Shine Square Building, Pingle Road,<br>near Imperial Hospital, Chikhali,<br>Vitthal Nagar, Pune – 411062</p>
       <p><i class="fas fa-phone"></i> <a href="tel:7420806178">7420806178</a></p>
       <a class="branch-link" href="https://www.google.com/maps/search/A+F+Computer+Shine+Square+Pingle+Road+Chikhali+Pune" target="_blank">
         <i class="fas fa-map-marker-alt"></i> View on Google Maps
@@ -1068,6 +1124,21 @@ function toggleTheme() {
     localStorage.setItem('theme', 'dark');
   }
 }
+
+// Mobile Dropdown Toggle
+function toggleDropdown() {
+  const dropdown = document.getElementById('mobileDropdown');
+  dropdown.classList.toggle('active');
+}
+
+// Close dropdown when clicking outside or on a link
+document.addEventListener('click', function(e) {
+  const dropdown = document.getElementById('mobileDropdown');
+  const menuBtn = document.querySelector('.menu-btn');
+  if (!dropdown.contains(e.target) && !menuBtn.contains(e.target)) {
+    dropdown.classList.remove('active');
+  }
+});
 
 // Scroll Reveal Animation
 const observer = new IntersectionObserver(entries => {
