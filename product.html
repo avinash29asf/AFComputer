@@ -3,380 +3,711 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="googlea75de922b485a323.html">
 <title>Products - A F Computer</title>
 <meta name="description" content="Buy laptops, desktops, printers, networking equipment and accessories at A F Computer, Pune.">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --primary:#ff7a00;
-  --primary-dark:#cc6000;
-  --primary-glow:rgba(255,122,0,0.22);
-  --bg:#0a0a0a;
-  --surface:rgba(255,255,255,0.05);
-  --border:rgba(255,255,255,0.08);
-  --text:#f0f0f0;
-  --text-muted:rgba(255,255,255,0.5);
-  --nav-bg:rgba(10,10,10,0.85);
-  --overlay:rgba(0,0,0,0.72);
-  --radius:14px;
-  --radius-sm:8px;
-  --transition:0.3s cubic-bezier(0.4,0,0.2,1);
+  --primary: #ff7a00;
+  --primary-dark: #cc6000;
+  --primary-light: #ffa333;
+  --primary-glow: rgba(255,122,0,0.25);
+  --secondary: #ff7a00;
+  --secondary-dark: #cc6000;
+  --accent: #ff7a00;
+  --accent-dark: #cc6000;
+  
+  --bg: #0f172a;
+  --bg-secondary: #1e293b;
+  --surface: rgba(255,255,255,0.03);
+  --border: rgba(255,255,255,0.1);
+  --text: #f1f5f9;
+  --text-muted: rgba(255,255,255,0.6);
+  --nav-bg: rgba(15,23,42,0.9);
+  
+  --radius: 16px;
+  --radius-sm: 12px;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+  --shadow: 0 10px 40px rgba(0,0,0,0.3);
 }
+
 body.light {
-  --surface:rgba(0,0,0,0.04);
-  --border:rgba(0,0,0,0.1);
-  --text:#111;
-  --text-muted:rgba(0,0,0,0.5);
-  --nav-bg:rgba(220,220,220,0.92);
-  --overlay:rgba(255,255,255,0.62);
+  --bg: #f0f9ff;
+  --bg-secondary: #e0f2fe;
+  --surface: rgba(0,0,0,0.02);
+  --border: rgba(0,0,0,0.08);
+  --text: #0f172a;
+  --text-muted: rgba(0,0,0,0.6);
+  --nav-bg: rgba(240,249,255,0.9);
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
-html,body{font-family:'DM Sans',sans-serif;color:var(--text);scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
-body{
-  background:url('hp desktop.jpg') no-repeat center center fixed;
-  background-size:cover;position:relative;
-  transition:color var(--transition);
-}
-body::before{content:"";position:fixed;inset:0;background:var(--overlay);z-index:0;transition:background var(--transition);}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
 
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;height:60px;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 20px;background:var(--nav-bg);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);z-index:1000;
-}
-.nav-left{display:flex;align-items:center;gap:14px;}
-.logo{font-family:'Rajdhani',sans-serif;font-size:1.55rem;font-weight:700;color:var(--text);}
-.logo span{color:var(--primary);}
-.menu-btn,.theme-btn{
-  width:38px;height:38px;display:flex;align-items:center;justify-content:center;
-  border-radius:var(--radius-sm);cursor:pointer;font-size:1.2rem;color:var(--primary);
-  background:var(--surface);border:1px solid var(--border);
-  transition:background var(--transition),transform var(--transition);
-  -webkit-tap-highlight-color:transparent;
-}
-.menu-btn:hover,.theme-btn:hover{background:var(--primary);color:#fff;transform:scale(1.05);}
-
-/* DROPDOWN */
-.dropdown{
-  position:fixed;top:0;left:-280px;width:260px;height:100%;
-  background:rgba(8,8,8,0.97);backdrop-filter:blur(16px);
-  display:flex;flex-direction:column;
-  transition:left 0.35s cubic-bezier(0.4,0,0.2,1);
-  z-index:1100;padding-top:70px;
-  border-right:1px solid rgba(255,122,0,0.15);
-}
-body.light .dropdown{background:rgba(30,30,30,0.97);}
-.dropdown.show{left:0;}
-.dropdown-header{
-  padding:0 24px 16px;font-family:'Rajdhani',sans-serif;font-size:0.75rem;
-  letter-spacing:2px;text-transform:uppercase;color:var(--primary);
-  border-bottom:1px solid rgba(255,122,0,0.2);margin-bottom:8px;
-}
-.dropdown a{
-  color:#e0e0e0;font-weight:500;font-size:1rem;
-  padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.06);
-  display:flex;align-items:center;gap:10px;
-  transition:background var(--transition),color var(--transition),padding-left var(--transition);
-  text-decoration:none;
-}
-.dropdown a:hover{background:rgba(255,122,0,0.12);color:var(--primary);padding-left:32px;}
-.dropdown a i{width:18px;color:var(--primary);opacity:0.8;}
-.dropdown-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1050;}
-.dropdown-overlay.show{display:block;}
-
-/* PAGE HEADER */
-.page-header{
-  position:relative;z-index:2;
-  padding:120px 20px 50px;
-  text-align:center;max-width:800px;margin:0 auto;
-}
-.page-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(255,122,0,0.12);border:1px solid rgba(255,122,0,0.3);
-  color:var(--primary);font-size:0.78rem;font-weight:700;
-  letter-spacing:1.5px;text-transform:uppercase;
-  padding:6px 16px;border-radius:50px;margin-bottom:20px;
-  animation:fadeUp 0.7s ease both;
-}
-.page-header h1{
-  font-family:'Rajdhani',sans-serif;
-  font-size:clamp(2.2rem,5vw,3.6rem);font-weight:700;
-  color:var(--text);line-height:1.1;margin-bottom:16px;
-  animation:fadeUp 0.7s 0.1s ease both;
-}
-.page-header h1 span{color:var(--primary);}
-.page-header p{
-  font-size:clamp(0.95rem,2vw,1.1rem);color:var(--text-muted);
-  line-height:1.7;animation:fadeUp 0.7s 0.2s ease both;
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, var(--bg) 0%, var(--bg-secondary) 100%);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background var(--transition), color var(--transition);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-/* FILTER BAR */
-.filter-bar{
-  position:relative;z-index:2;
-  display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
-  padding:0 20px 36px;
-  animation:fadeUp 0.7s 0.3s ease both;
-}
-.filter-btn{
-  padding:8px 20px;border-radius:50px;
-  font-size:0.85rem;font-weight:600;cursor:pointer;
-  border:1px solid var(--border);background:var(--surface);
-  color:var(--text-muted);
-  transition:background var(--transition),color var(--transition),border-color var(--transition);
-  -webkit-tap-highlight-color:transparent;
-}
-.filter-btn:hover,.filter-btn.active{
-  background:var(--primary);color:#fff;border-color:var(--primary);
+/* Navbar */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 70px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
 }
 
-/* MAIN */
-main{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 20px 80px;}
-
-/* CATEGORY SECTION */
-.category-section{margin-bottom:56px;}
-.category-title{
-  font-family:'Rajdhani',sans-serif;font-size:1.5rem;font-weight:700;
-  color:var(--text);margin-bottom:20px;
-  display:flex;align-items:center;gap:10px;
-  padding-bottom:12px;border-bottom:1px solid var(--border);
-}
-.category-title i{color:var(--primary);}
-.category-title span{
-  font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;
-  background:rgba(255,122,0,0.12);border:1px solid rgba(255,122,0,0.2);
-  color:var(--primary);padding:3px 10px;border-radius:50px;margin-left:auto;
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.products-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
+.nav-links {
+  display: flex; gap: 32px;
 }
 
-.product-card{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--radius);overflow:hidden;
-  display:flex;flex-direction:column;
-  opacity:0;transform:translateY(30px);
-  transition:transform var(--transition),box-shadow var(--transition),border-color var(--transition);
-  -webkit-tap-highlight-color:transparent;
-}
-.product-card.visible{
-  opacity:1;transform:translateY(0);
-  transition:opacity 0.65s ease,transform 0.65s ease,box-shadow var(--transition),border-color var(--transition);
-}
-.product-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 16px 40px rgba(0,0,0,0.45),0 0 0 1px rgba(255,122,0,0.2);
-  border-color:rgba(255,122,0,0.25);
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color var(--transition);
 }
 
-.product-img-wrap{position:relative;overflow:hidden;}
-.product-card img{
-  width:100%;height:170px;object-fit:cover;display:block;
-  transition:transform 0.5s ease;
-}
-.product-card:hover img{transform:scale(1.07);}
+.nav-links a:hover { color: var(--primary); }
 
-.product-badge{
-  position:absolute;top:10px;left:10px;
-  background:var(--primary);color:#fff;
-  font-size:0.67rem;font-weight:700;
-  letter-spacing:0.8px;text-transform:uppercase;
-  padding:4px 10px;border-radius:50px;
-}
-.badge-new{background:#22c55e;}
-.badge-sale{background:#ef4444;}
-
-.product-body{padding:16px;flex:1;display:flex;flex-direction:column;}
-.product-body h3{
-  font-family:'Rajdhani',sans-serif;font-size:1.05rem;font-weight:700;
-  color:var(--text);margin-bottom:6px;
-}
-.product-body p{font-size:0.82rem;color:var(--text-muted);line-height:1.55;flex:1;margin-bottom:14px;}
-
-.product-specs{
-  display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;
-}
-.spec{
-  font-size:0.68rem;font-weight:600;
-  padding:3px 8px;border-radius:4px;
-  background:rgba(255,255,255,0.06);
-  border:1px solid var(--border);
-  color:var(--text-muted);
+.nav-links a::after {
+  content: "";
+  position: absolute; bottom: -5px; left: 0;
+  width: 0; height: 2px;
+  background: var(--primary);
+  transition: width var(--transition);
 }
 
-.btn-order{
-  background:var(--primary);color:#fff;
-  border:none;border-radius:var(--radius-sm);
-  padding:10px 0;width:100%;
-  font-size:0.85rem;font-weight:600;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;gap:6px;
-  transition:background var(--transition),transform var(--transition);
-  -webkit-tap-highlight-color:transparent;
-}
-.btn-order:hover{background:var(--primary-dark);transform:scale(1.02);}
-.btn-order:active{transform:scale(0.98);}
+.nav-links a:hover::after { width: 100%; }
 
-/* CTA BANNER */
-.cta-banner{
-  background:linear-gradient(135deg,rgba(255,122,0,0.18) 0%,rgba(255,122,0,0.06) 100%);
-  border:1px solid rgba(255,122,0,0.25);
-  border-radius:var(--radius);padding:36px 40px;
-  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
-  margin-top:20px;
+.nav-actions {
+  display: flex; gap: 12px; align-items: center;
 }
-.cta-banner h3{
-  font-family:'Rajdhani',sans-serif;font-size:1.7rem;font-weight:700;
-  color:var(--text);margin-bottom:6px;
-}
-.cta-banner p{font-size:0.88rem;color:var(--text-muted);}
-.btn-primary{
-  background:var(--primary);color:#fff;
-  padding:13px 28px;border-radius:var(--radius-sm);
-  font-weight:600;font-size:0.95rem;border:none;cursor:pointer;
-  display:inline-flex;align-items:center;gap:8px;
-  transition:background var(--transition),transform var(--transition),box-shadow var(--transition);
-  box-shadow:0 4px 20px var(--primary-glow);text-decoration:none;white-space:nowrap;
-  -webkit-tap-highlight-color:transparent;
-}
-.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);}
 
-/* FOOTER */
-footer{
-  position:relative;z-index:2;
-  background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);
-  border-top:1px solid rgba(255,122,0,0.15);
-  padding:28px 20px;text-align:center;
+.nav-btn {
+  width: 42px; height: 42px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all var(--transition);
 }
-.footer-logo{font-family:'Rajdhani',sans-serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:6px;}
-.footer-logo span{color:var(--primary);}
-.footer-info{font-size:0.85rem;color:rgba(255,255,255,0.45);margin-bottom:14px;line-height:1.8;}
-.footer-info a{color:var(--primary);}
-.social-icons{display:flex;gap:10px;justify-content:center;margin-bottom:14px;}
-.social-icons a{
-  width:36px;height:36px;border-radius:50%;
-  background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);
-  display:flex;align-items:center;justify-content:center;
-  color:rgba(255,255,255,0.6);font-size:0.9rem;
-  transition:background var(--transition),color var(--transition);
-}
-.social-icons a:hover{background:var(--primary);color:#fff;}
-.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.22);}
 
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+.nav-btn:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
 
-/* RESPONSIVE */
-@media(max-width:1000px){
-  .products-grid{grid-template-columns:repeat(3,1fr);}
+.menu-btn { display: none; }
+
+/* Page Header */
+.page-header {
+  padding: 120px 5% 60px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
-@media(max-width:750px){
-  .products-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
+
+.page-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: 50px;
+  margin-bottom: 24px;
 }
-@media(max-width:600px){
-  .page-header{padding:100px 16px 36px;}
-  main{padding:0 14px 60px;}
-  .products-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
-  .product-card img{height:130px;}
-  .product-body{padding:12px;}
-  .product-body h3{font-size:0.95rem;}
-  .product-body p{font-size:0.78rem;}
-  .cta-banner{padding:24px 20px;flex-direction:column;text-align:center;}
-  .cta-banner h3{font-size:1.4rem;}
-  .category-title{font-size:1.2rem;}
-  .filter-bar{padding:0 14px 28px;}
+
+.page-header h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 16px;
 }
-@media(max-width:380px){
-  .products-grid{grid-template-columns:1fr;}
+
+.page-header h1 span {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-header p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding: 0 5% 40px;
+}
+
+.filter-btn {
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  transition: all var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+/* Main */
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5% 80px;
+}
+
+/* Category Section */
+.category-section {
+  margin-bottom: 60px;
+}
+
+.category-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.category-title i { color: var(--primary); }
+
+.category-count {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: rgba(59,130,246,0.12);
+  border: 1px solid rgba(59,130,246,0.2);
+  color: var(--primary);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-left: auto;
+}
+
+/* Products Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.product-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow);
+  border-color: var(--primary);
+}
+
+.product-img-wrap {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover img { transform: scale(1.1); }
+
+.product-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.product-badge.new { background: var(--secondary); }
+.product-badge.sale { background: #ef4444; }
+
+.product-body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-body h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.product-body p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  flex: 1;
+  margin-bottom: 14px;
+}
+
+.product-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.spec {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(59,130,246,0.08);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.btn-order {
+  background: linear-gradient(90deg, var(--secondary), var(--secondary-dark));
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 10px 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all var(--transition);
+  width: 100%;
+}
+
+.btn-order:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 20px rgba(16,185,129,0.3);
+}
+
+/* CTA Banner */
+.cta-banner {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: var(--radius);
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  color: #fff;
+  margin-top: 40px;
+}
+
+.cta-banner h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.cta-banner p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.cta-btn {
+  background: #fff;
+  color: var(--primary);
+  padding: 13px 28px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all var(--transition);
+  text-decoration: none;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Footer */
+footer {
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
+  padding: 50px 5% 30px;
+  margin-top: 100px;
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-brand {
+  grid-column: span 2;
+}
+
+.footer-logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+}
+
+.footer-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  max-width: 350px;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.social-links a {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  font-size: 1.1rem;
+  transition: all var(--transition);
+}
+
+.social-links a:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.footer-col h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.footer-contact i {
+  color: var(--primary);
+  width: 20px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  margin-top: 30px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .page-header {
+    padding: 100px 20px 40px;
+  }
+  
+  .category-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .menu-btn { display: flex; }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .page-header p {
+    font-size: 1rem;
+  }
+  
+  main {
+    padding: 0 5% 60px;
+  }
+  
+  .filter-bar {
+    padding: 0 20px 30px;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .cta-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-brand {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header h1 {
+    font-size: 1.7rem;
+  }
+  
+  .filter-bar {
+    gap: 8px;
+  }
+  
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  
+  .category-section {
+    margin-bottom: 40px;
+  }
 }
 </style>
 </head>
 <body>
 
+<!-- Navbar -->
 <nav>
-  <div class="nav-left">
-    <div class="menu-btn" onclick="toggleDropdown()"><i class="fas fa-bars"></i></div>
-    <div class="logo">A F <span>Computer</span></div>
+  <div class="logo">A F <span>Computer</span></div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="product.html">Products</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
   </div>
-  <div class="theme-btn" onclick="toggleTheme()"><i class="fas fa-moon" id="theme-icon"></i></div>
+  <div class="nav-actions">
+    <div class="nav-btn theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+      <i class="fas fa-moon" id="theme-icon"></i>
+    </div>
+    <div class="nav-btn menu-btn" onclick="toggleDropdown()" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
 </nav>
 
-<div class="dropdown-overlay" id="dropdownOverlay" onclick="closeDropdown()"></div>
-<div class="dropdown" id="dropdownMenu">
-  <div class="dropdown-header">Navigation</div>
-  <a href="index.html"><i class="fas fa-home"></i> Home</a>
-  <a href="services.html"><i class="fas fa-tools"></i> Services</a>
-  <a href="product.html"><i class="fas fa-laptop"></i> Products</a>
-  <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
-  <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
-  <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
-</div>
-
-<!-- PAGE HEADER -->
+<!-- Page Header -->
 <div class="page-header">
-  <div class="page-badge"><i class="fas fa-laptop"></i> Shop</div>
+  <div class="page-badge">
+    <i class="fas fa-laptop"></i> Shop
+  </div>
   <h1>Our <span>Products</span></h1>
   <p>Quality laptops, desktops, printers, networking gear and accessories — new and refurbished at the best prices in Pune.</p>
 </div>
 
-<!-- FILTER BAR -->
+<!-- Filter Bar -->
 <div class="filter-bar">
-  <button class="filter-btn active" onclick="filterCategory('all',this)">All</button>
-  <button class="filter-btn" onclick="filterCategory('laptop',this)">Laptops</button>
-  <button class="filter-btn" onclick="filterCategory('desktop',this)">Desktops</button>
-  <button class="filter-btn" onclick="filterCategory('printer',this)">Printers</button>
-  <button class="filter-btn" onclick="filterCategory('network',this)">Networking</button>
-  <button class="filter-btn" onclick="filterCategory('accessory',this)">Accessories</button>
+  <button class="filter-btn active" onclick="filterCategory('all', this)">All Products</button>
+  <button class="filter-btn" onclick="filterCategory('laptop', this)">Laptops</button>
+  <button class="filter-btn" onclick="filterCategory('desktop', this)">Desktops</button>
+  <button class="filter-btn" onclick="filterCategory('printer', this)">Printers</button>
+  <button class="filter-btn" onclick="filterCategory('network', this)">Networking</button>
+  <button class="filter-btn" onclick="filterCategory('accessory', this)">Accessories</button>
 </div>
 
 <main>
-
   <!-- LAPTOPS -->
   <div class="category-section" data-cat="laptop">
-    <div class="category-title"><i class="fas fa-laptop"></i> Laptops <span>New &amp; Refurbished</span></div>
+    <div class="category-title">
+      <i class="fas fa-laptop"></i> Laptops
+      <span class="category-count">New & Refurbished</span>
+    </div>
     <div class="products-grid">
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="lenovo laptop.jpg" alt="Gaming Laptop" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1603121431237-56c6a9cdf4e1?w=400&auto=format&fit=crop" alt="Gaming Laptop" loading="lazy">
           <span class="product-badge">Hot</span>
         </div>
         <div class="product-body">
           <h3>Gaming Laptop</h3>
-          <p>High-performance gaming with latest GPU and processor.</p>
-          <div class="product-specs"><span class="spec">i7 / Ryzen 7</span><span class="spec">16GB RAM</span><span class="spec">512GB SSD</span></div>
-          <button class="btn-order" onclick="location.href='contact.html'"><i class="fas fa-phone-alt"></i> Enquire Now</button>
+          <p>High-performance gaming with latest GPU and processor for smooth gameplay.</p>
+          <div class="product-specs">
+            <span class="spec">i7 / Ryzen 7</span>
+            <span class="spec">16GB RAM</span>
+            <span class="spec">512GB SSD</span>
+          </div>
+          <button class="btn-order" onclick="location.href='contact.html'">
+            <i class="fas fa-shopping-cart"></i> Order Now
+          </button>
         </div>
       </div>
+      
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="hp laptop.jpg" alt="HP Laptop" loading="lazy">
-          <span class="product-badge badge-new">New</span>
+          <img src="https://images.unsplash.com/photo-1580589492822-f1e7bde0c5c4?w=400&auto=format&fit=crop" alt="HP Laptop" loading="lazy">
+          <span class="product-badge new">New</span>
         </div>
         <div class="product-body">
-          <h3>HP Business Laptop</h3>
-          <p>Reliable HP laptop ideal for office and student use.</p>
-          <div class="product-specs"><span class="spec">i5 / Ryzen 5</span><span class="spec">8GB RAM</span><span class="spec">256GB SSD</span></div>
-          <button class="btn-order" onclick="location.href='contact.html'"><i class="fas fa-phone-alt"></i> Enquire Now</button>
+          <h3>Business Laptop</h3>
+          <p>Reliable laptop ideal for office work and student use with long battery life.</p>
+          <div class="product-specs">
+            <span class="spec">i5 / Ryzen 5</span>
+            <span class="spec">8GB RAM</span>
+            <span class="spec">256GB SSD</span>
+          </div>
+          <button class="btn-order" onclick="location.href='contact.html'">
+            <i class="fas fa-shopping-cart"></i> Order Now
+          </button>
         </div>
       </div>
+      
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="dell desktop.jpg" alt="Refurbished Laptop" loading="lazy">
-          <span class="product-badge badge-sale">Refurbished</span>
+          <img src="https://images.unsplash.com/photo-1593642602827-d764f632f42c?w=400&auto=format&fit=crop" alt="Refurbished Laptop" loading="lazy">
+          <span class="product-badge sale">Refurbished</span>
         </div>
         <div class="product-body">
-          <h3>Refurbished Laptop</h3>
+          <h3>Used Laptop</h3>
           <p>Certified refurbished laptops in excellent condition at budget prices.</p>
-          <div class="product-specs"><span class="spec">Core i5</span><span class="spec">8GB RAM</span><span class="spec">HDD/SSD</span></div>
-          <button class="btn-order" onclick="location.href='contact.html'"><i class="fas fa-phone-alt"></i> Enquire Now</button>
+          <div class="product-specs">
+            <span class="spec">Core i5</span>
+            <span class="spec">8GB RAM</span>
+            <span class="spec">HDD/SSD</span>
+          </div>
+          <button class="btn-order" onclick="location.href='contact.html'">
+            <i class="fas fa-shopping-cart"></i> Order Now
+          </button>
         </div>
       </div>
     </div>
@@ -384,29 +715,45 @@ footer{
 
   <!-- DESKTOPS -->
   <div class="category-section" data-cat="desktop">
-    <div class="category-title"><i class="fas fa-desktop"></i> Desktops &amp; All-in-One PCs <span>Home &amp; Office</span></div>
+    <div class="category-title">
+      <i class="fas fa-desktop"></i> Desktops & All-in-One PCs
+      <span class="category-count">Home & Office</span>
+    </div>
     <div class="products-grid">
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="hp desktop.jpg" alt="All-in-One PC" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1580589492822-f1e7bde0c5c4?w=400&auto=format&fit=crop" alt="All-in-One PC" loading="lazy">
           <span class="product-badge">Popular</span>
         </div>
         <div class="product-body">
           <h3>All-in-One PC</h3>
           <p>Compact desktop with integrated display for home or office.</p>
-          <div class="product-specs"><span class="spec">Core i5</span><span class="spec">8GB RAM</span><span class="spec">1TB HDD</span></div>
-          <button class="btn-order" onclick="location.href='contact.html'"><i class="fas fa-phone-alt"></i> Enquire Now</button>
+          <div class="product-specs">
+            <span class="spec">Core i5</span>
+            <span class="spec">8GB RAM</span>
+            <span class="spec">1TB HDD</span>
+          </div>
+          <button class="btn-order" onclick="location.href='contact.html'">
+            <i class="fas fa-shopping-cart"></i> Order Now
+          </button>
         </div>
       </div>
+      
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="computer repair.jpg" alt="Desktop PC" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1593642602827-d764f632f42c?w=400&auto=format&fit=crop" alt="Desktop PC" loading="lazy">
         </div>
         <div class="product-body">
-          <h3>Assembled Desktop</h3>
-          <p>Custom-built desktops for work, gaming or school use.</p>
-          <div class="product-specs"><span class="spec">Core i3/i5</span><span class="spec">4–16GB RAM</span><span class="spec">HDD/SSD</span></div>
-          <button class="btn-order" onclick="location.href='contact.html'"><i class="fas fa-phone-alt"></i> Enquire Now</button>
+          <h3>Custom Desktop</h3>
+          <p>Custom-built PCs for work, gaming or school use.</p>
+          <div class="product-specs">
+            <span class="spec">Core i3/i5</span>
+            <span class="spec">4–16GB RAM</span>
+            <span class="spec">HDD/SSD</span>
+          </div>
+          <button class="btn-order" onclick="location.href='contact.html'">
+            <i class="fas fa-shopping-cart"></i> Order Now
+          </button>
         </div>
       </div>
     </div>
@@ -414,41 +761,64 @@ footer{
 
   <!-- PRINTERS -->
   <div class="category-section" data-cat="printer">
-    <div class="category-title"><i class="fas fa-print"></i> Printers <span>All Brands</span></div>
+    <div class="category-title">
+      <i class="fas fa-print"></i> Printers
+      <span class="category-count">All Brands</span>
+    </div>
     <div class="products-grid">
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="hp printer.jpg" alt="Laser Printer" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1612812098893-2f8d8193dd7a?w=400&auto=format&fit=crop" alt="Laser Printer" loading="lazy">
           <span class="product-badge">Best Seller</span>
         </div>
         <div class="product-body">
-          <h3>HP Laser Printer</h3>
+          <h3>Laser Printer</h3>
           <p>High-speed monochrome laser printer ideal for office use.</p>
-          <div class="product-specs"><span class="spec">22 ppm</span><span class="spec">USB / Wi-Fi</span><span class="spec">HP</span></div>
-          <button class="btn-order" onclick="location.href='contact.html'"><i class="fas fa-phone-alt"></i> Enquire Now</button>
+          <div class="product-specs">
+            <span class="spec">22 ppm</span>
+            <span class="spec">USB / Wi-Fi</span>
+            <span class="spec">HP / Canon</span>
+          </div>
+          <button class="btn-order" onclick="location.href='contact.html'">
+            <i class="fas fa-shopping-cart"></i> Order Now
+          </button>
         </div>
       </div>
+      
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="printer repair.jpg" alt="Inkjet Printer" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1612812098893-2f8d8193dd7a?w=400&auto=format&fit=crop" alt="Inkjet Printer" loading="lazy">
         </div>
         <div class="product-body">
-          <h3>Inkjet / Colour Printer</h3>
-          <p>All-in-one colour printer for home or small business printing.</p>
-          <div class="product-specs"><span class="spec">Colour</span><span class="spec">Scan / Copy</span><span class="spec">Wi-Fi</span></div>
-          <button class="btn-order" onclick="location.href='contact.html'"><i class="fas fa-phone-alt"></i> Enquire Now</button>
+          <h3>Inkjet Printer</h3>
+          <p>All-in-one colour printer for home or small business.</p>
+          <div class="product-specs">
+            <span class="spec">Colour</span>
+            <span class="spec">Scan / Copy</span>
+            <span class="spec">Wi-Fi</span>
+          </div>
+          <button class="btn-order" onclick="location.href='contact.html'">
+            <i class="fas fa-shopping-cart"></i> Order Now
+          </button>
         </div>
       </div>
+      
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="toner.jpg" alt="Toner Cartridge" loading="lazy">
-          <span class="product-badge badge-new">In Stock</span>
+          <img src="https://images.unsplash.com/photo-1558494684-309-4b4c3b73138a?w=400&auto=format&fit=crop" alt="Toner Cartridge" loading="lazy">
+          <span class="product-badge new">In Stock</span>
         </div>
         <div class="product-body">
-          <h3>Toner &amp; Cartridges</h3>
-          <p>Original and compatible toner cartridges for all major brands.</p>
-          <div class="product-specs"><span class="spec">HP</span><span class="spec">Canon</span><span class="spec">Epson</span></div>
-          <button class="btn-order" onclick="location.href='contact.html'"><i class="fas fa-phone-alt"></i> Enquire Now</button>
+          <h3>Toner & Cartridges</h3>
+          <p>Original and compatible cartridges for all major brands.</p>
+          <div class="product-specs">
+            <span class="spec">HP</span>
+            <span class="spec">Canon</span>
+            <span class="spec">Epson</span>
+          </div>
+          <button class="btn-order" onclick="location.href='contact.html'">
+            <i class="fas fa-shopping-cart"></i> Order Now
+          </button>
         </div>
       </div>
     </div>
@@ -456,29 +826,45 @@ footer{
 
   <!-- NETWORKING -->
   <div class="category-section" data-cat="network">
-    <div class="category-title"><i class="fas fa-network-wired"></i> Networking <span>Home &amp; Office</span></div>
+    <div class="category-title">
+      <i class="fas fa-network-wired"></i> Networking
+      <span class="category-count">Home & Office</span>
+    </div>
     <div class="products-grid">
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="network setup.jpg" alt="Networking Kit" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1558494684-309-4b4c3b73138a?w=400&auto=format&fit=crop" alt="Networking Kit" loading="lazy">
         </div>
         <div class="product-body">
           <h3>Networking Kit</h3>
           <p>Routers, switches and cables for seamless connectivity.</p>
-          <div class="product-specs"><span class="spec">Router</span><span class="spec">Switch</span><span class="spec">LAN Cable</span></div>
-          <button class="btn-order" onclick="location.href='contact.html'"><i class="fas fa-phone-alt"></i> Enquire Now</button>
+          <div class="product-specs">
+            <span class="spec">Router</span>
+            <span class="spec">Switch</span>
+            <span class="spec">LAN Cable</span>
+          </div>
+          <button class="btn-order" onclick="location.href='contact.html'">
+            <i class="fas fa-shopping-cart"></i> Order Now
+          </button>
         </div>
       </div>
+      
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="network design.png" alt="Wi-Fi Router" loading="lazy">
-          <span class="product-badge badge-new">New</span>
+          <img src="https://images.unsplash.com/photo-1558494684-309-4b4c3b73138a?w=400&auto=format&fit=crop" alt="Wi-Fi Router" loading="lazy">
+          <span class="product-badge new">New</span>
         </div>
         <div class="product-body">
           <h3>Wi-Fi Router</h3>
-          <p>Dual-band Wi-Fi routers for fast home and office internet.</p>
-          <div class="product-specs"><span class="spec">Dual Band</span><span class="spec">AC1200</span><span class="spec">TP-Link / D-Link</span></div>
-          <button class="btn-order" onclick="location.href='contact.html'"><i class="fas fa-phone-alt"></i> Enquire Now</button>
+          <p>Dual-band routers for fast internet at home or office.</p>
+          <div class="product-specs">
+            <span class="spec">Dual Band</span>
+            <span class="spec">AC1200</span>
+            <span class="spec">TP-Link / D-Link</span>
+          </div>
+          <button class="btn-order" onclick="location.href='contact.html'">
+            <i class="fas fa-shopping-cart"></i> Order Now
+          </button>
         </div>
       </div>
     </div>
@@ -486,40 +872,45 @@ footer{
 
   <!-- ACCESSORIES -->
   <div class="category-section" data-cat="accessory">
-    <div class="category-title"><i class="fas fa-plug"></i> Accessories <span>Parts &amp; Peripherals</span></div>
+    <div class="category-title">
+      <i class="fas fa-plug"></i> Accessories
+      <span class="category-count">Parts & Peripherals</span>
+    </div>
     <div class="products-grid">
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="accessories.jpg" alt="Accessories" loading="lazy">
-          <span class="product-badge badge-new">In Stock</span>
+          <img src="https://images.unsplash.com/photo-1585299382085-4a0f7e27a0b9?w=400&auto=format&fit=crop" alt="Accessories" loading="lazy">
+          <span class="product-badge new">In Stock</span>
         </div>
         <div class="product-body">
           <h3>Computer Accessories</h3>
-          <p>Keyboards, mouse, headphones, webcams, USB hubs and more.</p>
-          <div class="product-specs"><span class="spec">Keyboard</span><span class="spec">Mouse</span><span class="spec">Webcam</span></div>
-          <button class="btn-order" onclick="location.href='contact.html'"><i class="fas fa-phone-alt"></i> Enquire Now</button>
+          <p>Keyboards, mouse, webcams, USB hubs and more.</p>
+          <div class="product-specs">
+            <span class="spec">Keyboard</span>
+            <span class="spec">Mouse</span>
+            <span class="spec">Webcam</span>
+          </div>
+          <button class="btn-order" onclick="location.href='contact.html'">
+            <i class="fas fa-shopping-cart"></i> Order Now
+          </button>
         </div>
       </div>
+      
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="dell desktop.jpg" alt="RAM & Storage" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1585299382085-4a0f7e27a0b9?w=400&auto=format&fit=crop" alt="RAM & Storage" loading="lazy">
         </div>
         <div class="product-body">
-          <h3>RAM &amp; Storage</h3>
-          <p>Upgrade your system with compatible RAM, SSDs and hard drives.</p>
-          <div class="product-specs"><span class="spec">DDR4 / DDR5</span><span class="spec">SSD</span><span class="spec">HDD</span></div>
-          <button class="btn-order" onclick="location.href='contact.html'"><i class="fas fa-phone-alt"></i> Enquire Now</button>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-img-wrap">
-          <img src="laptop repair.jpg" alt="UPS" loading="lazy">
-        </div>
-        <div class="product-body">
-          <h3>UPS / Power Backup</h3>
-          <p>Reliable UPS units to protect your devices from power fluctuations.</p>
-          <div class="product-specs"><span class="spec">600VA – 2KVA</span><span class="spec">APC / Microtek</span></div>
-          <button class="btn-order" onclick="location.href='contact.html'"><i class="fas fa-phone-alt"></i> Enquire Now</button>
+          <h3>RAM & Storage</h3>
+          <p>Upgrade your system with compatible RAM and SSDs.</p>
+          <div class="product-specs">
+            <span class="spec">DDR4 / DDR5</span>
+            <span class="spec">SSD</span>
+            <span class="spec">HDD</span>
+          </div>
+          <button class="btn-order" onclick="location.href='contact.html'">
+            <i class="fas fa-shopping-cart"></i> Order Now
+          </button>
         </div>
       </div>
     </div>
@@ -531,67 +922,107 @@ footer{
       <h3>Can't find what you need?</h3>
       <p>Contact us — we can source or order any product for you.</p>
     </div>
-    <a href="contact.html" class="btn-primary"><i class="fas fa-phone-alt"></i> Call or WhatsApp</a>
+    <a href="contact.html" class="cta-btn">
+      <i class="fas fa-phone-alt"></i> Call Us Now
+    </a>
   </div>
-
 </main>
 
+<!-- Footer -->
 <footer>
-  <div class="footer-logo">A F <span>Computer</span></div>
-  <div class="footer-info">
-    Phone: <a href="tel:7420806178">7420806178</a> &nbsp;|&nbsp;
-    Email: <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <div class="footer-logo">A F Computer</div>
+      <p class="footer-desc">Your trusted partner for computer repair, laptop sales, and IT services in Pune. Quality service, affordable prices, and expert support.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/917420806178" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="#">Laptop Repair</a></li>
+        <li><a href="#">Desktop Services</a></li>
+        <li><a href="#">Printer Solutions</a></li>
+        <li><a href="#">Data Recovery</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Contact Info</h4>
+      <div class="footer-contact">
+        <p><i class="fas fa-phone"></i> +91 7420806178</p>
+        <p><i class="fas fa-envelope"></i> avinash29asf@gmail.com</p>
+        <p><i class="fas fa-clock"></i> Mon-Sat: 10AM - 8PM</p>
+      </div>
+    </div>
   </div>
-  <div class="social-icons">
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://wa.me/917420806178"><i class="fab fa-whatsapp"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
+  
+  <div class="footer-bottom">
+    &copy; 2025 A F Computer. All rights reserved.
   </div>
-  <div class="footer-copy">&copy; 2025 A F Computer. All rights reserved.</div>
 </footer>
 
 <script>
-function toggleDropdown(){
-  document.getElementById('dropdownMenu').classList.toggle('show');
-  document.getElementById('dropdownOverlay').classList.toggle('show');
+// Theme Toggle
+const themeIcon = document.getElementById('theme-icon');
+if(localStorage.getItem('theme') === 'light') {
+  document.body.classList.add('light');
+  themeIcon.className = 'fas fa-sun';
 }
-function closeDropdown(){
-  document.getElementById('dropdownMenu').classList.remove('show');
-  document.getElementById('dropdownOverlay').classList.remove('show');
-}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDropdown();});
 
-const themeIcon=document.getElementById('theme-icon');
-if(localStorage.getItem('theme')==='light'){document.body.classList.add('light');themeIcon.className='fas fa-sun';}
-else{themeIcon.className='fas fa-moon';}
-function toggleTheme(){
+function toggleTheme() {
   document.body.classList.toggle('light');
-  if(document.body.classList.contains('light')){themeIcon.className='fas fa-sun';localStorage.setItem('theme','light');}
-  else{themeIcon.className='fas fa-moon';localStorage.setItem('theme','dark');}
+  if(document.body.classList.contains('light')) {
+    themeIcon.className = 'fas fa-sun';
+    localStorage.setItem('theme', 'light');
+  } else {
+    themeIcon.className = 'fas fa-moon';
+    localStorage.setItem('theme', 'dark');
+  }
 }
 
 // Category filter
-function filterCategory(cat, btn){
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+function filterCategory(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('.category-section').forEach(sec=>{
-    if(cat==='all' || sec.dataset.cat===cat){
-      sec.style.display='block';
+  document.querySelectorAll('.category-section').forEach(sec => {
+    if(cat === 'all' || sec.dataset.cat === cat) {
+      sec.style.display = 'block';
     } else {
-      sec.style.display='none';
+      sec.style.display = 'none';
     }
   });
 }
 
 // Scroll reveal
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
   });
-},{threshold:0.08});
-document.querySelectorAll('.product-card').forEach((el,i)=>{
-  el.style.transitionDelay=(i%4*0.08)+'s'; observer.observe(el);
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.product-card').forEach(el => {
+  observer.observe(el);
 });
 </script>
+
 </body>
 </html>

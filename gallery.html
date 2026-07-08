@@ -3,281 +3,827 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="googlea75de922b485a323.html">
 <title>Gallery - A F Computer</title>
 <meta name="description" content="View our completed repair work, accessories, and refurbished product photos at A F Computer – Nigdi & Chikhali, Pune.">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
 <style>
-:root{--primary:#ff7a00;--primary-dark:#cc6000;--primary-glow:rgba(255,122,0,0.22);--surface:rgba(255,255,255,0.05);--border:rgba(255,255,255,0.08);--text:#f0f0f0;--text-muted:rgba(255,255,255,0.5);--nav-bg:rgba(10,10,10,0.85);--overlay:rgba(0,0,0,0.72);--radius:14px;--radius-sm:8px;--transition:0.3s cubic-bezier(0.4,0,0.2,1);}
-body.light{--surface:rgba(0,0,0,0.04);--border:rgba(0,0,0,0.1);--text:#111;--text-muted:rgba(0,0,0,0.5);--nav-bg:rgba(220,220,220,0.92);--overlay:rgba(255,255,255,0.62);}
-*{margin:0;padding:0;box-sizing:border-box;}
-html,body{font-family:'DM Sans',sans-serif;color:var(--text);scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
-body{background:url('gallery.jpg') no-repeat center center fixed;background-size:cover;position:relative;transition:color var(--transition);}
-body::before{content:"";position:fixed;inset:0;background:var(--overlay);z-index:0;transition:background var(--transition);}
-nav{position:fixed;top:0;left:0;right:0;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:var(--nav-bg);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:1000;}
-.nav-left{display:flex;align-items:center;gap:14px;}
-.logo{font-family:'Rajdhani',sans-serif;font-size:1.55rem;font-weight:700;color:var(--text);}
-.logo span{color:var(--primary);}
-.menu-btn,.theme-btn{width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-sm);cursor:pointer;font-size:1.2rem;color:var(--primary);background:var(--surface);border:1px solid var(--border);transition:background var(--transition),transform var(--transition);-webkit-tap-highlight-color:transparent;}
-.menu-btn:hover,.theme-btn:hover{background:var(--primary);color:#fff;transform:scale(1.05);}
-.dropdown{position:fixed;top:0;left:-280px;width:260px;height:100%;background:rgba(8,8,8,0.97);backdrop-filter:blur(16px);display:flex;flex-direction:column;transition:left 0.35s cubic-bezier(0.4,0,0.2,1);z-index:1100;padding-top:70px;border-right:1px solid rgba(255,122,0,0.15);overflow-y:auto;}
-body.light .dropdown{background:rgba(30,30,30,0.97);}
-.dropdown.show{left:0;}
-.dropdown-header{padding:0 24px 14px;font-family:'Rajdhani',sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--primary);border-bottom:1px solid rgba(255,122,0,0.2);margin-bottom:8px;}
-.dropdown a{color:#e0e0e0;font-weight:500;font-size:0.97rem;padding:14px 24px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:10px;transition:background var(--transition),color var(--transition),padding-left var(--transition);text-decoration:none;}
-.dropdown a:hover{background:rgba(255,122,0,0.12);color:var(--primary);padding-left:32px;}
-.dropdown a i{width:18px;color:var(--primary);opacity:0.8;}
-.dropdown-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1050;}
-.dropdown-overlay.show{display:block;}
-.page-header{position:relative;z-index:2;padding:120px 20px 50px;text-align:center;max-width:800px;margin:0 auto;}
-.page-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,122,0,0.12);border:1px solid rgba(255,122,0,0.3);color:var(--primary);font-size:0.78rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:20px;animation:fadeUp 0.7s ease both;}
-.page-header h1{font-family:'Rajdhani',sans-serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:700;color:var(--text);line-height:1.1;margin-bottom:16px;animation:fadeUp 0.7s 0.1s ease both;}
-.page-header h1 span{color:var(--primary);}
-.page-header p{font-size:clamp(0.95rem,2vw,1.1rem);color:var(--text-muted);line-height:1.7;animation:fadeUp 0.7s 0.2s ease both;}
+:root {
+  --primary: #ff7a00;
+  --primary-dark: #cc6000;
+  --primary-light: #ffa333;
+  --primary-glow: rgba(255,122,0,0.25);
+  --secondary: #ff7a00;
+  --secondary-dark: #cc6000;
+  --accent: #ff7a00;
+  --accent-dark: #cc6000;
+  
+  --bg: #0f172a;
+  --bg-secondary: #1e293b;
+  --surface: rgba(255,255,255,0.03);
+  --border: rgba(255,255,255,0.1);
+  --text: #f1f5f9;
+  --text-muted: rgba(255,255,255,0.6);
+  --nav-bg: rgba(15,23,42,0.9);
+  
+  --radius: 16px;
+  --radius-sm: 12px;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+  --shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
 
-/* FILTER */
-.filter-bar{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:0 20px 36px;animation:fadeUp 0.7s 0.3s ease both;}
-.filter-btn{padding:7px 18px;border-radius:50px;font-size:0.82rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);transition:background var(--transition),color var(--transition),border-color var(--transition);-webkit-tap-highlight-color:transparent;}
-.filter-btn:hover,.filter-btn.active{background:var(--primary);color:#fff;border-color:var(--primary);}
+body.light {
+  --bg: #f0f9ff;
+  --bg-secondary: #e0f2fe;
+  --surface: rgba(0,0,0,0.02);
+  --border: rgba(0,0,0,0.08);
+  --text: #0f172a;
+  --text-muted: rgba(0,0,0,0.6);
+  --nav-bg: rgba(240,249,255,0.9);
+}
 
-/* GALLERY GRID */
-main{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 20px 80px;}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;animation:fadeUp 0.8s 0.4s ease both;}
-.gallery-item{position:relative;cursor:pointer;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);opacity:0;transform:translateY(24px);transition:transform var(--transition),box-shadow var(--transition),border-color var(--transition);-webkit-tap-highlight-color:transparent;}
-.gallery-item.visible{opacity:1;transform:translateY(0);transition:opacity 0.6s ease,transform 0.6s ease,box-shadow var(--transition),border-color var(--transition);}
-.gallery-item:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 12px 36px rgba(0,0,0,0.5),0 0 0 1px rgba(255,122,0,0.2);border-color:rgba(255,122,0,0.25);}
-.gallery-item:active{transform:scale(0.97);}
-.gallery-item img{width:100%;height:210px;object-fit:cover;display:block;transition:transform 0.5s ease;}
-.gallery-item:hover img{transform:scale(1.06);}
-.gallery-item .caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.88));color:#fff;padding:32px 14px 12px;font-size:0.88rem;font-weight:600;opacity:0;transition:opacity var(--transition);}
-.gallery-item:hover .caption{opacity:1;}
-.gallery-item .zoom-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);color:#fff;font-size:2rem;transition:transform var(--transition);text-shadow:0 0 12px rgba(0,0,0,0.8);}
-.gallery-item:hover .zoom-icon{transform:translate(-50%,-50%) scale(1);}
-.gallery-item .cat-badge{position:absolute;top:10px;right:10px;background:rgba(0,0,0,0.7);border:1px solid rgba(255,122,0,0.3);color:var(--primary);font-size:0.68rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;padding:3px 9px;border-radius:50px;backdrop-filter:blur(4px);}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
 
-/* LIGHTBOX */
-.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.96);z-index:9999;justify-content:center;align-items:center;flex-direction:column;}
-.lightbox.active{display:flex;animation:fadeUp 0.3s ease;}
-.lightbox img{max-width:92%;max-height:74vh;border-radius:var(--radius-sm);box-shadow:0 0 50px rgba(255,122,0,0.3);transition:opacity 0.2s;pointer-events:none;}
-.lb-caption{color:var(--primary);margin-top:14px;font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:0.5px;}
-.lb-counter{color:rgba(255,255,255,0.35);font-size:0.82rem;margin-top:4px;}
-.lb-swipe-hint{color:rgba(255,255,255,0.3);font-size:0.75rem;margin-top:6px;display:none;}
-.lightbox .close-btn{position:absolute;top:14px;right:18px;font-size:2.2rem;color:#fff;cursor:pointer;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,0.08);transition:background var(--transition),color var(--transition);-webkit-tap-highlight-color:transparent;}
-.lightbox .close-btn:hover{background:var(--primary);color:#fff;}
-.nav-btn{position:absolute;top:50%;font-size:1.6rem;color:#fff;cursor:pointer;user-select:none;transform:translateY(-50%);background:rgba(255,255,255,0.08);width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background var(--transition);-webkit-tap-highlight-color:transparent;}
-.nav-btn:hover,.nav-btn:active{background:var(--primary);}
-.prev-btn{left:14px;}
-.next-btn{right:14px;}
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, var(--bg) 0%, var(--bg-secondary) 100%);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background var(--transition), color var(--transition);
+  -webkit-font-smoothing: antialiased;
+}
 
-footer{position:relative;z-index:2;background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);border-top:1px solid rgba(255,122,0,0.15);padding:28px 20px;text-align:center;margin-top:40px;}
-.footer-logo{font-family:'Rajdhani',sans-serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:6px;}
-.footer-logo span{color:var(--primary);}
-.footer-info{font-size:0.85rem;color:rgba(255,255,255,0.45);margin-bottom:14px;line-height:1.8;}
-.footer-info a{color:var(--primary);}
-.social-icons{display:flex;gap:10px;justify-content:center;margin-bottom:14px;}
-.social-icons a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);font-size:0.9rem;transition:background var(--transition),color var(--transition);}
-.social-icons a:hover{background:var(--primary);color:#fff;}
-.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.22);}
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+/* Navbar */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 70px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+}
 
-/* TABLET */
-@media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr);}}
-/* MOBILE */
-@media(max-width:600px){
-  .page-header{padding:100px 16px 36px;}
-  main{padding:0 12px 60px;}
-  .filter-bar{padding:0 12px 28px;}
-  .gallery{grid-template-columns:repeat(2,1fr);gap:10px;}
-  .gallery-item img{height:140px;}
-  .gallery-item .caption{opacity:1;font-size:0.75rem;padding:20px 8px 8px;}
-  .gallery-item .zoom-icon{display:none;}
-  .nav-btn{width:40px;height:40px;font-size:1.3rem;}
-  .prev-btn{left:6px;}.next-btn{right:6px;}
-  .lightbox img{max-height:62vh;}
-  .lb-swipe-hint{display:block;}
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-links {
+  display: flex; gap: 32px;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color var(--transition);
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+.nav-links a::after {
+  content: "";
+  position: absolute; bottom: -5px; left: 0;
+  width: 0; height: 2px;
+  background: var(--primary);
+  transition: width var(--transition);
+}
+
+.nav-links a:hover::after { width: 100%; }
+
+.nav-actions {
+  display: flex; gap: 12px; align-items: center;
+}
+
+.nav-btn {
+  width: 42px; height: 42px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+}
+
+.nav-btn:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.menu-btn { display: none; }
+
+/* Page Header */
+.page-header {
+  padding: 120px 5% 60px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: 50px;
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.page-header h1 span {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-header p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding: 0 5% 40px;
+}
+
+.filter-btn {
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  transition: all var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+/* Gallery */
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5% 80px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  cursor: pointer;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.gallery-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+  border-color: var(--primary);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img { transform: scale(1.08); }
+
+.caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  color: #fff;
+  padding: 36px 16px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.gallery-item:hover .caption { opacity: 1; }
+
+.cat-badge {
+  position: absolute;
+  top: 12px; right: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lightbox.active {
+  display: flex;
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 70vh;
+  border-radius: var(--radius-sm);
+  transition: opacity 0.2s;
+}
+
+.lb-caption {
+  color: var(--primary);
+  margin-top: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.lb-counter {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin-top: 6px;
+}
+
+.lightbox .close-btn {
+  position: absolute;
+  top: 20px; right: 20px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  width: 48px; height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--surface);
+  transition: all var(--transition);
+}
+
+.lightbox .close-btn:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.nav-btn-lb {
+  position: absolute;
+  top: 50%;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  transform: translateY(-50%);
+  background: var(--surface);
+  width: 48px; height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all var(--transition);
+}
+
+.nav-btn-lb:hover {
+  background: var(--primary);
+}
+
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+/* Footer */
+footer {
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
+  padding: 50px 5% 30px;
+  margin-top: 100px;
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-brand {
+  grid-column: span 2;
+}
+
+.footer-logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+}
+
+.footer-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  max-width: 350px;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.social-links a {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  font-size: 1.1rem;
+  transition: all var(--transition);
+}
+
+.social-links a:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.footer-col h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.footer-contact i {
+  color: var(--primary);
+  width: 20px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  margin-top: 30px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .page-header {
+    padding: 100px 20px 40px;
+  }
+  
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .menu-btn { display: flex; }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .page-header p {
+    font-size: 1rem;
+  }
+  
+  main {
+    padding: 0 5% 60px;
+  }
+  
+  .filter-bar {
+    padding: 0 20px 30px;
+  }
+  
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  
+  .gallery-item img {
+    height: 160px;
+  }
+  
+  .caption {
+    opacity: 1;
+    font-size: 0.82rem;
+    padding: 24px 10px 10px;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-brand {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header h1 {
+    font-size: 1.7rem;
+  }
+  
+  .filter-bar {
+    gap: 8px;
+  }
+  
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 0.82rem;
+  }
+  
+  .gallery {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
 <body>
+
+<!-- Navbar -->
 <nav>
-  <div class="nav-left">
-    <div class="menu-btn" onclick="toggleDropdown()"><i class="fas fa-bars"></i></div>
-    <div class="logo">A F <span>Computer</span></div>
+  <div class="logo">A F <span>Computer</span></div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="product.html">Products</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
   </div>
-  <div class="theme-btn" onclick="toggleTheme()"><i class="fas fa-moon" id="theme-icon"></i></div>
+  <div class="nav-actions">
+    <div class="nav-btn theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+      <i class="fas fa-moon" id="theme-icon"></i>
+    </div>
+    <div class="nav-btn menu-btn" onclick="toggleDropdown()" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
 </nav>
-<div class="dropdown-overlay" id="dropdownOverlay" onclick="closeDropdown()"></div>
-<div class="dropdown" id="dropdownMenu">
-  <div class="dropdown-header">Navigation</div>
-  <a href="index.html"><i class="fas fa-home"></i> Home</a>
-  <a href="services.html"><i class="fas fa-tools"></i> Services</a>
-  <a href="product.html"><i class="fas fa-laptop"></i> Products</a>
-  <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
-  <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
-  <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
-  <a href="reviews.html"><i class="fas fa-star"></i> Reviews</a>
-  <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
-  <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
-  <a href="careers.html"><i class="fas fa-briefcase"></i> Careers</a>
-</div>
 
+<!-- Page Header -->
 <div class="page-header">
-  <div class="page-badge"><i class="fas fa-images"></i> Work Gallery</div>
+  <div class="page-badge">
+    <i class="fas fa-images"></i> Work Gallery
+  </div>
   <h1>Our <span>Gallery</span></h1>
-  <p>Repairs, products, and setups from our Nigdi &amp; Chikhali branches.</p>
+  <p>Repairs, products, and setups from our Nigdi & Chikhali branches.</p>
 </div>
 
-<!-- FILTER -->
+<!-- Filter Bar -->
 <div class="filter-bar">
-  <button class="filter-btn active" onclick="filterGallery('all',this)">All</button>
-  <button class="filter-btn" onclick="filterGallery('laptop',this)">Laptops</button>
-  <button class="filter-btn" onclick="filterGallery('desktop',this)">Desktops</button>
-  <button class="filter-btn" onclick="filterGallery('printer',this)">Printers</button>
-  <button class="filter-btn" onclick="filterGallery('network',this)">Networking</button>
-  <button class="filter-btn" onclick="filterGallery('accessory',this)">Accessories</button>
+  <button class="filter-btn active" onclick="filterGallery('all', this)">All Work</button>
+  <button class="filter-btn" onclick="filterGallery('laptop', this)">Laptops</button>
+  <button class="filter-btn" onclick="filterGallery('desktop', this)">Desktops</button>
+  <button class="filter-btn" onclick="filterGallery('printer', this)">Printers</button>
+  <button class="filter-btn" onclick="filterGallery('network', this)">Networking</button>
+  <button class="filter-btn" onclick="filterGallery('accessory', this)">Accessories</button>
 </div>
 
 <main>
   <div class="gallery" id="gallery">
     <div class="gallery-item" data-cat="desktop" onclick="openLightbox(0)">
-      <img src="dell desktop.jpg" alt="Dell Desktop" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1593642602827-d764f632f42c?w=500&auto=format&fit=crop" alt="Desktop Repair" loading="lazy">
       <span class="cat-badge">Desktop</span>
-      <div class="caption">Dell Desktop</div>
-      <i class="fas fa-search-plus zoom-icon"></i>
+      <div class="caption">Desktop Computer Repair</div>
     </div>
+    
     <div class="gallery-item" data-cat="laptop" onclick="openLightbox(1)">
-      <img src="hp laptop.jpg" alt="HP Laptop" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1580894908361-f9061b1b1aaa?w=500&auto=format&fit=crop" alt="Laptop Repair" loading="lazy">
       <span class="cat-badge">Laptop</span>
-      <div class="caption">HP Laptop Sales</div>
-      <i class="fas fa-search-plus zoom-icon"></i>
+      <div class="caption">Laptop Screen Repair</div>
     </div>
+    
     <div class="gallery-item" data-cat="printer" onclick="openLightbox(2)">
-      <img src="printer repair.jpg" alt="Printer Repair" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1612812098893-2f8d8193dd7a?w=500&auto=format&fit=crop" alt="Printer Repair" loading="lazy">
       <span class="cat-badge">Printer</span>
-      <div class="caption">Printer Repair</div>
-      <i class="fas fa-search-plus zoom-icon"></i>
+      <div class="caption">Printer Maintenance</div>
     </div>
+    
     <div class="gallery-item" data-cat="accessory" onclick="openLightbox(3)">
-      <img src="accessories.jpg" alt="Accessories" loading="lazy">
-      <span class="cat-badge">Accessories</span>
+      <img src="https://images.unsplash.com/photo-1585299382085-4a0f7e27a0b9?w=500&auto=format&fit=crop" alt="Accessories" loading="lazy">
+      <span class="cat-badge">Accessory</span>
       <div class="caption">Computer Accessories</div>
-      <i class="fas fa-search-plus zoom-icon"></i>
     </div>
+    
     <div class="gallery-item" data-cat="network" onclick="openLightbox(4)">
-      <img src="network design.png" alt="Networking" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1558494684-309-4b4c3b73138a?w=500&auto=format&fit=crop" alt="Networking" loading="lazy">
       <span class="cat-badge">Network</span>
       <div class="caption">Network Setup</div>
-      <i class="fas fa-search-plus zoom-icon"></i>
     </div>
+    
     <div class="gallery-item" data-cat="printer" onclick="openLightbox(5)">
-      <img src="toner.jpg" alt="Toner Cartridge" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1612812098893-2f8d8193dd7a?w=500&auto=format&fit=crop" alt="Toner" loading="lazy">
       <span class="cat-badge">Printer</span>
-      <div class="caption">Toner Cartridge</div>
-      <i class="fas fa-search-plus zoom-icon"></i>
+      <div class="caption">Toner Replacement</div>
     </div>
+    
     <div class="gallery-item" data-cat="laptop" onclick="openLightbox(6)">
-      <img src="laptop repair.jpg" alt="Laptop Repair" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1603121431237-56c6a9cdf4e1?w=500&auto=format&fit=crop" alt="Gaming Laptop" loading="lazy">
       <span class="cat-badge">Laptop</span>
-      <div class="caption">Laptop Repair</div>
-      <i class="fas fa-search-plus zoom-icon"></i>
+      <div class="caption">Gaming Laptop Setup</div>
     </div>
+    
     <div class="gallery-item" data-cat="desktop" onclick="openLightbox(7)">
-      <img src="computer repair.jpg" alt="Computer Repair" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1580589492822-f1e7bde0c5c4?w=500&auto=format&fit=crop" alt="All-in-One PC" loading="lazy">
       <span class="cat-badge">Desktop</span>
-      <div class="caption">Computer Repair</div>
-      <i class="fas fa-search-plus zoom-icon"></i>
-    </div>
-    <div class="gallery-item" data-cat="network" onclick="openLightbox(8)">
-      <img src="network setup.jpg" alt="Network Setup" loading="lazy">
-      <span class="cat-badge">Network</span>
-      <div class="caption">Office Network</div>
-      <i class="fas fa-search-plus zoom-icon"></i>
+      <div class="caption">All-in-One PC Setup</div>
     </div>
   </div>
 </main>
 
-<!-- LIGHTBOX -->
+<!-- Lightbox -->
 <div class="lightbox" id="lightbox">
   <span class="close-btn" onclick="closeLightbox()">&times;</span>
-  <span class="nav-btn prev-btn" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></span>
+  <span class="nav-btn-lb prev-btn" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></span>
   <img id="lb-img" src="" alt="">
   <div class="lb-caption" id="lb-caption"></div>
   <div class="lb-counter" id="lb-counter"></div>
-  <div class="lb-swipe-hint">← Swipe to navigate →</div>
-  <span class="nav-btn next-btn" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></span>
+  <span class="nav-btn-lb next-btn" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></span>
 </div>
 
+<!-- Footer -->
 <footer>
-  <div class="footer-logo">A F <span>Computer</span></div>
-  <div class="footer-info">Phone: <a href="tel:7420806178">7420806178</a> &nbsp;|&nbsp; Email: <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a></div>
-  <div class="social-icons"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="https://wa.me/917420806178"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div>
-  <div class="footer-copy">&copy; 2025 A F Computer. All rights reserved.</div>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <div class="footer-logo">A F Computer</div>
+      <p class="footer-desc">Your trusted partner for computer repair, laptop sales, and IT services in Pune. Quality service, affordable prices, and expert support.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/917420806178" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="#">Laptop Repair</a></li>
+        <li><a href="#">Desktop Services</a></li>
+        <li><a href="#">Printer Solutions</a></li>
+        <li><a href="#">Data Recovery</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Contact Info</h4>
+      <div class="footer-contact">
+        <p><i class="fas fa-phone"></i> +91 7420806178</p>
+        <p><i class="fas fa-envelope"></i> avinash29asf@gmail.com</p>
+        <p><i class="fas fa-clock"></i> Mon-Sat: 10AM - 8PM</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    &copy; 2025 A F Computer. All rights reserved.
+  </div>
 </footer>
 
 <script>
-function toggleDropdown(){document.getElementById('dropdownMenu').classList.toggle('show');document.getElementById('dropdownOverlay').classList.toggle('show');}
-function closeDropdown(){document.getElementById('dropdownMenu').classList.remove('show');document.getElementById('dropdownOverlay').classList.remove('show');}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeDropdown();closeLightbox();}if(e.key==='ArrowLeft')changeImage(-1);if(e.key==='ArrowRight')changeImage(1);});
-const themeIcon=document.getElementById('theme-icon');
-if(localStorage.getItem('theme')==='light'){document.body.classList.add('light');themeIcon.className='fas fa-sun';}else{themeIcon.className='fas fa-moon';}
-function toggleTheme(){document.body.classList.toggle('light');if(document.body.classList.contains('light')){themeIcon.className='fas fa-sun';localStorage.setItem('theme','light');}else{themeIcon.className='fas fa-moon';localStorage.setItem('theme','dark');}}
-
-const images=[
-  {src:'dell desktop.jpg',cap:'Dell Desktop',cat:'desktop'},
-  {src:'hp laptop.jpg',cap:'HP Laptop Sales',cat:'laptop'},
-  {src:'printer repair.jpg',cap:'Printer Repair',cat:'printer'},
-  {src:'accessories.jpg',cap:'Computer Accessories',cat:'accessory'},
-  {src:'network design.png',cap:'Network Setup',cat:'network'},
-  {src:'toner.jpg',cap:'Toner Cartridge',cat:'printer'},
-  {src:'laptop repair.jpg',cap:'Laptop Repair',cat:'laptop'},
-  {src:'computer repair.jpg',cap:'Computer Repair',cat:'desktop'},
-  {src:'network setup.jpg',cap:'Office Network',cat:'network'}
-];
-let current=0;
-
-function updateLightbox(){
-  const img=document.getElementById('lb-img');
-  img.style.opacity='0';
-  setTimeout(()=>{img.src=images[current].src;img.alt=images[current].cap;img.style.opacity='1';},150);
-  document.getElementById('lb-caption').textContent=images[current].cap;
-  document.getElementById('lb-counter').textContent=(current+1)+' / '+images.length;
+// Theme Toggle
+const themeIcon = document.getElementById('theme-icon');
+if(localStorage.getItem('theme') === 'light') {
+  document.body.classList.add('light');
+  themeIcon.className = 'fas fa-sun';
 }
-function openLightbox(i){current=i;updateLightbox();document.getElementById('lightbox').classList.add('active');document.body.style.overflow='hidden';}
-function closeLightbox(){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow='';}
-function changeImage(d){current=(current+d+images.length)%images.length;updateLightbox();}
 
-// Close on bg click
-document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLightbox();});
-
-// Touch swipe
-let tx=0,ty=0;
-document.getElementById('lightbox').addEventListener('touchstart',e=>{tx=e.changedTouches[0].screenX;ty=e.changedTouches[0].screenY;},{passive:true});
-document.getElementById('lightbox').addEventListener('touchend',e=>{
-  const dx=tx-e.changedTouches[0].screenX,dy=ty-e.changedTouches[0].screenY;
-  if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>50){dx>0?changeImage(1):changeImage(-1);}
-},{passive:true});
+function toggleTheme() {
+  document.body.classList.toggle('light');
+  if(document.body.classList.contains('light')) {
+    themeIcon.className = 'fas fa-sun';
+    localStorage.setItem('theme', 'light');
+  } else {
+    themeIcon.className = 'fas fa-moon';
+    localStorage.setItem('theme', 'dark');
+  }
+}
 
 // Gallery filter
-function filterGallery(cat,btn){
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+function filterGallery(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('.gallery-item').forEach(item=>{
-    item.style.display=(cat==='all'||item.dataset.cat===cat)?'block':'none';
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    if(cat === 'all' || item.dataset.cat === cat) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
   });
 }
 
-// Mobile captions always visible
-function mobileCaptions(){
-  const isMobile=window.innerWidth<=600;
-  document.querySelectorAll('.gallery-item .caption').forEach(c=>c.style.opacity=isMobile?'1':'');
+// Lightbox
+const images = [
+  { src: 'https://images.unsplash.com/photo-1593642602827-d764f632f42c?w=800&auto=format&fit=crop', cap: 'Desktop Computer Repair', cat: 'desktop' },
+  { src: 'https://images.unsplash.com/photo-1580894908361-f9061b1b1aaa?w=800&auto=format&fit=crop', cap: 'Laptop Screen Repair', cat: 'laptop' },
+  { src: 'https://images.unsplash.com/photo-1612812098893-2f8d8193dd7a?w=800&auto=format&fit=crop', cap: 'Printer Maintenance', cat: 'printer' },
+  { src: 'https://images.unsplash.com/photo-1585299382085-4a0f7e27a0b9?w=800&auto=format&fit=crop', cap: 'Computer Accessories', cat: 'accessory' },
+  { src: 'https://images.unsplash.com/photo-1558494684-309-4b4c3b73138a?w=800&auto=format&fit=crop', cap: 'Network Setup', cat: 'network' },
+  { src: 'https://images.unsplash.com/photo-1612812098893-2f8d8193dd7a?w=800&auto=format&fit=crop', cap: 'Toner Replacement', cat: 'printer' },
+  { src: 'https://images.unsplash.com/photo-1603121431237-56c6a9cdf4e1?w=800&auto=format&fit=crop', cap: 'Gaming Laptop Setup', cat: 'laptop' },
+  { src: 'https://images.unsplash.com/photo-1580589492822-f1e7bde0c5c4?w=800&auto=format&fit=crop', cap: 'All-in-One PC Setup', cat: 'desktop' }
+];
+
+let current = 0;
+
+function updateLightbox() {
+  const img = document.getElementById('lb-img');
+  img.style.opacity = '0';
+  setTimeout(() => {
+    img.src = images[current].src;
+    img.alt = images[current].cap;
+    img.style.opacity = '1';
+  }, 150);
+  document.getElementById('lb-caption').textContent = images[current].cap;
+  document.getElementById('lb-counter').textContent = (current + 1) + ' / ' + images.length;
 }
-mobileCaptions();
-window.addEventListener('resize',mobileCaptions);
+
+function openLightbox(i) {
+  current = i;
+  updateLightbox();
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function changeImage(d) {
+  current = (current + d + images.length) % images.length;
+  updateLightbox();
+}
+
+// Close on background click
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if(e.target === this) closeLightbox();
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape') closeLightbox();
+  if(e.key === 'ArrowLeft') changeImage(-1);
+  if(e.key === 'ArrowRight') changeImage(1);
+});
+
+// Touch swipe
+let startX = 0, startY = 0;
+document.getElementById('lightbox').addEventListener('touchstart', e => {
+  startX = e.changedTouches[0].screenX;
+  startY = e.changedTouches[0].screenY;
+}, {passive: true});
+
+document.getElementById('lightbox').addEventListener('touchend', e => {
+  const dx = startX - e.changedTouches[0].screenX;
+  const dy = startY - e.changedTouches[0].screenY;
+  if(Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+    dx > 0 ? changeImage(1) : changeImage(-1);
+  }
+}, {passive: true});
 
 // Scroll reveal
-const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.08});
-document.querySelectorAll('.gallery-item').forEach((el,i)=>{el.style.transitionDelay=(i*0.06)+'s';observer.observe(el);});
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.gallery-item').forEach(el => {
+  observer.observe(el);
+});
 </script>
+
 </body>
 </html>
