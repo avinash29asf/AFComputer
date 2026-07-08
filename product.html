@@ -577,6 +577,9 @@ footer {
   font-size: 0.85rem;
 }
 
+/* Mobile Tab Bar (WhatsApp-style direct buttons) */
+.mobile-tabs { display: none; }
+
 /* Responsive */
 @media (max-width: 968px) {
   .page-header {
@@ -589,9 +592,58 @@ footer {
 }
 
 @media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .logo, .nav-actions {
+    height: 70px;
+    display: flex;
+    align-items: center;
+  }
+
   .nav-links { display: none; }
   .menu-btn { display: flex; }
-  
+
+  /* WhatsApp-style direct tab buttons inside header */
+  .mobile-tabs {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 4px;
+    border-top: 1px solid var(--border);
+    padding: 6px 0;
+  }
+
+  .mobile-tabs a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 6px 2px;
+    border-radius: 10px;
+    transition: all var(--transition);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-tabs a i { font-size: 1.15rem; }
+
+  .mobile-tabs a:hover,
+  .mobile-tabs a.active {
+    color: var(--primary);
+    background: var(--surface);
+  }
+
+  body { padding-top: 126px; }
+
   .page-header h1 {
     font-size: 2rem;
   }
@@ -681,6 +733,13 @@ footer {
     <a href="product.html" class="mobile-dropdown-item">Products</a>
     <a href="gallery.html" class="mobile-dropdown-item">Gallery</a>
     <a href="contact.html" class="mobile-dropdown-item">Contact</a>
+  </div>
+
+  <!-- Mobile Tab Bar (WhatsApp-style direct buttons) -->
+  <div class="mobile-tabs">
+    <a href="index.html"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="services.html"><i class="fas fa-tools"></i><span>Services</span></a>
+    <a href="product.html" class="active"><i class="fas fa-box"></i><span>Products</span></a>
   </div>
 </nav>
 
