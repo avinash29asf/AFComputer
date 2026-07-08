@@ -133,6 +133,53 @@ nav {
 
 .menu-btn { display: none; }
 
+/* Mobile Dropdown Menu */
+.mobile-dropdown {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  flex-direction: column;
+  padding: 20px;
+  gap: 15px;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--transition);
+}
+
+.mobile-dropdown.active {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobile-dropdown-item {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+  display: block;
+}
+
+.mobile-dropdown-item:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateX(5px);
+}
+
 /* Page Header */
 .page-header {
   padding: 120px 5% 60px;
@@ -625,6 +672,16 @@ footer {
       <i class="fas fa-bars"></i>
     </div>
   </div>
+  
+  <!-- Mobile Dropdown Menu -->
+  <div class="mobile-dropdown" id="mobileDropdown">
+    <a href="index.html" class="mobile-dropdown-item">Home</a>
+    <a href="about.html" class="mobile-dropdown-item">About</a>
+    <a href="services.html" class="mobile-dropdown-item">Services</a>
+    <a href="product.html" class="mobile-dropdown-item">Products</a>
+    <a href="gallery.html" class="mobile-dropdown-item">Gallery</a>
+    <a href="contact.html" class="mobile-dropdown-item">Contact</a>
+  </div>
 </nav>
 
 <!-- Page Header -->
@@ -995,6 +1052,21 @@ function toggleTheme() {
     localStorage.setItem('theme', 'dark');
   }
 }
+
+// Mobile Dropdown Toggle
+function toggleDropdown() {
+  const dropdown = document.getElementById('mobileDropdown');
+  dropdown.classList.toggle('active');
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  const dropdown = document.getElementById('mobileDropdown');
+  const menuBtn = document.querySelector('.menu-btn');
+  if (!dropdown.contains(e.target) && !menuBtn.contains(e.target)) {
+    dropdown.classList.remove('active');
+  }
+});
 
 // Category filter
 function filterCategory(cat, btn) {
