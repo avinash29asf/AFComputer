@@ -297,7 +297,9 @@ main {
 .gallery-item img {
   width: 100%;
   height: 220px;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--bg-secondary);
+  padding: 8px;
   display: block;
   transition: transform 0.5s ease;
 }
@@ -725,49 +727,49 @@ footer {
 <main>
   <div class="gallery" id="gallery">
     <div class="gallery-item" data-cat="desktop" onclick="openLightbox(0)">
-      <img src="https://images.unsplash.com/photo-1593642602827-d764f632f42c?w=500&auto=format&fit=crop" alt="Desktop Repair" loading="lazy">
+      <img src="https://avinash29asf.github.io/AFComputer/desktop-repair.jpg" alt="Desktop Repair" loading="lazy">
       <span class="cat-badge">Desktop</span>
       <div class="caption">Desktop Computer Repair</div>
     </div>
     
     <div class="gallery-item" data-cat="laptop" onclick="openLightbox(1)">
-      <img src="https://images.unsplash.com/photo-1580894908361-f9061b1b1aaa?w=500&auto=format&fit=crop" alt="Laptop Repair" loading="lazy">
+      <img src="https://avinash29asf.github.io/AFComputer/laptop-repair.jpg" alt="Laptop Repair" loading="lazy">
       <span class="cat-badge">Laptop</span>
       <div class="caption">Laptop Screen Repair</div>
     </div>
     
     <div class="gallery-item" data-cat="printer" onclick="openLightbox(2)">
-      <img src="https://images.unsplash.com/photo-1612812098893-2f8d8193dd7a?w=500&auto=format&fit=crop" alt="Printer Repair" loading="lazy">
+      <img src="https://avinash29asf.github.io/AFComputer/printer-repair.jpg" alt="Printer Repair" loading="lazy">
       <span class="cat-badge">Printer</span>
       <div class="caption">Printer Maintenance</div>
     </div>
     
     <div class="gallery-item" data-cat="accessory" onclick="openLightbox(3)">
-      <img src="https://images.unsplash.com/photo-1585299382085-4a0f7e27a0b9?w=500&auto=format&fit=crop" alt="Accessories" loading="lazy">
+      <img src="https://avinash29asf.github.io/AFComputer/accessories.jpg" alt="Accessories" loading="lazy">
       <span class="cat-badge">Accessory</span>
       <div class="caption">Computer Accessories</div>
     </div>
     
     <div class="gallery-item" data-cat="network" onclick="openLightbox(4)">
-      <img src="https://images.unsplash.com/photo-1558494684-309-4b4c3b73138a?w=500&auto=format&fit=crop" alt="Networking" loading="lazy">
+      <img src="https://avinash29asf.github.io/AFComputer/networking.jpg" alt="Networking" loading="lazy">
       <span class="cat-badge">Network</span>
       <div class="caption">Network Setup</div>
     </div>
     
     <div class="gallery-item" data-cat="printer" onclick="openLightbox(5)">
-      <img src="https://images.unsplash.com/photo-1612812098893-2f8d8193dd7a?w=500&auto=format&fit=crop" alt="Toner" loading="lazy">
+      <img src="https://avinash29asf.github.io/AFComputer/toner.jpg" alt="Toner" loading="lazy">
       <span class="cat-badge">Printer</span>
       <div class="caption">Toner Replacement</div>
     </div>
     
     <div class="gallery-item" data-cat="laptop" onclick="openLightbox(6)">
-      <img src="https://images.unsplash.com/photo-1603121431237-56c6a9cdf4e1?w=500&auto=format&fit=crop" alt="Gaming Laptop" loading="lazy">
+      <img src="https://avinash29asf.github.io/AFComputer/gaming-laptop.jpg" alt="Gaming Laptop" loading="lazy">
       <span class="cat-badge">Laptop</span>
       <div class="caption">Gaming Laptop Setup</div>
     </div>
     
     <div class="gallery-item" data-cat="desktop" onclick="openLightbox(7)">
-      <img src="https://images.unsplash.com/photo-1580589492822-f1e7bde0c5c4?w=500&auto=format&fit=crop" alt="All-in-One PC" loading="lazy">
+      <img src="https://avinash29asf.github.io/AFComputer/all-in-one-pc.jpg" alt="All-in-One PC" loading="lazy">
       <span class="cat-badge">Desktop</span>
       <div class="caption">All-in-One PC Setup</div>
     </div>
@@ -793,7 +795,7 @@ footer {
       <div class="social-links">
         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://wa.me/917420806178" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/a_f_computer?igsh=MTlpdmxjYnY1cHZs" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       </div>
     </div>
@@ -882,14 +884,14 @@ function filterGallery(cat, btn) {
 
 // Lightbox
 const images = [
-  { src: 'https://images.unsplash.com/photo-1593642602827-d764f632f42c?w=800&auto=format&fit=crop', cap: 'Desktop Computer Repair', cat: 'desktop' },
-  { src: 'https://images.unsplash.com/photo-1580894908361-f9061b1b1aaa?w=800&auto=format&fit=crop', cap: 'Laptop Screen Repair', cat: 'laptop' },
-  { src: 'https://images.unsplash.com/photo-1612812098893-2f8d8193dd7a?w=800&auto=format&fit=crop', cap: 'Printer Maintenance', cat: 'printer' },
-  { src: 'https://images.unsplash.com/photo-1585299382085-4a0f7e27a0b9?w=800&auto=format&fit=crop', cap: 'Computer Accessories', cat: 'accessory' },
-  { src: 'https://images.unsplash.com/photo-1558494684-309-4b4c3b73138a?w=800&auto=format&fit=crop', cap: 'Network Setup', cat: 'network' },
-  { src: 'https://images.unsplash.com/photo-1612812098893-2f8d8193dd7a?w=800&auto=format&fit=crop', cap: 'Toner Replacement', cat: 'printer' },
-  { src: 'https://images.unsplash.com/photo-1603121431237-56c6a9cdf4e1?w=800&auto=format&fit=crop', cap: 'Gaming Laptop Setup', cat: 'laptop' },
-  { src: 'https://images.unsplash.com/photo-1580589492822-f1e7bde0c5c4?w=800&auto=format&fit=crop', cap: 'All-in-One PC Setup', cat: 'desktop' }
+  { src: 'https://avinash29asf.github.io/AFComputer/desktop-repair.jpg', cap: 'Desktop Computer Repair', cat: 'desktop' },
+  { src: 'https://avinash29asf.github.io/AFComputer/laptop-repair.jpg', cap: 'Laptop Screen Repair', cat: 'laptop' },
+  { src: 'https://avinash29asf.github.io/AFComputer/printer-repair.jpg', cap: 'Printer Maintenance', cat: 'printer' },
+  { src: 'https://avinash29asf.github.io/AFComputer/accessories.jpg', cap: 'Computer Accessories', cat: 'accessory' },
+  { src: 'https://avinash29asf.github.io/AFComputer/networking.jpg', cap: 'Network Setup', cat: 'network' },
+  { src: 'https://avinash29asf.github.io/AFComputer/toner.jpg', cap: 'Toner Replacement', cat: 'printer' },
+  { src: 'https://avinash29asf.github.io/AFComputer/gaming-laptop.jpg', cap: 'Gaming Laptop Setup', cat: 'laptop' },
+  { src: 'https://avinash29asf.github.io/AFComputer/all-in-one-pc.jpg', cap: 'All-in-One PC Setup', cat: 'desktop' }
 ];
 
 let current = 0;
