@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://github.com/afcomputer/sitemap.xml
+Sitemap: https://avinash29asf.github.io/AFComputer/sitemap.xml
+
+Disallow: /index_backup.html
