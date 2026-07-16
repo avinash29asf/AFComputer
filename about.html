@@ -4,30 +4,39 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#ff7a00">
-<title>About Us - A F Computer | Pune's Trusted IT Partner</title>
-<meta name="description" content="Learn more about A F Computer, Pune's trusted IT partner for computer repair, laptop sales, and IT support. 5+ years of excellence with two branches in Nigdi and Chikhali.">
-<meta name="keywords" content="about af computer, computer repair company pune, laptop repair company pune, it company pune, af computer nigdi, af computer chikhali, pune computer shop, computer service center pune">
+<meta name="description" content="Learn about A F Computer - Pune's trusted IT partner with 5+ years of excellence in computer repair, laptop sales, and IT support. Two branches in Nigdi & Chikhali.">
+<meta name="keywords" content="about af computer, computer repair company pune, laptop repair company pune, it company pune, af computer nigdi, af computer chikhali, pune computer shop, computer service center pune, about us">
 <meta name="author" content="A F Computer">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="https://avinash29asf.github.io/AFComputer/about.html">
+<link rel="alternate" hreflang="en-IN" href="https://avinash29asf.github.io/AFComputer/about.html">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
 
 <!-- Open Graph -->
 <meta property="og:title" content="About Us - A F Computer | Pune's Trusted IT Partner">
-<meta property="og:description" content="Learn more about A F Computer, Pune's trusted IT partner with 5+ years of excellence. Two branches in Nigdi and Chikhali.">
+<meta property="og:description" content="Learn about A F Computer, Pune's trusted IT partner with 5+ years of excellence. Two branches in Nigdi & Chikhali.">
 <meta property="og:image" content="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:url" content="https://avinash29asf.github.io/AFComputer/about.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="A F Computer">
+<meta property="og:locale" content="en_IN">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@afcomputer">
+<meta name="twitter:creator" content="@afcomputer">
 <meta name="twitter:title" content="About Us - A F Computer | Pune's Trusted IT Partner">
-<meta name="twitter:description" content="5+ years of excellence in computer repair, laptop sales, and IT support. Two branches in Nigdi and Chikhali, Pune.">
+<meta name="twitter:description" content="5+ years of excellence in computer repair, laptop sales, and IT support. Two branches in Nigdi & Chikhali, Pune.">
 <meta name="twitter:image" content="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
+
+<!-- Preconnect for Performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
 <!-- Fonts & Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
@@ -80,7 +89,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Navbar */
 nav {
   position: fixed; top: 0; left: 0; right: 0;
   height: 70px;
@@ -103,13 +111,13 @@ nav {
   background-clip: text;
 }
 
-  .logo-img {
-    height: 50px;
-    width: auto;
-    object-fit: cover;
-    object-position: top;
-    border-radius: 0;
-  }
+.logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 0;
+}
 
 .nav-links {
   display: flex; gap: 32px;
@@ -160,7 +168,8 @@ nav {
 
 .menu-btn { display: none; }
 
-/* Mobile Dropdown Menu */
+.mobile-tabs { display: none; }
+
 .mobile-dropdown {
   display: none;
   position: fixed;
@@ -207,7 +216,6 @@ nav {
   transform: translateX(5px);
 }
 
-/* Page Header */
 .page-header {
   padding: 120px 5% 60px;
   text-align: center;
@@ -253,14 +261,12 @@ nav {
   line-height: 1.7;
 }
 
-/* Main */
 main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 5% 80px;
 }
 
-/* Stats */
 .stats-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -298,7 +304,6 @@ main {
   margin-top: 8px;
 }
 
-/* Story Grid */
 .story-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -343,7 +348,6 @@ main {
 
 .story-card p:last-child { margin-bottom: 0; }
 
-/* Values Grid */
 .values-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -397,7 +401,6 @@ main {
   line-height: 1.5;
 }
 
-/* Section Title */
 .section-title {
   font-family: 'Poppins', sans-serif;
   font-size: 1.6rem;
@@ -413,7 +416,6 @@ main {
 
 .section-title i { color: var(--primary); }
 
-/* Branches */
 .branches-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -473,7 +475,6 @@ main {
 
 .branch-link:hover { gap: 10px; }
 
-/* CTA */
 .cta-banner {
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   border-radius: var(--radius);
@@ -519,7 +520,6 @@ main {
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* Footer */
 footer {
   background: var(--nav-bg);
   backdrop-filter: blur(20px);
@@ -633,10 +633,8 @@ footer {
   font-size: 0.85rem;
 }
 
-/* Mobile Tab Bar (WhatsApp-style direct buttons) */
 .mobile-tabs { display: none; }
 
-/* Responsive */
 @media (max-width: 968px) {
   .story-grid {
     grid-template-columns: 1fr;
@@ -666,7 +664,6 @@ footer {
   .nav-links { display: none; }
   .menu-btn { display: flex; }
 
-  /* WhatsApp-style direct tab buttons inside header */
   .mobile-tabs {
     display: flex;
     flex-basis: 100%;
@@ -745,7 +742,60 @@ footer {
 }
 </style>
 
-<!-- JSON-LD Schema -->
+<!-- JSON-LD Schema - Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "A F Computer",
+  "url": "https://avinash29asf.github.io/AFComputer/",
+  "logo": "https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png",
+  "description": "Computer, laptop and printer repair services in Pune with 5+ years of trusted service",
+  "foundingDate": "2019",
+  "founder": {
+    "@type": "Person",
+    "name": "Avinash"
+  },
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "28, near Bharati Technical Institute, Nigdi Gaothan, Nigdi",
+      "addressLocality": "Pimpri-Chinchwad",
+      "addressRegion": "Maharashtra",
+      "postalCode": "411044",
+      "addressCountry": "IN"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "Shine Square Building, Pingle Road, near Imperial Hospital, Chikhali",
+      "addressLocality": "Pune",
+      "addressRegion": "Maharashtra",
+      "postalCode": "411062",
+      "addressCountry": "IN"
+    }
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+91-7420806178",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Hindi"],
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "10:00",
+        "closes": "20:00"
+      }
+    }
+  ],
+  "sameAs": [
+    "https://wa.me/917420806178",
+    "https://www.instagram.com/a_f_computer?igsh=MTlpdmxjYnY1cHZs"
+  ]
+}
+</script>
+
+<!-- JSON-LD Schema - LocalBusiness -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -794,11 +844,56 @@ footer {
     }
   ],
   "priceRange": "₹₹",
-  "url": "https://avinash29asf.github.io/AFComputer/"
+  "url": "https://avinash29asf.github.io/AFComputer/",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "500"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "18.6650074",
+    "longitude": "73.7756536"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Pune"
+  }
 }
 </script>
 
-<!-- Breadcrumb Schema -->
+<!-- JSON-LD Schema - AboutPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About A F Computer",
+  "description": "Learn about A F Computer, Pune's trusted IT partner with 5+ years of excellence in computer repair, laptop sales, and IT support.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "A F Computer",
+    "foundingDate": "2019",
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "28, near Bharati Technical Institute, Nigdi Gaothan, Nigdi",
+        "addressLocality": "Pimpri-Chinchwad",
+        "addressRegion": "Maharashtra",
+        "postalCode": "411044"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Shine Square Building, Pingle Road, near Imperial Hospital, Chikhali",
+        "addressLocality": "Pune",
+        "addressRegion": "Maharashtra",
+        "postalCode": "411062"
+      }
+    ]
+  }
+}
+</script>
+
+<!-- JSON-LD Schema - Breadcrumb -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -823,36 +918,38 @@ footer {
 <body>
 
 <!-- Navbar -->
-<nav aria-label="Main navigation">
-  <img src="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png" alt="A F Computer Logo" class="logo-img">
+<nav aria-label="Main navigation" role="navigation">
+  <img src="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png" alt="A F Computer Logo" class="logo-img" width="50" height="50">
   <div class="nav-links">
     <a href="index.html">Home</a>
+    <a href="about.html" aria-current="page">About</a>
     <a href="services.html">Services</a>
     <a href="product.html">Products</a>
     <a href="gallery.html">Gallery</a>
+    <a href="faq.html">FAQ</a>
     <a href="contact.html">Contact</a>
-    <a href="about.html">About</a>
   </div>
   <div class="nav-actions">
-    <div class="nav-btn theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+    <div class="nav-btn theme-btn" onclick="toggleTheme()" aria-label="Toggle theme" role="button" tabindex="0">
       <i class="fas fa-moon" id="theme-icon"></i>
     </div>
-    <div class="nav-btn menu-btn" onclick="toggleDropdown()" aria-label="Menu">
+    <div class="nav-btn menu-btn" onclick="toggleDropdown()" aria-label="Menu" role="button" tabindex="0" aria-expanded="false">
       <i class="fas fa-bars"></i>
     </div>
   </div>
   
   <!-- Mobile Dropdown Menu -->
-  <div class="mobile-dropdown" id="mobileDropdown">
+  <div class="mobile-dropdown" id="mobileDropdown" aria-hidden="true">
     <a href="index.html" class="mobile-dropdown-item">Home</a>
     <a href="about.html" class="mobile-dropdown-item">About</a>
     <a href="services.html" class="mobile-dropdown-item">Services</a>
     <a href="product.html" class="mobile-dropdown-item">Products</a>
     <a href="gallery.html" class="mobile-dropdown-item">Gallery</a>
+    <a href="faq.html" class="mobile-dropdown-item">FAQ</a>
     <a href="contact.html" class="mobile-dropdown-item">Contact</a>
   </div>
 
-  <!-- Mobile Tab Bar (WhatsApp-style direct buttons) -->
+  <!-- Mobile Tab Bar -->
   <div class="mobile-tabs">
     <a href="index.html"><i class="fas fa-home"></i><span>Home</span></a>
     <a href="services.html"><i class="fas fa-tools"></i><span>Services</span></a>
@@ -869,7 +966,7 @@ footer {
     <i class="fas fa-building"></i> Our Story
   </div>
   <h1>About <span>A F Computer</span></h1>
-  <p>Pune's trusted IT partner — serving homes, schools and businesses for 5+ years across Nigdi and Chikhali.</p>
+  <p>Pune's trusted IT partner — serving homes, schools and businesses for 5+ years across Nigdi and Chikhali with expert <strong>computer repair</strong> and IT solutions.</p>
 </div>
 
 <main>
@@ -897,10 +994,9 @@ footer {
   <div class="story-grid">
     <div class="story-card">
       <h2><i class="fas fa-building"></i> Who We Are</h2>
-      <p>A F Computer is a trusted name in computer hardware, software, and IT services based in Pune. We specialize in expert support for desktops, laptops, printers, and all computer-related accessories.</p>
-      <p>Our services cover hardware repair, software installation, system upgrades, networking, and firewall configuration. We also deal in sales of new and refurbished laptops, desktops, printers, and accessories at competitive prices.</p>
-      <p>With a reputation for quick response, honest advice, and quality work, we proudly serve home users, small businesses, schools and organizations with complete IT solutions.</p>
-      <p>We now operate from <strong style="color:var(--primary);">two convenient branches</strong> — Nigdi (Pimpri-Chinchwad) and Chikhali (Pune) — making quality IT support accessible to more customers across the city.</p>
+      <p>A F Computer is a trusted name in <strong>computer repair in Pune</strong>, specializing in expert support for desktops, laptops, printers, and all computer-related accessories. We provide comprehensive IT solutions including <a href="services.html">laptop repair</a>, desktop repair, printer repair, and networking services.</p>
+      <p>Our services cover hardware repair, software installation, system upgrades, networking, and firewall configuration. We also deal in sales of new and refurbished laptops, desktops, printers, and accessories at competitive prices in Pune.</p>
+      <p>With a reputation for quick response, honest advice, and quality work, we proudly serve home users, small businesses, schools and organizations with complete IT solutions. We now operate from <strong style="color:var(--primary);">two convenient branches</strong> — Nigdi (Pimpri-Chinchwad) and Chikhali (Pune).</p>
     </div>
     
     <div class="values-grid">
@@ -943,21 +1039,33 @@ footer {
   </div>
   
   <div class="branches-grid">
-    <div class="branch-card">
-      <h3><i class="fas fa-store"></i> Nigdi Branch</h3>
-      <p>28, near Bharati Technical Institute, Nigdi Gaothan, Nigdi, Pimpri-Chinchwad, Maharashtra – 411044</p>
-      <p><i class="fas fa-phone" style="color:var(--primary);margin-right:6px;"></i><a href="tel:7420806178">7420806178</a></p>
-      <a href="https://www.google.com/maps/place/A+F+Computer/@18.6650074,73.7756536,15z" target="_blank" class="branch-link" rel="noopener">
-        <i class="fas fa-map-marker-alt"></i> View on Google Maps
+    <div class="branch-card" itemscope itemtype="https://schema.org/Place">
+      <h3 itemprop="name"><i class="fas fa-store" aria-hidden="true"></i> Nigdi Branch</h3>
+      <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <span itemprop="streetAddress">28, near Bharati Technical Institute, Nigdi Gaothan, Nigdi</span>,
+        <span itemprop="addressLocality">Pimpri-Chinchwad</span>,
+        <span itemprop="addressRegion">Maharashtra</span> –
+        <span itemprop="postalCode">411044</span>
+      </p>
+      <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:7420806178">7420806178</a></p>
+      <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a></p>
+      <a class="branch-link" href="https://www.google.com/maps/place/A+F+Computer/@18.6650074,73.7756536,15z" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i> View on Google Maps
       </a>
     </div>
     
-    <div class="branch-card">
-      <h3><i class="fas fa-store"></i> Chikhali Branch</h3>
-      <p>Shine Square Building, Pingle Road, near Imperial Hospital, Chikhali, Vitthal Nagar, Pune – 411062</p>
-      <p><i class="fas fa-phone" style="color:var(--primary);margin-right:6px;"></i><a href="tel:7420806178">7420806178</a></p>
-      <a href="https://www.google.com/maps/search/A+F+Computer+Shine+Square+Pingle+Road+Chikhali+Pune" target="_blank" class="branch-link" rel="noopener">
-        <i class="fas fa-map-marker-alt"></i> View on Google Maps
+    <div class="branch-card" itemscope itemtype="https://schema.org/Place">
+      <h3 itemprop="name"><i class="fas fa-store" aria-hidden="true"></i> Chikhali Branch</h3>
+      <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <span itemprop="streetAddress">Shine Square Building, Pingle Road, near Imperial Hospital, Chikhali</span>,
+        <span itemprop="addressLocality">Pune</span>,
+        <span itemprop="addressRegion">Maharashtra</span> –
+        <span itemprop="postalCode">411062</span>
+      </p>
+      <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:7420806178">7420806178</a></p>
+      <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a></p>
+      <a class="branch-link" href="https://www.google.com/maps/search/A+F+Computer+Shine+Square+Pingle+Road+Chikhali+Pune" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i> View on Google Maps
       </a>
     </div>
   </div>
@@ -975,15 +1083,15 @@ footer {
 </main>
 
 <!-- Footer -->
-<footer>
+<footer role="contentinfo">
   <div class="footer-content">
     <div class="footer-brand">
       <div class="footer-logo">A F Computer</div>
-      <p class="footer-desc">Your trusted partner for computer repair, laptop sales, and IT services in Pune. Quality service, affordable prices, and expert support.</p>
+      <p class="footer-desc">Your trusted partner for <strong>computer repair in Pune</strong>, laptop sales, and IT services. Quality service, affordable prices, and expert support since 2019.</p>
       <div class="social-links">
+        <a href="https://wa.me/917420806178" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/a_f_computer?igsh=MTlpdmxjYnY1cHZs" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://wa.me/917420806178" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.instagram.com/a_f_computer?igsh=MTlpdmxjYnY1cHZs" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       </div>
     </div>
@@ -992,34 +1100,42 @@ footer {
       <h4>Quick Links</h4>
       <ul class="footer-links">
         <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="product.html">Products</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </div>
     
     <div class="footer-col">
-      <h4>Services</h4>
+      <h4>Our Services</h4>
       <ul class="footer-links">
-        <li><a href="#">Laptop Repair</a></li>
-        <li><a href="#">Desktop Services</a></li>
-        <li><a href="#">Printer Solutions</a></li>
-        <li><a href="#">Data Recovery</a></li>
+        <li><a href="services.html">Computer Repair Pune</a></li>
+        <li><a href="services.html">Laptop Repair Pune</a></li>
+        <li><a href="services.html">Printer Repair Pune</a></li>
+        <li><a href="services.html">Desktop Repair Pune</a></li>
+        <li><a href="services.html">Networking Services Pune</a></li>
+        <li><a href="services.html">CCTV Installation Pune</a></li>
+        <li><a href="services.html">Computer AMC Pune</a></li>
       </ul>
     </div>
     
     <div class="footer-col">
       <h4>Contact Info</h4>
       <div class="footer-contact">
-        <p><i class="fas fa-phone"></i> +91 7420806178</p>
-        <p><i class="fas fa-envelope"></i> avinash29asf@gmail.com</p>
-        <p><i class="fas fa-clock"></i> Mon-Sat: 10AM - 8PM</p>
+        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:7420806178">+91 7420806178</a></p>
+        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a></p>
+        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Nigdi & Chikhali, Pune</p>
+        <p><i class="fas fa-clock" aria-hidden="true"></i> Mon-Sat: 10AM - 8PM</p>
       </div>
     </div>
   </div>
   
   <div class="footer-bottom">
-    &copy; 2025 A F Computer. All rights reserved.
+    <p>&copy; 2025 <a href="index.html">A F Computer</a>. All rights reserved. | <a href="about.html">About Us</a> | <a href="contact.html">Contact</a></p>
+    <p style="margin-top: 8px;"><strong>Computer Repair Pune</strong> | <strong>Laptop Repair Pune</strong> | <strong>Printer Repair Pune</strong> | <strong>Desktop Repair Pune</strong></p>
   </div>
 </footer>
 
@@ -1045,7 +1161,11 @@ function toggleTheme() {
 // Mobile Dropdown Toggle
 function toggleDropdown() {
   const dropdown = document.getElementById('mobileDropdown');
+  const menuBtn = document.querySelector('.menu-btn');
   dropdown.classList.toggle('active');
+  const isExpanded = dropdown.classList.contains('active');
+  menuBtn.setAttribute('aria-expanded', isExpanded);
+  dropdown.setAttribute('aria-hidden', !isExpanded);
 }
 
 // Close dropdown when clicking outside
@@ -1054,6 +1174,8 @@ document.addEventListener('click', function(e) {
   const menuBtn = document.querySelector('.menu-btn');
   if (!dropdown.contains(e.target) && !menuBtn.contains(e.target)) {
     dropdown.classList.remove('active');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    dropdown.setAttribute('aria-hidden', 'true');
   }
 });
 
@@ -1069,6 +1191,16 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.story-card, .value-item, .branch-card').forEach(el => {
   observer.observe(el);
+});
+
+// Keyboard accessibility
+document.querySelectorAll('.nav-btn').forEach(btn => {
+  btn.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      btn.click();
+    }
+  });
 });
 </script>
 

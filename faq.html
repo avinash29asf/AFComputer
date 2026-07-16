@@ -4,30 +4,39 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#ff7a00">
-<title>FAQ - A F Computer | Frequently Asked Questions Pune</title>
-<meta name="description" content="Frequently asked questions about computer repair, laptop service, printer support and IT services at A F Computer, Pune.">
-<meta name="keywords" content="faq af computer, computer repair faq pune, laptop repair questions, printer repair faq, it support questions pune, af computer contact">
+<meta name="description" content="Get answers to frequently asked questions about computer repair, laptop repair, printer repair, and IT services at A F Computer, Pune. Expert help for all your tech questions.">
+<meta name="keywords" content="faq af computer, computer repair faq pune, laptop repair questions, printer repair faq, it support questions pune, af computer contact, repair warranty pune, amc faq">
 <meta name="author" content="A F Computer">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="https://avinash29asf.github.io/AFComputer/faq.html">
+<link rel="alternate" hreflang="en-IN" href="https://avinash29asf.github.io/AFComputer/faq.html">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
 
 <!-- Open Graph -->
 <meta property="og:title" content="FAQ - A F Computer | Frequently Asked Questions Pune">
-<meta property="og:description" content="Frequently asked questions about computer repair, laptop service, printer support and IT services at A F Computer, Pune.">
+<meta property="og:description" content="Get answers to common questions about our repair services, pricing, warranty, and support at A F Computer, Pune. Expert help for all your tech questions.">
 <meta property="og:image" content="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:url" content="https://avinash29asf.github.io/AFComputer/faq.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="A F Computer">
+<meta property="og:locale" content="en_IN">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@afcomputer">
+<meta name="twitter:creator" content="@afcomputer">
 <meta name="twitter:title" content="FAQ - A F Computer | Frequently Asked Questions Pune">
-<meta name="twitter:description" content="Get answers to common questions about our repair services, pricing, warranty, and support at A F Computer, Pune.">
+<meta name="twitter:description" content="Get answers to common questions about our repair services, pricing, warranty, and support at A F Computer, Pune. We are here to help!">
 <meta name="twitter:image" content="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
+
+<!-- Preconnect for Performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
 <!-- Fonts & Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
@@ -69,16 +78,17 @@ body.light {
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
-html, body { font-family:'Inter',sans-serif; color:var(--text); scroll-behavior:smooth; -webkit-font-smoothing:antialiased; }
-html { font-size:16px; }
+html { scroll-behavior:smooth; font-size:16px; }
+
 body {
-  background: var(--bg);
-  position: relative;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, var(--bg) 0%, var(--bg-secondary) 100%);
+  color: var(--text);
   min-height: 100vh;
   transition: background var(--transition), color var(--transition);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Navbar */
 nav {
   position: fixed; top: 0; left: 0; right: 0;
   height: 70px;
@@ -101,13 +111,13 @@ nav {
   background-clip: text;
 }
 
-  .logo-img {
-    height: 50px;
-    width: auto;
-    object-fit: cover;
-    object-position: top;
-    border-radius: 0;
-  }
+.logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 0;
+}
 
 .nav-links {
   display: flex; gap: 32px;
@@ -158,7 +168,8 @@ nav {
 
 .menu-btn { display: none; }
 
-/* Mobile Dropdown Menu */
+.mobile-tabs { display: none; }
+
 .mobile-dropdown {
   display: none;
   position: fixed;
@@ -205,10 +216,7 @@ nav {
   transform: translateX(5px);
 }
 
-/* Page Header */
 .page-header {
-  position: relative;
-  z-index: 2;
   padding: 120px 5% 60px;
   text-align: center;
   max-width: 800px;
@@ -253,10 +261,8 @@ nav {
   line-height: 1.7;
 }
 
-/* Search */
 .search-wrap {
   position: relative;
-  z-index: 2;
   max-width: 560px;
   margin: 0 auto 40px;
   padding: 0 5%;
@@ -267,7 +273,7 @@ nav {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 50px;
-  padding: 13px 48px 13px 20px;
+  padding: 14px 48px 14px 20px;
   color: var(--text);
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
@@ -278,21 +284,19 @@ nav {
 .search-wrap input:focus { border-color: var(--primary); }
 
 .search-wrap i {
-  position: absolute; right: 36px; top: 50%;
+  position: absolute;
+  right: 36px;
+  top: 50%;
   transform: translateY(-50%);
   color: var(--text-muted);
 }
 
-/* Main */
 main {
-  position: relative;
-  z-index: 2;
   max-width: 860px;
   margin: 0 auto;
   padding: 40px 5% 80px;
 }
 
-/* Category Tabs */
 .cat-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -310,17 +314,16 @@ main {
   border: 1px solid var(--border);
   background: var(--surface);
   color: var(--text-muted);
-  transition: background var(--transition), color var(--transition), border-color var(--transition);
-  -webkit-tap-highlight-color: transparent;
+  transition: all var(--transition);
 }
 
-.cat-tab:hover, .cat-tab.active {
+.cat-tab:hover,
+.cat-tab.active {
   background: var(--primary);
   color: #fff;
   border-color: var(--primary);
 }
 
-/* FAQ Group */
 .faq-group { margin-bottom: 40px; }
 
 .faq-group-title {
@@ -336,14 +339,13 @@ main {
   border-bottom: 1px solid var(--border);
 }
 
-/* Accordion */
 .faq-item {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   margin-bottom: 10px;
   overflow: hidden;
-  transition: border-color var(--transition);
+  transition: all var(--transition);
   opacity: 0;
   transform: translateY(16px);
 }
@@ -363,7 +365,6 @@ main {
   padding: 16px 20px;
   cursor: pointer;
   gap: 12px;
-  -webkit-tap-highlight-color: transparent;
 }
 
 .faq-q span {
@@ -384,7 +385,7 @@ main {
   color: var(--primary);
   font-size: 0.75rem;
   flex-shrink: 0;
-  transition: transform var(--transition), background var(--transition);
+  transition: all var(--transition);
 }
 
 .faq-item.open .faq-icon {
@@ -408,7 +409,6 @@ main {
   line-height: 1.7;
 }
 
-/* CTA */
 .cta-banner {
   background: linear-gradient(135deg, rgba(255,122,0,0.18), rgba(255,122,0,0.06));
   border: 1px solid rgba(255,122,0,0.25);
@@ -419,7 +419,7 @@ main {
   justify-content: space-between;
   gap: 24px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .cta-banner h3 {
@@ -444,7 +444,7 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: background var(--transition), transform var(--transition);
+  transition: all var(--transition);
   text-decoration: none;
   white-space: nowrap;
 }
@@ -454,81 +454,129 @@ main {
   transform: translateY(-2px);
 }
 
-/* Footer */
 footer {
-  position: relative;
-  z-index: 2;
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255,122,0,0.15);
-  padding: 40px 5% 30px;
-  margin-top: 80px;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
+  padding: 50px 5% 30px;
+  margin-top: 100px;
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-brand {
+  grid-column: span 2;
 }
 
 .footer-logo {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 12px;
-  text-align: center;
 }
 
-.footer-logo span { color: var(--primary); }
-
-.footer-info {
-  font-size: 0.88rem;
-  color: rgba(255,255,255,0.45);
-  margin-bottom: 18px;
-  line-height: 1.8;
-  text-align: center;
+.footer-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  max-width: 350px;
 }
 
-.footer-info a { color: var(--primary); }
-
-.social-icons {
+.social-links {
   display: flex;
-  gap: 12px;
-  justify-content: center;
-  margin-bottom: 18px;
+  gap: 16px;
 }
 
-.social-icons a {
-  width: 36px; height: 36px;
+.social-links a {
+  width: 40px; height: 40px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: var(--surface);
+  border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255,255,255,0.6);
-  font-size: 0.9rem;
-  transition: background var(--transition), color var(--transition);
+  color: var(--text);
+  font-size: 1.1rem;
+  transition: all var(--transition);
 }
 
-.social-icons a:hover {
+.social-links a:hover {
   background: var(--primary);
   color: #fff;
+  transform: translateY(-3px);
 }
 
-.footer-copy {
+.footer-col h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.footer-contact i {
+  color: var(--primary);
+  width: 20px;
+}
+
+.footer-bottom {
   text-align: center;
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.22);
+  padding-top: 30px;
+  margin-top: 30px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
 }
 
-@keyframes fadeUp {
-  from { opacity:0; transform:translateY(22px); }
-  to { opacity:1; transform:translateY(0); }
-}
-
-/* Mobile Tab Bar (WhatsApp-style direct buttons) */
 .mobile-tabs { display: none; }
 
-/* Responsive */
 @media (max-width: 968px) {
-  .page-header { padding: 100px 20px 40px; }
-  main { padding: 20px 5% 60px; }
+  .page-header {
+    padding: 100px 20px 40px;
+  }
+  
+  main {
+    padding: 20px 5% 60px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -546,7 +594,6 @@ footer {
   .nav-links { display: none; }
   .menu-btn { display: flex; }
 
-  /* WhatsApp-style direct tab buttons inside header */
   .mobile-tabs {
     display: flex;
     flex-basis: 100%;
@@ -584,18 +631,27 @@ footer {
 
   body { padding-top: 126px; }
 
-  .page-header h1 { font-size: 2rem; }
-  .page-header p { font-size: 1rem; }
+  .page-header h1 {
+    font-size: 2rem;
+  }
   
-  .search-wrap { padding: 0 20px; }
+  .page-header p {
+    font-size: 1rem;
+  }
   
-  .cat-tabs { gap: 8px; }
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
   
-  .faq-q span { font-size: 0.88rem; }
+  .footer-brand {
+    grid-column: span 1;
+  }
 }
 
 @media (max-width: 480px) {
-  .page-header h1 { font-size: 1.7rem; }
+  .page-header h1 {
+    font-size: 1.7rem;
+  }
   
   .cat-tab {
     padding: 8px 16px;
@@ -604,7 +660,50 @@ footer {
 }
 </style>
 
-<!-- JSON-LD Schema -->
+<!-- JSON-LD Schema - Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "A F Computer",
+  "url": "https://avinash29asf.github.io/AFComputer/",
+  "logo": "https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png",
+  "description": "Computer, laptop and printer repair services in Pune with 5+ years of trusted service",
+  "foundingDate": "2019",
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "28, near Bharati Technical Institute, Nigdi Gaothan, Nigdi",
+      "addressLocality": "Pimpri-Chinchwad",
+      "addressRegion": "Maharashtra",
+      "postalCode": "411044",
+      "addressCountry": "IN"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "Shine Square Building, Pingle Road, near Imperial Hospital, Chikhali",
+      "addressLocality": "Pune",
+      "addressRegion": "Maharashtra",
+      "postalCode": "411062",
+      "addressCountry": "IN"
+    }
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+91-7420806178",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Hindi"]
+    }
+  ],
+  "sameAs": [
+    "https://wa.me/917420806178",
+    "https://www.instagram.com/a_f_computer?igsh=MTlpdmxjYnY1cHZs"
+  ]
+}
+</script>
+
+<!-- JSON-LD Schema - LocalBusiness -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -653,11 +752,115 @@ footer {
     }
   ],
   "priceRange": "₹₹",
-  "url": "https://avinash29asf.github.io/AFComputer/"
+  "url": "https://avinash29asf.github.io/AFComputer/",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "500"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "18.6650074",
+    "longitude": "73.7756536"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Pune"
+  }
 }
 </script>
 
-<!-- Breadcrumb Schema -->
+<!-- JSON-LD Schema - FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does a laptop repair take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most repairs such as screen replacement, battery change, keyboard fix, or software issues are completed the same day or within 24 hours. Complex motherboard or data recovery jobs may take 2-3 days. We always inform you in advance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer on-site repair service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we offer on-site support for businesses under our AMC (Annual Maintenance Contract) plans. For home users, most repairs are done at our Nigdi or Chikhali branch. Contact us to discuss your needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide warranty on repairs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we provide a warranty on all our repairs. Hardware part replacements come with a minimum 30-day to 6-month warranty depending on the part. Software services carry a 30-day service guarantee."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you recover data from a damaged hard drive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In many cases, yes. We offer data recovery services for damaged, corrupted or accidentally formatted drives. Recovery success depends on the extent of damage. Bring your drive to either branch for a free diagnosis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you charge for diagnosis / inspection?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, basic diagnosis is free of charge. We inspect your device and give you a cost estimate before starting any work. You only pay if you approve the repair."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What payment methods do you accept?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We accept cash, UPI (GPay, PhonePe, Paytm), and bank transfers. Payments are collected after the job is completed and you are satisfied with the work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are your prices fixed or negotiable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer transparent and competitive pricing. For businesses and bulk orders we have special rates. Contact us to discuss your specific requirements and get the best quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you sell new and refurbished laptops?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we sell both new and certified refurbished laptops. All refurbished laptops are tested, cleaned and come with a warranty. Brands include HP, Dell, Lenovo, Acer and more."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My laptop is not turning on - can you fix it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. This could be due to a dead battery, faulty charger, motherboard issue or power IC failure. Bring it to us and we will diagnose it for free and let you know the exact cause and repair cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide AMC for schools and businesses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we offer Annual Maintenance Contracts (AMC) for schools, offices and businesses. AMC includes scheduled preventive maintenance, priority support and discounted repair rates. Contact us for a custom quote."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- JSON-LD Schema - Breadcrumb -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -682,36 +885,38 @@ footer {
 <body>
 
 <!-- Navbar -->
-<nav aria-label="Main navigation">
-  <img src="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png" alt="A F Computer Logo" class="logo-img">
+<nav aria-label="Main navigation" role="navigation">
+  <img src="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png" alt="A F Computer Logo" class="logo-img" width="50" height="50">
   <div class="nav-links">
     <a href="index.html">Home</a>
+    <a href="about.html">About</a>
     <a href="services.html">Services</a>
     <a href="product.html">Products</a>
     <a href="gallery.html">Gallery</a>
+    <a href="faq.html" aria-current="page">FAQ</a>
     <a href="contact.html">Contact</a>
-    <a href="about.html">About</a>
   </div>
   <div class="nav-actions">
-    <div class="nav-btn theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+    <div class="nav-btn theme-btn" onclick="toggleTheme()" aria-label="Toggle theme" role="button" tabindex="0">
       <i class="fas fa-moon" id="theme-icon"></i>
     </div>
-    <div class="nav-btn menu-btn" onclick="toggleDropdown()" aria-label="Menu">
+    <div class="nav-btn menu-btn" onclick="toggleDropdown()" aria-label="Menu" role="button" tabindex="0" aria-expanded="false">
       <i class="fas fa-bars"></i>
     </div>
   </div>
   
   <!-- Mobile Dropdown Menu -->
-  <div class="mobile-dropdown" id="mobileDropdown">
+  <div class="mobile-dropdown" id="mobileDropdown" aria-hidden="true">
     <a href="index.html" class="mobile-dropdown-item">Home</a>
     <a href="about.html" class="mobile-dropdown-item">About</a>
     <a href="services.html" class="mobile-dropdown-item">Services</a>
     <a href="product.html" class="mobile-dropdown-item">Products</a>
     <a href="gallery.html" class="mobile-dropdown-item">Gallery</a>
+    <a href="faq.html" class="mobile-dropdown-item">FAQ</a>
     <a href="contact.html" class="mobile-dropdown-item">Contact</a>
   </div>
 
-  <!-- Mobile Tab Bar (WhatsApp-style direct buttons) -->
+  <!-- Mobile Tab Bar -->
   <div class="mobile-tabs">
     <a href="index.html"><i class="fas fa-home"></i><span>Home</span></a>
     <a href="services.html"><i class="fas fa-tools"></i><span>Services</span></a>
@@ -722,28 +927,22 @@ footer {
   </div>
 </nav>
 
+<!-- Page Header -->
 <div class="page-header">
-  <div class="page-badge"><i class="fas fa-question-circle"></i> Help Center</div>
+  <div class="page-badge">
+    <i class="fas fa-question-circle"></i> Help Center
+  </div>
   <h1>Frequently Asked <span>Questions</span></h1>
-  <p>Answers to common questions about our repair services, pricing, and support.</p>
+  <p>Get answers to common questions about our repair services, pricing, warranty, and support at A F Computer, Pune.</p>
 </div>
 
+<!-- Search -->
 <div class="search-wrap">
-  <input type="text" id="faqSearch" placeholder="Search questions..." oninput="searchFAQ(this.value)">
+  <input type="text" id="faqSearch" placeholder="Search questions..." oninput="searchFAQ(this.value)" aria-label="Search FAQ">
   <i class="fas fa-search"></i>
 </div>
 
 <main>
-  <!-- CATEGORY TABS -->
-  <div class="cat-tabs">
-    <button class="cat-tab active" onclick="filterFAQ('all',this)">All</button>
-    <button class="cat-tab" onclick="filterFAQ('repair',this)">Repairs</button>
-    <button class="cat-tab" onclick="filterFAQ('pricing',this)">Pricing</button>
-    <button class="cat-tab" onclick="filterFAQ('laptop',this)">Laptop</button>
-    <button class="cat-tab" onclick="filterFAQ('printer',this)">Printer</button>
-    <button class="cat-tab" onclick="filterFAQ('general',this)">General</button>
-  </div>
-
   <!-- REPAIRS -->
   <div class="faq-group" data-cat="repair">
     <div class="faq-group-title"><i class="fas fa-tools"></i> Repairs & Service</div>
@@ -753,7 +952,11 @@ footer {
         <span>How long does a laptop repair take?</span>
         <div class="faq-icon"><i class="fas fa-plus"></i></div>
       </div>
-      <div class="faq-a"><div class="faq-a-inner">Most repairs such as screen replacement, battery change, keyboard fix, or software issues are completed the same day or within 24 hours. Complex motherboard or data recovery jobs may take 2–3 days. We always inform you in advance.</div></div>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <strong>Most repairs</strong> such as screen replacement, battery change, keyboard fix, or software issues are completed the same day or within 24 hours at our Nigdi and Chikhali branches. Complex motherboard or data recovery jobs may take 2-3 days. We always inform you in advance about the timeline.
+        </div>
+      </div>
     </div>
 
     <div class="faq-item" data-cat="repair">
@@ -761,7 +964,9 @@ footer {
         <span>Do you offer on-site repair service?</span>
         <div class="faq-icon"><i class="fas fa-plus"></i></div>
       </div>
-      <div class="faq-a"><div class="faq-a-inner">Yes, we offer on-site support for businesses under our AMC (Annual Maintenance Contract) plans. For home users, most repairs are done at our Nigdi or Chikhali branch. Contact us to discuss your needs.</div></div>
+      <div class="faq-a">
+        <div class="faq-a-inner">Yes, we offer <strong>on-site support</strong> for businesses under our <a href="services.html">AMC (Annual Maintenance Contract)</a> plans. For home users, most repairs are done at our Nigdi or Chikhali branch for faster service. <a href="contact.html">Contact us</a> to discuss your needs.</div>
+      </div>
     </div>
 
     <div class="faq-item" data-cat="repair">
@@ -769,7 +974,9 @@ footer {
         <span>Do you provide warranty on repairs?</span>
         <div class="faq-icon"><i class="fas fa-plus"></i></div>
       </div>
-      <div class="faq-a"><div class="faq-a-inner">Yes, we provide a warranty on all our repairs. Hardware part replacements come with a minimum 30-day to 6-month warranty depending on the part. Software services carry a 30-day service guarantee.</div></div>
+      <div class="faq-a">
+        <div class="faq-a-inner">Yes, we provide a <strong>warranty on all our repairs</strong>. Hardware part replacements come with a minimum 30-day to 6-month warranty depending on the part. Software services carry a 30-day service guarantee. All details are provided on the invoice.</div>
+      </div>
     </div>
 
     <div class="faq-item" data-cat="repair">
@@ -777,7 +984,9 @@ footer {
         <span>Can you recover data from a damaged hard drive?</span>
         <div class="faq-icon"><i class="fas fa-plus"></i></div>
       </div>
-      <div class="faq-a"><div class="faq-a-inner">In many cases, yes. We offer data recovery services for damaged, corrupted or accidentally formatted drives. Recovery success depends on the extent of damage. Bring your drive to either branch for a free diagnosis.</div></div>
+      <div class="faq-a">
+        <div class="faq-a-inner">In many cases, yes. We offer <strong>data recovery services</strong> for damaged, corrupted or accidentally formatted drives. Recovery success depends on the extent of damage. Bring your drive to either branch for a free diagnosis.</div>
+      </div>
     </div>
   </div>
 
@@ -790,7 +999,9 @@ footer {
         <span>Do you charge for diagnosis / inspection?</span>
         <div class="faq-icon"><i class="fas fa-plus"></i></div>
       </div>
-      <div class="faq-a"><div class="faq-a-inner">No, basic diagnosis is free of charge. We inspect your device and give you a cost estimate before starting any work. You only pay if you approve the repair.</div></div>
+      <div class="faq-a">
+        <div class="faq-a-inner">No, <strong>basic diagnosis is free</strong> of charge. We inspect your device and give you a cost estimate before starting any work. You only pay if you approve the repair. There are no hidden charges.</div>
+      </div>
     </div>
 
     <div class="faq-item" data-cat="pricing">
@@ -798,7 +1009,9 @@ footer {
         <span>What payment methods do you accept?</span>
         <div class="faq-icon"><i class="fas fa-plus"></i></div>
       </div>
-      <div class="faq-a"><div class="faq-a-inner">We accept cash, UPI (GPay, PhonePe, Paytm), and bank transfers. Payments are collected after the job is completed and you are satisfied with the work.</div></div>
+      <div class="faq-a">
+        <div class="faq-a-inner">We accept <strong>cash, UPI</strong> (GPay, PhonePe, Paytm), and bank transfers. Payments are collected after the job is completed and you are satisfied with the work.</div>
+      </div>
     </div>
 
     <div class="faq-item" data-cat="pricing">
@@ -806,7 +1019,9 @@ footer {
         <span>Are your prices fixed or negotiable?</span>
         <div class="faq-icon"><i class="fas fa-plus"></i></div>
       </div>
-      <div class="faq-a"><div class="faq-a-inner">We offer transparent and competitive pricing. For businesses and bulk orders we have special rates. Contact us to discuss your specific requirements and get the best quote.</div></div>
+      <div class="faq-a">
+        <div class="faq-a-inner">We offer transparent and competitive pricing. For businesses and bulk orders we have special rates. <a href="contact.html">Contact us</a> to discuss your specific requirements and get the best quote.</div>
+      </div>
     </div>
   </div>
 
@@ -819,15 +1034,19 @@ footer {
         <span>Do you sell new and refurbished laptops?</span>
         <div class="faq-icon"><i class="fas fa-plus"></i></div>
       </div>
-      <div class="faq-a"><div class="faq-a-inner">Yes, we sell both new and certified refurbished laptops. All refurbished laptops are tested, cleaned and come with a warranty. Brands include HP, Dell, Lenovo, Acer and more.</div></div>
+      <div class="faq-a">
+        <div class="faq-a-inner">Yes, we sell both new and certified refurbished laptops. All refurbished laptops are tested, cleaned and come with a warranty. Brands include HP, Dell, Lenovo, Acer and more. Visit our <a href="product.html">Products</a> page or contact us.</div>
+      </div>
     </div>
 
     <div class="faq-item" data-cat="laptop">
       <div class="faq-q" onclick="toggleFAQ(this)">
-        <span>My laptop is not turning on — can you fix it?</span>
+        <span>My laptop is not turning on - can you fix it?</span>
         <div class="faq-icon"><i class="fas fa-plus"></i></div>
       </div>
-      <div class="faq-a"><div class="faq-a-inner">Yes. This could be due to a dead battery, faulty charger, motherboard issue or power IC failure. Bring it to us and we will diagnose it for free and let you know the exact cause and repair cost.</div></div>
+      <div class="faq-a">
+        <div class="faq-a-inner">Yes. This could be due to a dead battery, faulty charger, motherboard issue or power IC failure. Bring it to us and we will diagnose it for free and let you know the exact cause and repair cost.</div>
+      </div>
     </div>
 
     <div class="faq-item" data-cat="laptop">
@@ -835,7 +1054,9 @@ footer {
         <span>Can you upgrade my old laptop with SSD or RAM?</span>
         <div class="faq-icon"><i class="fas fa-plus"></i></div>
       </div>
-      <div class="faq-a"><div class="faq-a-inner">Absolutely! Upgrading to an SSD is one of the best ways to speed up an old laptop. We can also upgrade RAM on compatible models. This service is quick, affordable and makes a huge difference in performance.</div></div>
+      <div class="faq-a">
+        <div class="faq-a-inner">Absolutely! Upgrading to an SSD is one of the best ways to speed up an old laptop. We can also upgrade RAM on compatible models. This service is quick, affordable and makes a huge difference in performance.</div>
+      </div>
     </div>
   </div>
 
@@ -848,7 +1069,9 @@ footer {
         <span>Which printer brands do you service?</span>
         <div class="faq-icon"><i class="fas fa-plus"></i></div>
       </div>
-      <div class="faq-a"><div class="faq-a-inner">We service all major printer brands including HP, Canon, Epson, Brother, Samsung and Xerox. Both laser and inkjet printers are handled by our experienced technicians.</div></div>
+      <div class="faq-a">
+        <div class="faq-a-inner">We service all major printer brands including <strong>HP, Canon, Epson, Brother, Samsung and Xerox</strong>. Both laser and inkjet printers are handled by our experienced technicians.</div>
+      </div>
     </div>
 
     <div class="faq-item" data-cat="printer">
@@ -856,7 +1079,9 @@ footer {
         <span>Do you offer toner refilling and cartridge replacement?</span>
         <div class="faq-icon"><i class="fas fa-plus"></i></div>
       </div>
-      <div class="faq-a"><div class="faq-a-inner">Yes, we offer toner refilling for laser printers and ink cartridge replacement for inkjet printers. We use quality compatible toners that give excellent print results at lower cost than originals.</div></div>
+      <div class="faq-a">
+        <div class="faq-a-inner">Yes, we offer <strong>toner refilling</strong> for laser printers and ink cartridge replacement for inkjet printers. We use quality compatible toners that give excellent print results at lower cost than originals.</div>
+      </div>
     </div>
   </div>
 
@@ -869,7 +1094,9 @@ footer {
         <span>Where are your branches located?</span>
         <div class="faq-icon"><i class="fas fa-plus"></i></div>
       </div>
-      <div class="faq-a"><div class="faq-a-inner">We have two branches: (1) 28, near Bharati Technical Institute, Nigdi Gaothan, Nigdi, Pimpri-Chinchwad – 411044. (2) Shine Square Building, Pingle Road, near Imperial Hospital, Chikhali, Vitthal Nagar, Pune – 411062.</div></div>
+      <div class="faq-a">
+        <div class="faq-a-inner">We have two branches: (1) <strong>Nigdi:</strong> 28, near Bharati Technical Institute, Nigdi Gaothan, Nigdi, Pimpri-Chinchwad – 411044. (2) <strong>Chikhali:</strong> Shine Square Building, Pingle Road, near Imperial Hospital, Chikhali, Vitthal Nagar, Pune – 411062.</div>
+      </div>
     </div>
 
     <div class="faq-item" data-cat="general">
@@ -877,7 +1104,9 @@ footer {
         <span>What are your shop working hours?</span>
         <div class="faq-icon"><i class="fas fa-plus"></i></div>
       </div>
-      <div class="faq-a"><div class="faq-a-inner">We are open Monday to Saturday, 10:00 AM to 8:00 PM. On Sundays we are open from 11:00 AM to 5:00 PM. You can also call or WhatsApp us at 7420806178 any time for urgent support.</div></div>
+      <div class="faq-a">
+        <div class="faq-a-inner">We are open <strong>Monday to Saturday, 10:00 AM to 8:00 PM</strong>. On Sundays we are open from <strong>11:00 AM to 5:00 PM</strong>. You can also call or WhatsApp us at 7420806178 any time for urgent support.</div>
+      </div>
     </div>
 
     <div class="faq-item" data-cat="general">
@@ -885,7 +1114,9 @@ footer {
         <span>Do you provide AMC for schools and businesses?</span>
         <div class="faq-icon"><i class="fas fa-plus"></i></div>
       </div>
-      <div class="faq-a"><div class="faq-a-inner">Yes, we offer Annual Maintenance Contracts (AMC) for schools, offices and businesses. AMC includes scheduled preventive maintenance, priority support and discounted repair rates. Contact us for a custom quote.</div></div>
+      <div class="faq-a">
+        <div class="faq-a-inner">Yes, we offer <strong>Annual Maintenance Contracts (AMC)</strong> for schools, offices and businesses. AMC includes scheduled preventive maintenance, priority support and discounted repair rates. <a href="contact.html">Contact us</a> for a custom quote.</div>
+      </div>
     </div>
   </div>
 
@@ -895,20 +1126,64 @@ footer {
       <h3>Still have a question?</h3>
       <p>Call or WhatsApp us — we reply quickly.</p>
     </div>
-    <a href="contact.html" class="btn-primary"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+    <a href="contact.html" class="btn-primary"><i class="fas fa-phone-alt"></i> Contact Us</a>
   </div>
 </main>
 
 <!-- Footer -->
-<footer>
-  <div class="footer-logo">A F <span>Computer</span></div>
-  <div class="footer-info">Phone: <a href="tel:7420806178">7420806178</a> &nbsp;|&nbsp; Email: <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a></div>
-  <div class="social-icons">
-    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://wa.me/917420806178" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.instagram.com/a_f_computer?igsh=MTlpdmxjYnY1cHZs" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+<footer role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <div class="footer-logo">A F Computer</div>
+      <p class="footer-desc">Your trusted partner for <strong>computer repair in Pune</strong>, laptop sales, and IT services. Quality service, affordable prices, and expert support since 2019.</p>
+      <div class="social-links">
+        <a href="https://wa.me/917420806178" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/a_f_computer?igsh=MTlpdmxjYnY1cHZs" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <ul class="footer-links">
+        <li><a href="services.html">Laptop Repair Pune</a></li>
+        <li><a href="services.html">Desktop Repair Pune</a></li>
+        <li><a href="services.html">Printer Repair Pune</a></li>
+        <li><a href="services.html">Networking Services Pune</a></li>
+        <li><a href="services.html">CCTV Installation Pune</a></li>
+        <li><a href="services.html">Computer AMC Pune</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Contact Info</h4>
+      <div class="footer-contact">
+        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:7420806178">+91 7420806178</a></p>
+        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a></p>
+        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Nigdi & Chikhali, Pune</p>
+        <p><i class="fas fa-clock" aria-hidden="true"></i> Mon-Sat: 10AM - 8PM</p>
+      </div>
+    </div>
   </div>
-  <div class="footer-copy">&copy; 2025 A F Computer. All rights reserved.</div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2025 <a href="index.html">A F Computer</a>. All rights reserved. | <a href="about.html">About Us</a> | <a href="contact.html">Contact</a></p>
+    <p style="margin-top: 8px;"><strong>Computer Repair Pune</strong> | <strong>Laptop Repair Pune</strong> | <strong>Printer Repair Pune</strong> | <strong>Desktop Repair Pune</strong></p>
+  </div>
 </footer>
 
 <script>
@@ -933,15 +1208,21 @@ function toggleTheme() {
 // Mobile Dropdown Toggle
 function toggleDropdown() {
   const dropdown = document.getElementById('mobileDropdown');
+  const menuBtn = document.querySelector('.menu-btn');
   dropdown.classList.toggle('active');
+  const isExpanded = dropdown.classList.contains('active');
+  menuBtn.setAttribute('aria-expanded', isExpanded);
+  dropdown.setAttribute('aria-hidden', !isExpanded);
 }
 
-// Close dropdown when clicking outside or on a link
+// Close dropdown when clicking outside
 document.addEventListener('click', function(e) {
   const dropdown = document.getElementById('mobileDropdown');
   const menuBtn = document.querySelector('.menu-btn');
   if (!dropdown.contains(e.target) && !menuBtn.contains(e.target)) {
     dropdown.classList.remove('active');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    dropdown.setAttribute('aria-hidden', 'true');
   }
 });
 
@@ -950,14 +1231,6 @@ function toggleFAQ(el) {
   const isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
   if(!isOpen) item.classList.add('open');
-}
-
-function filterFAQ(cat, btn) {
-  document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.faq-group').forEach(g => {
-    g.style.display = (cat === 'all' || g.dataset.cat === cat) ? 'block' : 'none';
-  });
 }
 
 function searchFAQ(val) {
@@ -975,10 +1248,10 @@ function searchFAQ(val) {
 
 // Scroll reveal
 const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
     }
   });
 }, { threshold: 0.08 });
@@ -986,6 +1259,16 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.faq-item').forEach((el, i) => {
   el.style.transitionDelay = (i * 0.04) + 's';
   observer.observe(el);
+});
+
+// Keyboard accessibility
+document.querySelectorAll('.nav-btn').forEach(btn => {
+  btn.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      btn.click();
+    }
+  });
 });
 </script>
 

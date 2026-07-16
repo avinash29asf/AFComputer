@@ -4,30 +4,39 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#ff7a00">
-<title>Products - A F Computer | Laptops, Desktops, Printers Pune</title>
-<meta name="description" content="Browse quality laptops, desktops, printers, networking equipment and accessories at A F Computer, Pune. New and refurbished products with warranty.">
-<meta name="keywords" content="laptops pune, desktops pune, printers pune, gaming laptop pune, refurbished laptop pune, all in one pc pune, networking equipment pune, computer accessories pune">
+<meta name="description" content="Shop quality laptops, desktops, printers, and networking equipment at A F Computer, Pune. New and refurbished computers with warranty. Visit Nigdi or Chikhali branches.">
+<meta name="keywords" content="laptops pune, desktops pune, printers pune, gaming laptop pune, refurbished laptop pune, all in one pc pune, networking equipment pune, computer accessories pune, af computer products">
 <meta name="author" content="A F Computer">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="https://avinash29asf.github.io/AFComputer/product.html">
+<link rel="alternate" hreflang="en-IN" href="https://avinash29asf.github.io/AFComputer/product.html">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Products - A F Computer | Laptops, Desktops, Printers Pune">
-<meta property="og:description" content="Browse quality laptops, desktops, printers, networking equipment and accessories at A F Computer, Pune.">
+<meta property="og:description" content="Browse quality laptops, desktops, printers, networking equipment and accessories at A F Computer, Pune. New and refurbished products with warranty.">
 <meta property="og:image" content="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:url" content="https://avinash29asf.github.io/AFComputer/product.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="A F Computer">
+<meta property="og:locale" content="en_IN">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@afcomputer">
+<meta name="twitter:creator" content="@afcomputer">
 <meta name="twitter:title" content="Products - A F Computer | Laptops, Desktops, Printers Pune">
-<meta name="twitter:description" content="Quality laptops, desktops, printers and accessories at unbeatable prices. New and refurbished with warranty.">
+<meta name="twitter:description" content="Quality laptops, desktops, printers and accessories at unbeatable prices. New and refurbished with warranty at Nigdi & Chikhali, Pune.">
 <meta name="twitter:image" content="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
+
+<!-- Preconnect for Performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
 <!-- Fonts & Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
@@ -81,7 +90,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Navbar */
 nav {
   position: fixed; top: 0; left: 0; right: 0;
   height: 70px;
@@ -104,13 +112,13 @@ nav {
   background-clip: text;
 }
 
-  .logo-img {
-    height: 50px;
-    width: auto;
-    object-fit: cover;
-    object-position: top;
-    border-radius: 0;
-  }
+.logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 0;
+}
 
 .nav-links {
   display: flex; gap: 32px;
@@ -161,7 +169,8 @@ nav {
 
 .menu-btn { display: none; }
 
-/* Mobile Dropdown Menu */
+.mobile-tabs { display: none; }
+
 .mobile-dropdown {
   display: none;
   position: fixed;
@@ -208,7 +217,6 @@ nav {
   transform: translateX(5px);
 }
 
-/* Page Header */
 .page-header {
   padding: 120px 5% 60px;
   text-align: center;
@@ -254,7 +262,6 @@ nav {
   line-height: 1.7;
 }
 
-/* Filter Bar */
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
@@ -282,14 +289,12 @@ nav {
   border-color: var(--primary);
 }
 
-/* Main */
 main {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 5% 80px;
 }
 
-/* Category Section */
 .category-section {
   margin-bottom: 60px;
 }
@@ -322,7 +327,6 @@ main {
   margin-left: auto;
 }
 
-/* Products Grid */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -446,7 +450,6 @@ main {
   box-shadow: 0 5px 20px rgba(16,185,129,0.3);
 }
 
-/* CTA Banner */
 .cta-banner {
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   border-radius: var(--radius);
@@ -493,7 +496,6 @@ main {
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* Footer */
 footer {
   background: var(--nav-bg);
   backdrop-filter: blur(20px);
@@ -607,10 +609,8 @@ footer {
   font-size: 0.85rem;
 }
 
-/* Mobile Tab Bar (WhatsApp-style direct buttons) */
 .mobile-tabs { display: none; }
 
-/* Responsive */
 @media (max-width: 968px) {
   .page-header {
     padding: 100px 20px 40px;
@@ -636,7 +636,6 @@ footer {
   .nav-links { display: none; }
   .menu-btn { display: flex; }
 
-  /* WhatsApp-style direct tab buttons inside header */
   .mobile-tabs {
     display: flex;
     flex-basis: 100%;
@@ -733,7 +732,50 @@ footer {
 }
 </style>
 
-<!-- JSON-LD Schema -->
+<!-- JSON-LD Schema - Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "A F Computer",
+  "url": "https://avinash29asf.github.io/AFComputer/",
+  "logo": "https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png",
+  "description": "Computer, laptop and printer repair services in Pune with 5+ years of trusted service",
+  "foundingDate": "2019",
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "28, near Bharati Technical Institute, Nigdi Gaothan, Nigdi",
+      "addressLocality": "Pimpri-Chinchwad",
+      "addressRegion": "Maharashtra",
+      "postalCode": "411044",
+      "addressCountry": "IN"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "Shine Square Building, Pingle Road, near Imperial Hospital, Chikhali",
+      "addressLocality": "Pune",
+      "addressRegion": "Maharashtra",
+      "postalCode": "411062",
+      "addressCountry": "IN"
+    }
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+91-7420806178",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Hindi"]
+    }
+  ],
+  "sameAs": [
+    "https://wa.me/917420806178",
+    "https://www.instagram.com/a_f_computer?igsh=MTlpdmxjYnY1cHZs"
+  ]
+}
+</script>
+
+<!-- JSON-LD Schema - LocalBusiness -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -782,11 +824,134 @@ footer {
     }
   ],
   "priceRange": "₹₹",
-  "url": "https://avinash29asf.github.io/AFComputer/"
+  "url": "https://avinash29asf.github.io/AFComputer/",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "500"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "18.6650074",
+    "longitude": "73.7756536"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Pune"
+  }
 }
 </script>
 
-<!-- Breadcrumb Schema -->
+<!-- JSON-LD Schema - Product -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Computer Products at A F Computer",
+  "description": "Quality laptops, desktops, printers and accessories available at A F Computer, Pune",
+  "url": "https://avinash29asf.github.io/AFComputer/product.html",
+  "itemListElement": [
+    {
+      "@type": "Product",
+      "name": "Gaming Laptop",
+      "description": "High-performance gaming laptop with latest GPU and processor",
+      "brand": "A F Computer",
+      "offers": {
+        "@type": "Offer",
+        "price": "Contact for Price",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "A F Computer"
+        }
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "Business Laptop",
+      "description": "Reliable business laptop ideal for office work and student use",
+      "brand": "A F Computer",
+      "offers": {
+        "@type": "Offer",
+        "price": "Contact for Price",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "A F Computer"
+        }
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "Refurbished Laptop",
+      "description": "Certified refurbished laptop in excellent condition",
+      "brand": "A F Computer",
+      "offers": {
+        "@type": "Offer",
+        "price": "Contact for Price",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "A F Computer"
+        }
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "All-in-One PC",
+      "description": "Compact desktop with integrated display for home or office",
+      "brand": "A F Computer",
+      "offers": {
+        "@type": "Offer",
+        "price": "Contact for Price",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "A F Computer"
+        }
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "Laser Printer",
+      "description": "High-speed monochrome laser printer for office use",
+      "brand": "A F Computer",
+      "offers": {
+        "@type": "Offer",
+        "price": "Contact for Price",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "A F Computer"
+        }
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "Networking Kit",
+      "description": "Complete networking kit with routers, switches and cables",
+      "brand": "A F Computer",
+      "offers": {
+        "@type": "Offer",
+        "price": "Contact for Price",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "A F Computer"
+        }
+      }
+    }
+  ]
+}
+</script>
+
+<!-- JSON-LD Schema - Breadcrumb -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -811,36 +976,38 @@ footer {
 <body>
 
 <!-- Navbar -->
-<nav aria-label="Main navigation">
-  <img src="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png" alt="A F Computer Logo" class="logo-img">
+<nav aria-label="Main navigation" role="navigation">
+  <img src="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png" alt="A F Computer Logo" class="logo-img" width="50" height="50">
   <div class="nav-links">
     <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="product.html">Products</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
     <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="product.html" aria-current="page">Products</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
   </div>
   <div class="nav-actions">
-    <div class="nav-btn theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+    <div class="nav-btn theme-btn" onclick="toggleTheme()" aria-label="Toggle theme" role="button" tabindex="0">
       <i class="fas fa-moon" id="theme-icon"></i>
     </div>
-    <div class="nav-btn menu-btn" onclick="toggleDropdown()" aria-label="Menu">
+    <div class="nav-btn menu-btn" onclick="toggleDropdown()" aria-label="Menu" role="button" tabindex="0" aria-expanded="false">
       <i class="fas fa-bars"></i>
     </div>
   </div>
   
   <!-- Mobile Dropdown Menu -->
-  <div class="mobile-dropdown" id="mobileDropdown">
+  <div class="mobile-dropdown" id="mobileDropdown" aria-hidden="true">
     <a href="index.html" class="mobile-dropdown-item">Home</a>
     <a href="about.html" class="mobile-dropdown-item">About</a>
     <a href="services.html" class="mobile-dropdown-item">Services</a>
     <a href="product.html" class="mobile-dropdown-item">Products</a>
     <a href="gallery.html" class="mobile-dropdown-item">Gallery</a>
+    <a href="faq.html" class="mobile-dropdown-item">FAQ</a>
     <a href="contact.html" class="mobile-dropdown-item">Contact</a>
   </div>
 
-  <!-- Mobile Tab Bar (WhatsApp-style direct buttons) -->
+  <!-- Mobile Tab Bar -->
   <div class="mobile-tabs">
     <a href="index.html"><i class="fas fa-home"></i><span>Home</span></a>
     <a href="services.html"><i class="fas fa-tools"></i><span>Services</span></a>
@@ -880,7 +1047,7 @@ footer {
     <div class="products-grid">
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="https://avinash29asf.github.io/AFComputer/gaming-laptop.jpg" alt="High-performance gaming laptop with latest GPU and processor" loading="lazy">
+          <img src="https://avinash29asf.github.io/AFComputer/gaming-laptop.jpg" alt="High-performance gaming laptop with latest GPU and processor" loading="lazy" width="400" height="300">
           <span class="product-badge">Hot</span>
         </div>
         <div class="product-body">
@@ -892,14 +1059,14 @@ footer {
             <span class="spec">512GB SSD</span>
           </div>
           <button class="btn-order" onclick="location.href='contact.html'">
-            <i class="fas fa-shopping-cart"></i> Order Now
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Now
           </button>
         </div>
       </div>
       
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="https://avinash29asf.github.io/AFComputer/business-laptop.jpg" alt="Reliable business laptop ideal for office work and student use" loading="lazy">
+          <img src="https://avinash29asf.github.io/AFComputer/business-laptop.jpg" alt="Reliable business laptop ideal for office work and student use" loading="lazy" width="400" height="300">
           <span class="product-badge new">New</span>
         </div>
         <div class="product-body">
@@ -911,14 +1078,14 @@ footer {
             <span class="spec">256GB SSD</span>
           </div>
           <button class="btn-order" onclick="location.href='contact.html'">
-            <i class="fas fa-shopping-cart"></i> Order Now
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Now
           </button>
         </div>
       </div>
       
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="https://avinash29asf.github.io/AFComputer/refurbished-laptop.jpg" alt="Certified refurbished laptop in excellent condition at budget price" loading="lazy">
+          <img src="https://avinash29asf.github.io/AFComputer/refurbished-laptop.jpg" alt="Certified refurbished laptop in excellent condition at budget price" loading="lazy" width="400" height="300">
           <span class="product-badge sale">Refurbished</span>
         </div>
         <div class="product-body">
@@ -930,7 +1097,7 @@ footer {
             <span class="spec">HDD/SSD</span>
           </div>
           <button class="btn-order" onclick="location.href='contact.html'">
-            <i class="fas fa-shopping-cart"></i> Order Now
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Now
           </button>
         </div>
       </div>
@@ -946,7 +1113,7 @@ footer {
     <div class="products-grid">
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="https://avinash29asf.github.io/AFComputer/all-in-one-pc.jpg" alt="Compact all-in-one desktop PC with integrated display" loading="lazy">
+          <img src="https://avinash29asf.github.io/AFComputer/all-in-one-pc.jpg" alt="Compact all-in-one desktop PC with integrated display" loading="lazy" width="400" height="300">
           <span class="product-badge">Popular</span>
         </div>
         <div class="product-body">
@@ -958,14 +1125,14 @@ footer {
             <span class="spec">1TB HDD</span>
           </div>
           <button class="btn-order" onclick="location.href='contact.html'">
-            <i class="fas fa-shopping-cart"></i> Order Now
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Now
           </button>
         </div>
       </div>
       
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="https://avinash29asf.github.io/AFComputer/custom-desktop.jpg" alt="Custom-built desktop PC for work, gaming or school" loading="lazy">
+          <img src="https://avinash29asf.github.io/AFComputer/custom-desktop.jpg" alt="Custom-built desktop PC for work, gaming or school" loading="lazy" width="400" height="300">
         </div>
         <div class="product-body">
           <h3>Custom Desktop</h3>
@@ -976,7 +1143,7 @@ footer {
             <span class="spec">HDD/SSD</span>
           </div>
           <button class="btn-order" onclick="location.href='contact.html'">
-            <i class="fas fa-shopping-cart"></i> Order Now
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Now
           </button>
         </div>
       </div>
@@ -992,7 +1159,7 @@ footer {
     <div class="products-grid">
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="https://avinash29asf.github.io/AFComputer/laser-printer.jpg" alt="High-speed monochrome laser printer ideal for office use" loading="lazy">
+          <img src="https://avinash29asf.github.io/AFComputer/laser-printer.jpg" alt="High-speed monochrome laser printer ideal for office use" loading="lazy" width="400" height="300">
           <span class="product-badge">Best Seller</span>
         </div>
         <div class="product-body">
@@ -1004,14 +1171,14 @@ footer {
             <span class="spec">HP / Canon</span>
           </div>
           <button class="btn-order" onclick="location.href='contact.html'">
-            <i class="fas fa-shopping-cart"></i> Order Now
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Now
           </button>
         </div>
       </div>
       
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="https://avinash29asf.github.io/AFComputer/inkjet-printer.jpg" alt="All-in-one colour inkjet printer for home or small business" loading="lazy">
+          <img src="https://avinash29asf.github.io/AFComputer/inkjet-printer.jpg" alt="All-in-one colour inkjet printer for home or small business" loading="lazy" width="400" height="300">
         </div>
         <div class="product-body">
           <h3>Inkjet Printer</h3>
@@ -1022,14 +1189,14 @@ footer {
             <span class="spec">Wi-Fi</span>
           </div>
           <button class="btn-order" onclick="location.href='contact.html'">
-            <i class="fas fa-shopping-cart"></i> Order Now
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Now
           </button>
         </div>
       </div>
       
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="https://avinash29asf.github.io/AFComputer/toner-cartridge.jpg" alt="Original and compatible toner cartridges for all major brands" loading="lazy">
+          <img src="https://avinash29asf.github.io/AFComputer/toner-cartridge.jpg" alt="Original and compatible toner cartridges for all major brands" loading="lazy" width="400" height="300">
           <span class="product-badge new">In Stock</span>
         </div>
         <div class="product-body">
@@ -1041,7 +1208,7 @@ footer {
             <span class="spec">Epson</span>
           </div>
           <button class="btn-order" onclick="location.href='contact.html'">
-            <i class="fas fa-shopping-cart"></i> Order Now
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Now
           </button>
         </div>
       </div>
@@ -1057,7 +1224,7 @@ footer {
     <div class="products-grid">
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="https://avinash29asf.github.io/AFComputer/networking-kit.jpg" alt="Complete networking kit with routers, switches and cables" loading="lazy">
+          <img src="https://avinash29asf.github.io/AFComputer/networking-kit.jpg" alt="Complete networking kit with routers, switches and cables" loading="lazy" width="400" height="300">
         </div>
         <div class="product-body">
           <h3>Networking Kit</h3>
@@ -1068,14 +1235,14 @@ footer {
             <span class="spec">LAN Cable</span>
           </div>
           <button class="btn-order" onclick="location.href='contact.html'">
-            <i class="fas fa-shopping-cart"></i> Order Now
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Now
           </button>
         </div>
       </div>
       
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="https://avinash29asf.github.io/AFComputer/wifi-router.jpg" alt="Dual-band WiFi router for fast internet at home or office" loading="lazy">
+          <img src="https://avinash29asf.github.io/AFComputer/wifi-router.jpg" alt="Dual-band WiFi router for fast internet at home or office" loading="lazy" width="400" height="300">
           <span class="product-badge new">New</span>
         </div>
         <div class="product-body">
@@ -1087,7 +1254,7 @@ footer {
             <span class="spec">TP-Link / D-Link</span>
           </div>
           <button class="btn-order" onclick="location.href='contact.html'">
-            <i class="fas fa-shopping-cart"></i> Order Now
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Now
           </button>
         </div>
       </div>
@@ -1103,7 +1270,7 @@ footer {
     <div class="products-grid">
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="https://avinash29asf.github.io/AFComputer/accessories.jpg" alt="Computer accessories including keyboards, mouse and webcams" loading="lazy">
+          <img src="https://avinash29asf.github.io/AFComputer/accessories.jpg" alt="Computer accessories including keyboards, mouse and webcams" loading="lazy" width="400" height="300">
           <span class="product-badge new">In Stock</span>
         </div>
         <div class="product-body">
@@ -1115,14 +1282,14 @@ footer {
             <span class="spec">Webcam</span>
           </div>
           <button class="btn-order" onclick="location.href='contact.html'">
-            <i class="fas fa-shopping-cart"></i> Order Now
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Now
           </button>
         </div>
       </div>
       
       <div class="product-card">
         <div class="product-img-wrap">
-          <img src="https://avinash29asf.github.io/AFComputer/ram-storage.jpg" alt="RAM and storage upgrades for laptops and desktops" loading="lazy">
+          <img src="https://avinash29asf.github.io/AFComputer/ram-storage.jpg" alt="RAM and storage upgrades for laptops and desktops" loading="lazy" width="400" height="300">
         </div>
         <div class="product-body">
           <h3>RAM & Storage</h3>
@@ -1133,7 +1300,7 @@ footer {
             <span class="spec">HDD</span>
           </div>
           <button class="btn-order" onclick="location.href='contact.html'">
-            <i class="fas fa-shopping-cart"></i> Order Now
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Now
           </button>
         </div>
       </div>
@@ -1147,21 +1314,21 @@ footer {
       <p>Contact us — we can source or order any product for you.</p>
     </div>
     <a href="contact.html" class="cta-btn">
-      <i class="fas fa-phone-alt"></i> Call Us Now
+      <i class="fas fa-phone-alt" aria-hidden="true"></i> Call Us Now
     </a>
   </div>
 </main>
 
 <!-- Footer -->
-<footer>
+<footer role="contentinfo">
   <div class="footer-content">
     <div class="footer-brand">
       <div class="footer-logo">A F Computer</div>
-      <p class="footer-desc">Your trusted partner for computer repair, laptop sales, and IT services in Pune. Quality service, affordable prices, and expert support.</p>
+      <p class="footer-desc">Your trusted partner for <strong>computer repair in Pune</strong>, laptop sales, and IT services. Quality service, affordable prices, and expert support since 2019.</p>
       <div class="social-links">
+        <a href="https://wa.me/917420806178" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/a_f_computer?igsh=MTlpdmxjYnY1cHZs" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://wa.me/917420806178" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.instagram.com/a_f_computer?igsh=MTlpdmxjYnY1cHZs" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       </div>
     </div>
@@ -1170,34 +1337,41 @@ footer {
       <h4>Quick Links</h4>
       <ul class="footer-links">
         <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="product.html">Products</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </div>
     
     <div class="footer-col">
-      <h4>Services</h4>
+      <h4>Our Services</h4>
       <ul class="footer-links">
-        <li><a href="#">Laptop Repair</a></li>
-        <li><a href="#">Desktop Services</a></li>
-        <li><a href="#">Printer Solutions</a></li>
-        <li><a href="#">Data Recovery</a></li>
+        <li><a href="services.html">Laptop Repair Pune</a></li>
+        <li><a href="services.html">Desktop Repair Pune</a></li>
+        <li><a href="services.html">Printer Repair Pune</a></li>
+        <li><a href="services.html">Networking Services Pune</a></li>
+        <li><a href="services.html">CCTV Installation Pune</a></li>
+        <li><a href="services.html">Computer AMC Pune</a></li>
       </ul>
     </div>
     
     <div class="footer-col">
       <h4>Contact Info</h4>
       <div class="footer-contact">
-        <p><i class="fas fa-phone"></i> +91 7420806178</p>
-        <p><i class="fas fa-envelope"></i> avinash29asf@gmail.com</p>
-        <p><i class="fas fa-clock"></i> Mon-Sat: 10AM - 8PM</p>
+        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:7420806178">+91 7420806178</a></p>
+        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:avinash29asf@gmail.com">avinash29asf@gmail.com</a></p>
+        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Nigdi & Chikhali, Pune</p>
+        <p><i class="fas fa-clock" aria-hidden="true"></i> Mon-Sat: 10AM - 8PM</p>
       </div>
     </div>
   </div>
   
   <div class="footer-bottom">
-    &copy; 2025 A F Computer. All rights reserved.
+    <p>&copy; 2025 <a href="index.html">A F Computer</a>. All rights reserved. | <a href="about.html">About Us</a> | <a href="contact.html">Contact</a></p>
+    <p style="margin-top: 8px;"><strong>Computer Repair Pune</strong> | <strong>Laptop Repair Pune</strong> | <strong>Printer Repair Pune</strong> | <strong>Desktop Repair Pune</strong></p>
   </div>
 </footer>
 
@@ -1223,7 +1397,11 @@ function toggleTheme() {
 // Mobile Dropdown Toggle
 function toggleDropdown() {
   const dropdown = document.getElementById('mobileDropdown');
+  const menuBtn = document.querySelector('.menu-btn');
   dropdown.classList.toggle('active');
+  const isExpanded = dropdown.classList.contains('active');
+  menuBtn.setAttribute('aria-expanded', isExpanded);
+  dropdown.setAttribute('aria-hidden', !isExpanded);
 }
 
 // Close dropdown when clicking outside
@@ -1232,6 +1410,8 @@ document.addEventListener('click', function(e) {
   const menuBtn = document.querySelector('.menu-btn');
   if (!dropdown.contains(e.target) && !menuBtn.contains(e.target)) {
     dropdown.classList.remove('active');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    dropdown.setAttribute('aria-hidden', 'true');
   }
 });
 
@@ -1260,6 +1440,16 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.product-card').forEach(el => {
   observer.observe(el);
+});
+
+// Keyboard accessibility
+document.querySelectorAll('.nav-btn').forEach(btn => {
+  btn.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      btn.click();
+    }
+  });
 });
 </script>
 

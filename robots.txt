@@ -1,6 +1,105 @@
+# robots.txt for A F Computer - https://avinash29asf.github.io/AFComputer/
+# Optimized for Google, Bing, and AI Search Engines
+
+# Allow all crawlers
 User-agent: *
 Allow: /
+Disallow: /index_backup.html
 
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Important sitemap location
 Sitemap: https://avinash29asf.github.io/AFComputer/sitemap.xml
 
-Disallow: /index_backup.html
+# Google-specific directives
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+# Enable rich snippets for better search appearance
+# Images, products, FAQs, and breadcrumbs are enabled via structured data
+
+# Bing-specific directives
+User-agent: bingbot
+Allow: /
+Crawl-delay: 1
+
+# Baidu crawler
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# Yandex crawler
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+# AI Search Engine Optimization
+# Allow AI crawlers to access content for AI-powered search
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Block bad bots and scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Allow important assets
+Allow: /*.css
+Allow: /*.js
+Allow: /*.json
+Allow: /*.xml
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+
+# Block potentially sensitive files (if any exist)
+Disallow: /*.git$
+Disallow: /*.env$
+Disallow: /admin/
+Disallow: /private/
+
+# Host directive (for international sites)
+# Host: https://avinash29asf.github.io/AFComputer/
+
+# Contact and geo information for search engines
+# Geo-targeting for Pune, Maharashtra, India
+# This helps in local SEO rankings
+
+# Clean URLs - no query parameters needed
+# All pages are static HTML for fast loading
+
+# Mobile optimization - responsive design
+# All pages are mobile-friendly
+
+# Security headers referenced (implemented via GitHub Pages)
+# X-Robots-Tag: index, follow
