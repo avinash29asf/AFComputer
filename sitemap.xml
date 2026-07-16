@@ -1,32 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://avinash29asf.github.io/AFComputer/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2025-01-09</lastmod>
   </url>
+
   <url>
     <loc>https://avinash29asf.github.io/AFComputer/about.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://avinash29asf.github.io/AFComputer/services.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://avinash29asf.github.io/AFComputer/product.html</loc>
-    <priority>0.8</priority>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://avinash29asf.github.io/AFComputer/gallery.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://avinash29asf.github.io/AFComputer/contact.html</loc>
-    <priority>0.7</priority>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://avinash29asf.github.io/AFComputer/faq.html</loc>
-    <priority>0.6</priority>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
+
 </urlset>
