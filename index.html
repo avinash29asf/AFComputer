@@ -3,25 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ff7a00">
 <title>A F Computer – Computer, Laptop & Printer Repair in Pune</title>
-<meta name="description" content="A F Computer provides affordable and professional repair services for computers, laptops, and printers in Pune. Fast service and trusted support.">
-<meta name="keywords" content="Computer Repair Pune, Laptop Repair Pune, Printer Repair Pune, Desktop Service Pune, A F Computer">
+<meta name="description" content="A F Computer provides affordable and professional repair services for computers, laptops, and printers in Pune. Two branches in Nigdi & Chikhali with fast turnaround.">
+<meta name="keywords" content="computer repair pune, laptop repair pune, printer repair pune, desktop service pune, af computer, laptop sales pune, amc pune, it support pune, nigdi, chikhali">
 <meta name="author" content="A F Computer">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://avinash29asf.github.io/AFComputer/">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
 
 <!-- Open Graph -->
 <meta property="og:title" content="A F Computer – Computer, Laptop & Printer Repair in Pune">
-<meta property="og:description" content="Affordable and professional repair services for computers, laptops, and printers in Pune.">
+<meta property="og:description" content="Affordable and professional repair services for computers, laptops, and printers in Pune. Two branches in Nigdi & Chikhali.">
 <meta property="og:image" content="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
 <meta property="og:url" content="https://avinash29asf.github.io/AFComputer/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="A F Computer">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="A F Computer">
-<meta name="twitter:description" content="Professional Computer Repair Services in Pune">
+<meta name="twitter:site" content="@afcomputer">
+<meta name="twitter:title" content="A F Computer – Computer, Laptop & Printer Repair in Pune">
+<meta name="twitter:description" content="Professional Computer Repair Services in Pune. Two branches in Nigdi & Chikhali. Fast turnaround, honest pricing.">
 <meta name="twitter:image" content="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
 
 <!-- Fonts & Icons -->
@@ -108,7 +113,7 @@ nav {
 
 .logo {
   font-family: 'Poppins', sans-serif;
-  font-size: 2.8rem;
+  font-size: 1.8rem;
   font-weight: 800;
   color: var(--text);
   letter-spacing: -0.5px;
@@ -118,11 +123,13 @@ nav {
   background-clip: text;
 }
 
-.logo-img {
-  height: 40px;
-  width: auto;
-  object-fit: contain;
-}
+  .logo-img {
+    height: 70px;
+    width: auto;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 0;
+  }
 
 .nav-links {
   display: flex; gap: 32px;
@@ -926,11 +933,80 @@ footer {
   }
 }
 </style>
+
+<!-- JSON-LD Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "A F Computer",
+  "description": "Computer, laptop and printer repair services in Pune",
+  "image": "https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png",
+  "telephone": "+91-7420806178",
+  "email": "avinash29asf@gmail.com",
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "28, near Bharati Technical Institute, Nigdi Gaothan, Nigdi",
+      "addressLocality": "Pimpri-Chinchwad",
+      "addressRegion": "Maharashtra",
+      "postalCode": "411044",
+      "addressCountry": "IN"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "Shine Square Building, Pingle Road, near Imperial Hospital, Chikhali",
+      "addressLocality": "Pune",
+      "addressRegion": "Maharashtra",
+      "postalCode": "411062",
+      "addressCountry": "IN"
+    }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "10:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "10:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "11:00",
+      "closes": "17:00"
+    }
+  ],
+  "priceRange": "₹₹",
+  "url": "https://avinash29asf.github.io/AFComputer/"
+}
+</script>
+
+<!-- Breadcrumb Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://avinash29asf.github.io/AFComputer/"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
 <!-- ========== NAVBAR ========== -->
-<nav>
+<nav aria-label="Main navigation">
   <div class="nav-left">
     <img src="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png" alt="A F Computer Logo" class="logo-img">
   </div>
@@ -973,7 +1049,7 @@ footer {
 </nav>
 
 <!-- ========== HERO SECTION ========== -->
-<div class="hero">
+<section class="hero" aria-label="Hero">
   <div class="hero-content">
     <div class="hero-badge">
       <i class="fas fa-map-marker-alt"></i> Nigdi & Chikhali, Pune
@@ -987,15 +1063,15 @@ footer {
       <a href="services.html" class="btn btn-outline">
         <i class="fas fa-tools"></i> Our Services
       </a>
-      <a href="https://wa.me/917420806178" class="btn btn-whatsapp" target="_blank">
+      <a href="https://wa.me/917420806178" class="btn btn-whatsapp" target="_blank" rel="noopener">
         <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
     </div>
   </div>
   <div class="hero-image">
-<img src="https://avinash29asf.github.io/AFComputer/computer-repair-service.jpg" alt="Computer Repair Service" loading="lazy">
+<img src="https://avinash29asf.github.io/AFComputer/computer-repair-service.jpg" alt="Professional computer repair service at A F Computer, Pune" loading="lazy">
   </div>
-</div>
+</section>
 
 <!-- ========== SERVICES SECTION ========== -->
 <section id="services">
@@ -1041,7 +1117,7 @@ footer {
   <div class="products-grid">
     <div class="product-card">
       <div class="product-img-wrap">
-<img src="https://avinash29asf.github.io/AFComputer/gaming-laptop.jpg" alt="Gaming Laptop" loading="lazy">
+<img src="https://avinash29asf.github.io/AFComputer/gaming-laptop.jpg" alt="High-performance gaming laptop available at A F Computer, Pune" loading="lazy">
         <span class="product-badge">New</span>
       </div>
       <div class="product-body">
@@ -1055,7 +1131,7 @@ footer {
     
     <div class="product-card">
       <div class="product-img-wrap">
-<img src="https://avinash29asf.github.io/AFComputer/all-in-one-pc.jpg" alt="All-in-One PC" loading="lazy">
+<img src="https://avinash29asf.github.io/AFComputer/all-in-one-pc.jpg" alt="Compact all-in-one PC for home and office use" loading="lazy">
       </div>
       <div class="product-body">
         <h3>All-in-One PC</h3>
@@ -1068,7 +1144,7 @@ footer {
     
     <div class="product-card">
       <div class="product-img-wrap">
-<img src="https://avinash29asf.github.io/AFComputer/laser-printer.jpg" alt="Laser Printer" loading="lazy">
+<img src="https://avinash29asf.github.io/AFComputer/laser-printer.jpg" alt="Reliable laser printer for home and business with low running cost" loading="lazy">
         <span class="product-badge">Popular</span>
       </div>
       <div class="product-body">
@@ -1082,7 +1158,7 @@ footer {
     
     <div class="product-card">
       <div class="product-img-wrap">
-<img src="https://avinash29asf.github.io/AFComputer/networking-kit.jpg" alt="Networking Equipment" loading="lazy">
+<img src="https://avinash29asf.github.io/AFComputer/networking-kit.jpg" alt="Networking equipment including routers, switches and cables" loading="lazy">
       </div>
       <div class="product-body">
         <h3>Networking Kit</h3>
@@ -1108,7 +1184,7 @@ footer {
       <h3><i class="fas fa-store"></i> Nigdi Branch</h3>
       <p>28, near Bharati Technical Institute,<br>Nigdi Gaothan, Nigdi,<br>Pimpri-Chinchwad, Maharashtra – 411044</p>
       <p><i class="fas fa-phone"></i> <a href="tel:7420806178">7420806178</a></p>
-      <a class="branch-link" href="https://www.google.com/maps/place/A+F+Computer/@18.6650074,73.7756536,15z" target="_blank">
+      <a class="branch-link" href="https://www.google.com/maps/place/A+F+Computer/@18.6650074,73.7756536,15z" target="_blank" rel="noopener">
         <i class="fas fa-map-marker-alt"></i> View on Google Maps
       </a>
     </div>
@@ -1117,7 +1193,7 @@ footer {
       <h3><i class="fas fa-store"></i> Chikhali Branch</h3>
       <p>Shine Square Building, Pingle Road,<br>near Imperial Hospital, Chikhali,<br>Vitthal Nagar, Pune – 411062</p>
       <p><i class="fas fa-phone"></i> <a href="tel:7420806178">7420806178</a></p>
-      <a class="branch-link" href="https://www.google.com/maps/search/A+F+Computer+Shine+Square+Pingle+Road+Chikhali+Pune" target="_blank">
+      <a class="branch-link" href="https://www.google.com/maps/search/A+F+Computer+Shine+Square+Pingle+Road+Chikhali+Pune" target="_blank" rel="noopener">
         <i class="fas fa-map-marker-alt"></i> View on Google Maps
       </a>
     </div>
@@ -1133,7 +1209,7 @@ footer {
       <div class="social-links">
         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://wa.me/917420806178" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.instagram.com/a_f_computer?igsh=MTlpdmxjYnY1cHZs" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/a_f_computer?igsh=MTlpdmxjYnY1cHZs" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       </div>
     </div>

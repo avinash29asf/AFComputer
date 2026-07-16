@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://avinash29asf.github.io/AFComputer/sitemap.xml
+
+Disallow: /index_backup.html

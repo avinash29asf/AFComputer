@@ -3,11 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery - A F Computer</title>
+<meta name="theme-color" content="#ff7a00">
+<title>Gallery - A F Computer | Repair Work & Product Photos Pune</title>
 <meta name="description" content="View our completed repair work, accessories, and refurbished product photos at A F Computer – Nigdi & Chikhali, Pune.">
+<meta name="keywords" content="gallery af computer, repair work pune, laptop repair photos, desktop repair pune, printer repair photos, computer accessories gallery, refurbished laptops pune">
+<meta name="author" content="A F Computer">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://avinash29asf.github.io/AFComputer/gallery.html">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Gallery - A F Computer | Repair Work & Product Photos Pune">
+<meta property="og:description" content="View our completed repair work, accessories, and refurbished product photos at A F Computer – Nigdi & Chikhali, Pune.">
+<meta property="og:image" content="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
+<meta property="og:url" content="https://avinash29asf.github.io/AFComputer/gallery.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="A F Computer">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@afcomputer">
+<meta name="twitter:title" content="Gallery - A F Computer | Repair Work & Product Photos Pune">
+<meta name="twitter:description" content="Browse our gallery of repair work, products, and setups from our Nigdi & Chikhali branches in Pune.">
+<meta name="twitter:image" content="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png">
 
 <!-- Fonts & Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
@@ -83,11 +103,13 @@ nav {
   background-clip: text;
 }
 
-.logo-img {
-  height: 40px;
-  width: auto;
-  object-fit: contain;
-}
+  .logo-img {
+    height: 70px;
+    width: auto;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 0;
+  }
 
 .nav-links {
   display: flex; gap: 32px;
@@ -187,6 +209,8 @@ nav {
 
 /* Page Header */
 .page-header {
+  position: relative;
+  z-index: 2;
   padding: 120px 5% 60px;
   text-align: center;
   max-width: 800px;
@@ -261,6 +285,8 @@ nav {
 
 /* Gallery */
 main {
+  position: relative;
+  z-index: 2;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 5% 80px;
@@ -417,6 +443,8 @@ main {
 
 /* Footer */
 footer {
+  position: relative;
+  z-index: 2;
   background: var(--nav-bg);
   backdrop-filter: blur(20px);
   border-top: 1px solid var(--border);
@@ -661,11 +689,86 @@ footer {
   }
 }
 </style>
+
+<!-- JSON-LD Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "A F Computer",
+  "description": "Computer, laptop and printer repair services in Pune",
+  "image": "https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png",
+  "telephone": "+91-7420806178",
+  "email": "avinash29asf@gmail.com",
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "28, near Bharati Technical Institute, Nigdi Gaothan, Nigdi",
+      "addressLocality": "Pimpri-Chinchwad",
+      "addressRegion": "Maharashtra",
+      "postalCode": "411044",
+      "addressCountry": "IN"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "Shine Square Building, Pingle Road, near Imperial Hospital, Chikhali",
+      "addressLocality": "Pune",
+      "addressRegion": "Maharashtra",
+      "postalCode": "411062",
+      "addressCountry": "IN"
+    }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "10:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "10:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "11:00",
+      "closes": "17:00"
+    }
+  ],
+  "priceRange": "₹₹",
+  "url": "https://avinash29asf.github.io/AFComputer/"
+}
+</script>
+
+<!-- Breadcrumb Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://avinash29asf.github.io/AFComputer/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Gallery",
+      "item": "https://avinash29asf.github.io/AFComputer/gallery.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav>
+<nav aria-label="Main navigation">
   <img src="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png" alt="A F Computer Logo" class="logo-img">
   <div class="nav-links">
     <a href="index.html">Home</a>
@@ -727,49 +830,49 @@ footer {
 <main>
   <div class="gallery" id="gallery">
     <div class="gallery-item" data-cat="desktop" onclick="openLightbox(0)">
-      <img src="https://avinash29asf.github.io/AFComputer/desktop-repair.jpg" alt="Desktop Repair" loading="lazy">
+      <img src="https://avinash29asf.github.io/AFComputer/desktop-repair.jpg" alt="Professional desktop computer repair and assembly work" loading="lazy">
       <span class="cat-badge">Desktop</span>
       <div class="caption">Desktop Computer Repair</div>
     </div>
     
     <div class="gallery-item" data-cat="laptop" onclick="openLightbox(1)">
-      <img src="https://avinash29asf.github.io/AFComputer/laptop-repair.jpg" alt="Laptop Repair" loading="lazy">
+      <img src="https://avinash29asf.github.io/AFComputer/laptop-repair.jpg" alt="Laptop screen replacement and repair service" loading="lazy">
       <span class="cat-badge">Laptop</span>
       <div class="caption">Laptop Screen Repair</div>
     </div>
     
     <div class="gallery-item" data-cat="printer" onclick="openLightbox(2)">
-      <img src="https://avinash29asf.github.io/AFComputer/printer-repair.jpg" alt="Printer Repair" loading="lazy">
+      <img src="https://avinash29asf.github.io/AFComputer/printer-repair.jpg" alt="Printer maintenance and repair work" loading="lazy">
       <span class="cat-badge">Printer</span>
       <div class="caption">Printer Maintenance</div>
     </div>
     
     <div class="gallery-item" data-cat="accessory" onclick="openLightbox(3)">
-      <img src="https://avinash29asf.github.io/AFComputer/accessories.jpg" alt="Accessories" loading="lazy">
+      <img src="https://avinash29asf.github.io/AFComputer/accessories.jpg" alt="Computer accessories and peripherals display" loading="lazy">
       <span class="cat-badge">Accessory</span>
       <div class="caption">Computer Accessories</div>
     </div>
     
     <div class="gallery-item" data-cat="network" onclick="openLightbox(4)">
-      <img src="https://avinash29asf.github.io/AFComputer/networking.jpg" alt="Networking" loading="lazy">
+      <img src="https://avinash29asf.github.io/AFComputer/networking.jpg" alt="Network setup and WiFi configuration project" loading="lazy">
       <span class="cat-badge">Network</span>
       <div class="caption">Network Setup</div>
     </div>
     
     <div class="gallery-item" data-cat="printer" onclick="openLightbox(5)">
-      <img src="https://avinash29asf.github.io/AFComputer/toner.jpg" alt="Toner" loading="lazy">
+      <img src="https://avinash29asf.github.io/AFComputer/toner.jpg" alt="Toner replacement and refilling service" loading="lazy">
       <span class="cat-badge">Printer</span>
       <div class="caption">Toner Replacement</div>
     </div>
     
     <div class="gallery-item" data-cat="laptop" onclick="openLightbox(6)">
-      <img src="https://avinash29asf.github.io/AFComputer/gaming-laptop.jpg" alt="Gaming Laptop" loading="lazy">
+      <img src="https://avinash29asf.github.io/AFComputer/gaming-laptop.jpg" alt="Gaming laptop setup and configuration" loading="lazy">
       <span class="cat-badge">Laptop</span>
       <div class="caption">Gaming Laptop Setup</div>
     </div>
     
     <div class="gallery-item" data-cat="desktop" onclick="openLightbox(7)">
-      <img src="https://avinash29asf.github.io/AFComputer/all-in-one-pc.jpg" alt="All-in-One PC" loading="lazy">
+      <img src="https://avinash29asf.github.io/AFComputer/all-in-one-pc.jpg" alt="All-in-One PC setup for home or office" loading="lazy">
       <span class="cat-badge">Desktop</span>
       <div class="caption">All-in-One PC Setup</div>
     </div>
@@ -795,7 +898,7 @@ footer {
       <div class="social-links">
         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://wa.me/917420806178" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.instagram.com/a_f_computer?igsh=MTlpdmxjYnY1cHZs" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/a_f_computer?igsh=MTlpdmxjYnY1cHZs" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       </div>
     </div>
