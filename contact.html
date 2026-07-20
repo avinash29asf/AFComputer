@@ -446,8 +446,7 @@ main {
 }
 
 .form-field input,
-.form-field textarea,
-.form-field select {
+.form-field textarea {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -460,8 +459,7 @@ main {
 }
 
 .form-field input:focus,
-.form-field textarea:focus,
-.form-field select:focus {
+.form-field textarea:focus {
   border-color: var(--primary);
 }
 
@@ -871,7 +869,7 @@ footer {
       "closes": "17:00"
     }
   ],
-  "priceRange": "â‚¹â‚¹",
+  "priceRange": "₹₹",
   "url": "https://avinash29asf.github.io/AFComputer/",
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -1002,7 +1000,7 @@ footer {
     <i class="fas fa-envelope"></i> Get In Touch
   </div>
   <h1>Contact <span>Us</span></h1>
-  <p>Visit either of our branches, call us, or send a message â€” we're always happy to help with <strong>computer repair in Pune</strong>.</p>
+  <p>Visit either of our branches, call us, or send a message — we're always happy to help with <strong>computer repair in Pune</strong>.</p>
 </div>
 
 <main>
@@ -1013,7 +1011,7 @@ footer {
       <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
         <span itemprop="streetAddress">28, near Bharati Technical Institute, Nigdi Gaothan, Nigdi</span>,
         <span itemprop="addressLocality">Pimpri-Chinchwad</span>,
-        <span itemprop="addressRegion">Maharashtra</span> â€“
+        <span itemprop="addressRegion">Maharashtra</span> –
         <span itemprop="postalCode">411044</span>
       </p>
       <div class="info-row"><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:7420806178">7420806178</a></div>
@@ -1028,7 +1026,7 @@ footer {
       <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
         <span itemprop="streetAddress">Shine Square Building, Pingle Road, near Imperial Hospital, Chikhali</span>,
         <span itemprop="addressLocality">Pune</span>,
-        <span itemprop="addressRegion">Maharashtra</span> â€“
+        <span itemprop="addressRegion">Maharashtra</span> –
         <span itemprop="postalCode">411062</span>
       </p>
       <div class="info-row"><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:7420806178">7420806178</a></div>
@@ -1087,43 +1085,34 @@ footer {
       <h3><i class="fas fa-paper-plane" aria-hidden="true"></i> Send a Message</h3>
       <div class="form-row">
         <div class="form-field">
-          <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Full name">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" placeholder="Enter your full name" required>
         </div>
         <div class="form-field">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" placeholder="Mobile number">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" placeholder="Enter your mobile number" required>
         </div>
       </div>
       
       <div class="form-field" style="margin-bottom:16px;">
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Email address">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" placeholder="Enter your email address" required>
       </div>
       
       <div class="form-field" style="margin-bottom:16px;">
-        <label for="service">Service Needed</label>
-        <select id="service">
-          <option value="">Select a service</option>
-          <option>Laptop Repair</option>
-          <option>Desktop / Computer</option>
-          <option>Printer Service</option>
-          <option>Networking</option>
-          <option>Product Purchase</option>
-          <option>AMC / IT Support</option>
-          <option>Other</option>
-        </select>
+        <label for="subject">Subject *</label>
+        <input type="text" id="subject" placeholder="Enter message subject" required>
       </div>
       
       <div class="form-field" style="margin-bottom:16px;">
-        <label for="message">Message</label>
-        <textarea id="message" placeholder="Describe your issue or enquiry..."></textarea>
+        <label for="message">Message *</label>
+        <textarea id="message" placeholder="Describe your issue or enquiry..." required></textarea>
       </div>
       
       <button class="btn-send" onclick="sendMessage()">
-        <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
+        <i class="fas fa-paper-plane" aria-hidden="true"></i> Submit
       </button>
-      <div id="formMsg"><i class="fas fa-check-circle"></i> Message sent! We'll get back to you shortly.</div>
+      <div id="formMsg"><i class="fas fa-check-circle"></i> Message sent! Redirecting...</div>
     </div>
   </div>
   
@@ -1132,18 +1121,18 @@ footer {
     <h3><i class="fas fa-clock" aria-hidden="true"></i> Working Hours</h3>
     <div class="hours-grid">
       <div class="hours-item">
-        <div class="day">Mon â€“ Fri</div>
-        <div class="time">10:00 AM â€“ 8:00 PM</div>
+        <div class="day">Mon - Fri</div>
+        <div class="time">10:00 AM - 8:00 PM</div>
         <div class="status">Open</div>
       </div>
       <div class="hours-item">
         <div class="day">Saturday</div>
-        <div class="time">10:00 AM â€“ 8:00 PM</div>
+        <div class="time">10:00 AM - 8:00 PM</div>
         <div class="status">Open</div>
       </div>
       <div class="hours-item">
         <div class="day">Sunday</div>
-        <div class="time">11:00 AM â€“ 5:00 PM</div>
+        <div class="time">11:00 AM - 5:00 PM</div>
         <div class="status">Open</div>
       </div>
     </div>
@@ -1249,9 +1238,87 @@ document.addEventListener('click', function(e) {
 });
 
 function sendMessage() {
-  const m = document.getElementById('formMsg');
-  m.style.display = 'block';
-  setTimeout(() => m.style.display = 'none', 5000);
+  // Get form values
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const subject = document.getElementById('subject').value.trim();
+  const message = document.getElementById('message').value.trim();
+  
+  // Validate required fields
+  if (!name || !phone || !email || !subject || !message) {
+    showNotification('Please fill in all required fields', 'error');
+    return;
+  }
+  
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    showNotification('Please enter a valid email address', 'error');
+    return;
+  }
+  
+  // Create formatted message with proper encoding
+  const formattedMessage = encodeURIComponent(
+    '*Contact Form Submission*\n\n' +
+    '*Full Name:* ' + name + '\n' +
+    '*Phone:* ' + phone + '\n' +
+    '*Email:* ' + email + '\n' +
+    '*Subject:* ' + subject + '\n' +
+    '*Message:* ' + message
+  );
+  
+  // WhatsApp URL (wa.me format for +918007217007)
+  const whatsappUrl = 'https://wa.me/918007217007?text=' + formattedMessage;
+  
+  // SMS fallback URL
+  const smsUrl = 'sms:918007217007?body=' + encodeURIComponent(
+    '*Contact Form Submission*\n\n' +
+    '*Full Name:* ' + name + '\n' +
+    '*Phone:* ' + phone + '\n' +
+    '*Email:* ' + email + '\n' +
+    '*Subject:* ' + subject + '\n' +
+    '*Message:* ' + message
+  );
+  
+  // Show success notification
+  showNotification('Message sent! Opening WhatsApp...', 'success');
+  
+  // Try WhatsApp first, fallback to SMS if unavailable
+  tryWhatsAppOrSMS(whatsappUrl, smsUrl);
+  
+  // Clear form after delay
+  setTimeout(() => {
+    document.getElementById('name').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('subject').value = '';
+    document.getElementById('message').value = '';
+  }, 2000);
+}
+
+function showNotification(text, type = 'success') {
+  const msgEl = document.getElementById('formMsg');
+  msgEl.innerHTML = '<i class="fas fa-' + (type === 'success' ? 'check-circle' : 'exclamation-circle') + '"></i> ' + text;
+  msgEl.style.display = 'block';
+  msgEl.style.color = type === 'success' ? 'var(--secondary)' : '#ff4444';
+  setTimeout(() => {
+    msgEl.style.display = 'none';
+  }, 5000);
+}
+
+function tryWhatsAppOrSMS(whatsappUrl, smsUrl) {
+  // Try to open WhatsApp
+  const whatsappWindow = window.open(whatsappUrl, '_blank');
+  
+  // Check if WhatsApp opened successfully, fallback to SMS if not (mobile devices)
+  setTimeout(() => {
+    // On mobile, if WhatsApp app is not installed, try SMS
+    if (!whatsappWindow || whatsappWindow.closed) {
+      window.open(smsUrl, '_blank');
+      showNotification('WhatsApp not available. Opening SMS app...', 'error');
+    }
+  }, 1500);
 }
 
 // Scroll reveal
@@ -1274,6 +1341,16 @@ document.querySelectorAll('.nav-btn').forEach(btn => {
     if(e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       btn.click();
+    }
+  });
+});
+
+// Form field keyboard support
+document.querySelectorAll('input, textarea').forEach(field => {
+  field.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter' && field.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      sendMessage();
     }
   });
 });
