@@ -1270,6 +1270,20 @@ document.querySelectorAll('.faq-item').forEach((el, i) => {
   observer.observe(el);
 });
 
+// Back to Top Button
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 500) {
+    backToTop.classList.add('show');
+  } else {
+    backToTop.classList.remove('show');
+  }
+}, { passive: true });
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 // Keyboard accessibility
 document.querySelectorAll('.nav-btn').forEach(btn => {
   btn.addEventListener('keydown', (e) => {

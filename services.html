@@ -56,25 +56,32 @@
   --bg: #0f172a;
   --bg-secondary: #1e293b;
   --surface: rgba(255,255,255,0.03);
+  --surface-hover: rgba(255,255,255,0.06);
   --border: rgba(255,255,255,0.1);
   --text: #f1f5f9;
   --text-muted: rgba(255,255,255,0.6);
   --nav-bg: rgba(15,23,42,0.9);
+  --footer-bg: rgba(15,23,42,0.95);
+  --glass: rgba(255,255,255,0.05);
   
   --radius: 16px;
   --radius-sm: 12px;
   --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
   --shadow: 0 10px 40px rgba(0,0,0,0.3);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.4);
 }
 
 body.light {
   --bg: #f0f9ff;
   --bg-secondary: #e0f2fe;
   --surface: rgba(0,0,0,0.02);
+  --surface-hover: rgba(0,0,0,0.04);
   --border: rgba(0,0,0,0.08);
   --text: #0f172a;
   --text-muted: rgba(0,0,0,0.6);
   --nav-bg: rgba(240,249,255,0.9);
+  --footer-bg: rgba(240,249,255,0.95);
+  --glass: rgba(0,0,0,0.03);
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -85,8 +92,10 @@ body {
   background: linear-gradient(135deg, var(--bg) 0%, var(--bg-secondary) 100%);
   color: var(--text);
   min-height: 100vh;
+  position: relative;
   transition: background var(--transition), color var(--transition);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 nav {
@@ -99,7 +108,10 @@ nav {
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   z-index: 1000;
+  transition: all var(--transition);
 }
+
+.nav-left { display: flex; align-items: center; gap: 16px; }
 
 .logo {
   font-family: 'Poppins', sans-serif;
@@ -158,16 +170,17 @@ nav {
   background: var(--surface);
   border: 1px solid var(--border);
   transition: all var(--transition);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .nav-btn:hover {
   background: var(--primary);
   color: #fff;
   transform: translateY(-2px);
+  box-shadow: 0 5px 20px var(--primary-glow);
 }
 
 .menu-btn { display: none; }
-
 .mobile-tabs { display: none; }
 
 .mobile-dropdown {
@@ -214,6 +227,11 @@ nav {
   background: var(--primary);
   color: #fff;
   transform: translateX(5px);
+}
+
+.mobile-dropdown-item.active {
+  background: var(--primary);
+  color: #fff;
 }
 
 .page-header {
@@ -454,7 +472,7 @@ main {
 }
 
 footer {
-  background: var(--nav-bg);
+  background: var(--footer-bg);
   backdrop-filter: blur(20px);
   border-top: 1px solid var(--border);
   padding: 50px 5% 30px;
@@ -566,7 +584,39 @@ footer {
   font-size: 0.85rem;
 }
 
-.mobile-tabs { display: none; }
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  z-index: 100;
+  transition: all var(--transition);
+  box-shadow: 0 5px 25px var(--primary-glow);
+}
+
+#backToTop:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 35px var(--primary-glow);
+}
+
+#backToTop.show {
+  display: flex;
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(30px); }
+  to { opacity:1; transform:translateY(0); }
+}
 
 @media (max-width: 968px) {
   .page-header {
@@ -587,12 +637,11 @@ footer {
   nav {
     flex-wrap: wrap;
     height: auto;
+    padding: 0 20px;
   }
 
-  .logo, .nav-actions {
+  .nav-left, .nav-actions {
     height: 70px;
-    display: flex;
-    align-items: center;
   }
 
   .nav-links { display: none; }
@@ -640,6 +689,11 @@ footer {
   
   main { padding: 20px 5% 60px; }
   
+  .why-section { padding: 28px 20px; }
+  .why-section h2 { font-size: 1.4rem; }
+  
+  .cta-banner h3 { font-size: 1.3rem; }
+  
   .footer-content {
     grid-template-columns: 1fr;
   }
@@ -650,6 +704,8 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .page-header h1 { font-size: 1.7rem; }
+  
   .services-grid {
     grid-template-columns: 1fr;
   }
@@ -657,7 +713,11 @@ footer {
   .service-card img { height: 155px; }
   
   .why-section {
-    padding: 28px 20px;
+    padding: 24px 16px;
+  }
+  
+  .why-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -753,7 +813,7 @@ footer {
       "closes": "17:00"
     }
   ],
-  "priceRange": "â‚¹â‚¹",
+  "priceRange": "₹₹",
   "url": "https://avinash29asf.github.io/AFComputer/",
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -868,9 +928,11 @@ footer {
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- ========== NAVBAR ========== -->
 <nav aria-label="Main navigation" role="navigation">
-  <img src="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png" alt="A F Computer Logo" class="logo-img" width="50" height="50">
+  <div class="nav-left">
+    <img src="https://avinash29asf.github.io/AFComputer/A%20F%20Computer%20logo.png" alt="A F Computer Logo" class="logo-img" width="50" height="50">
+  </div>
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
@@ -918,7 +980,7 @@ footer {
   </div>
 </nav>
 
-<!-- Page Header -->
+<!-- ========== PAGE HEADER ========== -->
 <div class="page-header">
   <div class="page-badge">
     <i class="fas fa-tools"></i> What We Offer
@@ -1085,7 +1147,7 @@ footer {
   <div class="cta-banner">
     <div>
       <h3>Need a repair or IT support?</h3>
-      <p>Visit your nearest branch in Nigdi or Chikhali, or call us â€” we're ready to help.</p>
+      <p>Visit your nearest branch in Nigdi or Chikhali, or call us — we're ready to help.</p>
     </div>
     <a href="contact.html" class="btn-primary">
       <i class="fas fa-phone-alt" aria-hidden="true"></i> Contact Us Now
@@ -1093,7 +1155,7 @@ footer {
   </div>
 </main>
 
-<!-- Footer -->
+<!-- ========== FOOTER ========== -->
 <footer role="contentinfo">
   <div class="footer-content">
     <div class="footer-brand">
@@ -1151,6 +1213,11 @@ footer {
   </div>
 </footer>
 
+<!-- Back to Top Button -->
+<button id="backToTop" aria-label="Back to top" title="Back to top">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</button>
+
 <script>
 // Theme Toggle
 const themeIcon = document.getElementById('theme-icon');
@@ -1204,6 +1271,20 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.service-card').forEach(el => {
   el.style.transitionDelay = (Math.random() * 0.2) + 's';
   observer.observe(el);
+});
+
+// Back to Top Button
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 500) {
+    backToTop.classList.add('show');
+  } else {
+    backToTop.classList.remove('show');
+  }
+}, { passive: true });
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 // Keyboard accessibility

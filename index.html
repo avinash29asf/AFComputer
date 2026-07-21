@@ -351,8 +351,10 @@ nav {
 
 .hero-image {
   flex: 1;
-  max-width: 550px;
+  max-width: 600px;
   position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
 }
 
 .hero-image::before {
@@ -370,6 +372,8 @@ nav {
 
 .hero-image img {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
   animation: float 6s ease-in-out infinite;
@@ -788,6 +792,34 @@ footer {
   to { opacity:1; transform:translateY(0); }
 }
 
+@media (min-width: 1600px) {
+  .hero-image {
+    max-width: 700px;
+  }
+  
+  .hero-content {
+    max-width: 650px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .hero-image {
+    max-width: 900px;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+  }
+  
+  .hero h1 {
+    font-size: clamp(3rem, 5vw, 4rem);
+  }
+  
+  .hero p {
+    font-size: 1.25rem;
+  }
+}
+
 @media (max-width: 968px) {
   .hero {
     flex-direction: column;
@@ -806,6 +838,11 @@ footer {
   
   .hero-btns {
     justify-content: center;
+  }
+  
+  .hero-image {
+    max-width: 500px;
+    aspect-ratio: 3 / 2;
   }
 }
 
@@ -1315,8 +1352,8 @@ footer {
       <div class="social-links">
         <a href="https://wa.me/917420806178" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
         <a href="https://www.instagram.com/a_f_computer?igsh=MTlpdmxjYnY1cHZs" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/afcomputer" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/company/afcomputer" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
       </div>
     </div>
     
