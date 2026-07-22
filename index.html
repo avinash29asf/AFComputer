@@ -571,6 +571,7 @@ section {
   gap: 8px;
   transition: all var(--transition);
   width: 100%;
+  text-decoration: none;
 }
 
 .btn-order:hover {
@@ -792,32 +793,130 @@ footer {
   to { opacity:1; transform:translateY(0); }
 }
 
-@media (min-width: 1600px) {
-  .hero-image {
-    max-width: 700px;
-  }
-  
-  .hero-content {
-    max-width: 650px;
-  }
+.overview-section {
+  padding: 80px 5%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-@media (min-width: 2560px) {
-  .hero-image {
-    max-width: 900px;
-  }
-  
-  .hero-content {
-    max-width: 800px;
-  }
-  
-  .hero h1 {
-    font-size: clamp(3rem, 5vw, 4rem);
-  }
-  
-  .hero p {
-    font-size: 1.25rem;
-  }
+.overview-section.dark {
+  background: var(--bg-secondary);
+  padding: 80px 5%;
+  max-width: 100%;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.overview-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all var(--transition);
+  opacity: 0;
+  transform: translateY(30px);
+  display: flex;
+  flex-direction: column;
+}
+
+.overview-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overview-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow);
+  border-color: var(--primary);
+}
+
+.overview-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border);
+}
+
+.overview-card-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.overview-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.overview-card-title i {
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.overview-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.overview-features {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.overview-features li {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.overview-features li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 0.75rem;
+}
+
+.overview-btn {
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 10px 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all var(--transition);
+  text-decoration: none;
+}
+
+.overview-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px var(--primary-glow);
 }
 
 @media (max-width: 968px) {
@@ -919,6 +1018,10 @@ footer {
   
   section, .products-section, .branches-section {
     padding: 60px 5%;
+  }
+  
+  .overview-grid {
+    grid-template-columns: 1fr;
   }
   
   .footer-content {
@@ -1270,6 +1373,389 @@ footer {
   </div>
 </section>
 
+<!-- ========== OVERVIEW SECTION ========== -->
+<div class="overview-section dark">
+  <div class="section-header">
+    <span class="section-label">Explore Everything</span>
+    <h2 class="section-title">Complete Overview of Our Services</h2>
+    <p class="section-sub">Discover all the IT solutions we offer. From expert repair services to website development and product sales, we've got you covered.</p>
+  </div>
+  
+  <div class="overview-grid">
+    <!-- About Us -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/computer-repair-service.jpg" alt="About A F Computer - 5+ years of trusted IT services in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-info-circle"></i> About Us</h3>
+        <p class="overview-card-desc">Learn about A F Computer, Pune's trusted IT partner since 2019. With two branches in Nigdi and Chikhali, we've been serving customers with honest pricing, quality work, and 5+ years of excellence in computer repair, laptop sales, and IT services.</p>
+        <ul class="overview-features">
+          <li>5+ Years of Excellence</li>
+          <li>Two Convenient Branches</li>
+          <li>5000+ Happy Customers</li>
+          <li>Expert Technicians</li>
+        </ul>
+        <a href="about.html" class="overview-btn"><i class="fas fa-arrow-right"></i> Learn More</a>
+      </div>
+    </div>
+
+    <!-- Website Development -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/website-development-hero.jpg" alt="Professional website development services in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-laptop-code"></i> Website Development</h3>
+        <p class="overview-card-desc">Professional website design and development services in Pune. We create responsive, modern websites including business websites, e-commerce stores, landing pages, and custom web applications tailored to your business needs.</p>
+        <ul class="overview-features">
+          <li>Responsive Website Design</li>
+          <li>E-Commerce Solutions</li>
+          <li>Custom Web Applications</li>
+          <li>SEO Optimization</li>
+          <li>Speed Optimization</li>
+        </ul>
+        <a href="website-development.html" class="overview-btn"><i class="fas fa-arrow-right"></i> Learn More</a>
+      </div>
+    </div>
+
+    <!-- Web Hosting -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/web-hosting-hero.jpg" alt="Reliable web hosting services in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-server"></i> Web Hosting</h3>
+        <p class="overview-card-desc">Reliable and secure web hosting services in Pune. Enjoy 99.9% uptime, free SSL certificates, daily backups, and expert technical support. Perfect for businesses seeking dependable hosting solutions with competitive pricing.</p>
+        <ul class="overview-features">
+          <li>99.9% Uptime Guarantee</li>
+          <li>Free SSL Certificate</li>
+          <li>Daily Backups</li>
+          <li>24/7 Expert Support</li>
+        </ul>
+        <a href="web-hosting.html" class="overview-btn"><i class="fas fa-arrow-right"></i> Learn More</a>
+      </div>
+    </div>
+
+    <!-- Domain Services -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/domain-services-hero.jpg" alt="Professional domain registration services in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-globe"></i> Domain Registration</h3>
+        <p class="overview-card-desc">Professional domain services in Pune including domain registration, renewal, transfer, and DNS configuration. Secure your online identity with competitive pricing and expert management support for your domains.</p>
+        <ul class="overview-features">
+          <li>Domain Registration</li>
+          <li>Domain Transfer</li>
+          <li>DNS Configuration</li>
+          <li>Domain Management</li>
+        </ul>
+        <a href="domain-services.html" class="overview-btn"><i class="fas fa-arrow-right"></i> Learn More</a>
+      </div>
+    </div>
+
+    <!-- Business Email -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/website-development-hero.jpg" alt="Professional business email setup services in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-envelope"></i> Business Email</h3>
+        <p class="overview-card-desc">Professional business email setup and configuration services in Pune. Get yourname@yourdomain.com for a professional look. We handle complete setup, migration, and ongoing support for your business email needs.</p>
+        <ul class="overview-features">
+          <li>Professional Email Addresses</li>
+          <li>Email Migration</li>
+          <li>Security & Spam Protection</li>
+          <li>Ongoing Support</li>
+        </ul>
+        <a href="website-development.html" class="overview-btn"><i class="fas fa-arrow-right"></i> Learn More</a>
+      </div>
+    </div>
+
+    <!-- Website Maintenance -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/website-development-hero.jpg" alt="Website maintenance and support services in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-tools"></i> Website Maintenance</h3>
+        <p class="overview-card-desc">Comprehensive website maintenance services in Pune. Keep your website secure, updated, and performing optimally with our regular maintenance packages including updates, backups, security monitoring, and content updates.</p>
+        <ul class="overview-features">
+          <li>Regular Updates</li>
+          <li>Security Monitoring</li>
+          <li>Performance Optimization</li>
+          <li>Content Updates</li>
+        </ul>
+        <a href="website-development.html" class="overview-btn"><i class="fas fa-arrow-right"></i> Learn More</a>
+      </div>
+    </div>
+
+    <!-- E-Commerce Solutions -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/website-development-hero.jpg" alt="E-commerce website development in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-shopping-cart"></i> E-Commerce Solutions</h3>
+        <p class="overview-card-desc">Professional e-commerce website development in Pune. Build your online store with secure payment gateways, inventory management, order tracking, and mobile-responsive design to maximize your online sales and customer experience.</p>
+        <ul class="overview-features">
+          <li>Secure Payment Gateway</li>
+          <li>Inventory Management</li>
+          <li>Mobile Responsive Design</li>
+          <li>SEO Friendly</li>
+        </ul>
+        <a href="website-development.html" class="overview-btn"><i class="fas fa-arrow-right"></i> Learn More</a>
+      </div>
+    </div>
+
+    <!-- SEO Services -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/website-development-hero.jpg" alt="SEO optimization services in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-search"></i> SEO Services</h3>
+        <p class="overview-card-desc">Professional SEO optimization services in Pune. Improve your website's search engine rankings with our comprehensive SEO strategies including keyword optimization, technical SEO, link building, and local SEO for better visibility.</p>
+        <ul class="overview-features">
+          <li>Keyword Research & Optimization</li>
+          <li>Technical SEO</li>
+          <li>Link Building</li>
+          <li>Local SEO</li>
+        </ul>
+        <a href="website-development.html" class="overview-btn"><i class="fas fa-arrow-right"></i> Learn More</a>
+      </div>
+    </div>
+
+    <!-- Computer Sales -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/all-in-one-pc.jpg" alt="Quality computer sales in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-desktop"></i> Computer Sales</h3>
+        <p class="overview-card-desc">Quality desktop computers and all-in-one PCs for sale in Pune. Choose from new and refurbished systems with warranty. Perfect for home, office, and business use with reliable performance and excellent after-sales support at our Nigdi & Chikhali branches.</p>
+        <ul class="overview-features">
+          <li>New & Refurbished Options</li>
+          <li>Warranty Included</li>
+          <li>Custom Configurations</li>
+          <li>After-Sales Support</li>
+        </ul>
+        <a href="product.html" class="overview-btn"><i class="fas fa-arrow-right"></i> View Details</a>
+      </div>
+    </div>
+
+    <!-- Laptop Sales -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/business-laptop.jpg" alt="Quality laptops for sale in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-laptop"></i> Laptop Sales</h3>
+        <p class="overview-card-desc">Wide range of laptops for sale in Pune including gaming laptops, business laptops, and refurbished laptops. All laptops come with warranty and are available at competitive prices. Visit our branches in Nigdi & Chikhali for the best deals.</p>
+        <ul class="overview-features">
+          <li>Gaming Laptops</li>
+          <li>Business Laptops</li>
+          <li>Refurbished Options</li>
+          <li>Warranty Available</li>
+        </ul>
+        <a href="product.html" class="overview-btn"><i class="fas fa-arrow-right"></i> View Details</a>
+      </div>
+    </div>
+
+    <!-- Refurbished Systems -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/refurbished-laptop.jpg" alt="Certified refurbished computers and laptops in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-recycle"></i> Refurbished Systems</h3>
+        <p class="overview-card-desc">Certified refurbished computers and laptops available in Pune at budget-friendly prices. All refurbished systems are thoroughly tested, professionally restored, and come with warranty for reliable performance at affordable rates.</p>
+        <ul class="overview-features">
+          <li>Thoroughly Tested</li>
+          <li>Professionally Restored</li>
+          <li>Budget-Friendly Prices</li>
+          <li>Warranty Included</li>
+        </ul>
+        <a href="product.html" class="overview-btn"><i class="fas fa-arrow-right"></i> View Details</a>
+      </div>
+    </div>
+
+    <!-- Custom PC Build -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/custom-desktop.jpg" alt="Custom PC build services in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-cogs"></i> Custom PC Build</h3>
+        <p class="overview-card-desc">Custom-built desktop PCs tailored to your specific needs in Pune. Whether for gaming, professional work, or everyday use, we build high-performance systems with quality components and expert assembly services.</p>
+        <ul class="overview-features">
+          <li>Gaming PCs</li>
+          <li>Workstation Builds</li>
+          <li>Quality Components</li>
+          <li>Expert Assembly</li>
+        </ul>
+        <a href="product.html" class="overview-btn"><i class="fas fa-arrow-right"></i> View Details</a>
+      </div>
+    </div>
+
+    <!-- Computer Repair -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/computer-repair.jpg" alt="Professional computer repair services in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-tools"></i> Computer Repair</h3>
+        <p class="overview-card-desc">Expert desktop computer repair services in Pune. We handle motherboard repair, RAM/HDD upgrades, power supply issues, OS installation, virus removal, and complete system diagnostics. Fast, reliable service at our Nigdi & Chikhali branches.</p>
+        <ul class="overview-features">
+          <li>Motherboard Repair</li>
+          <li>Hardware Upgrades</li>
+          <li>OS Installation</li>
+          <li>Virus Removal</li>
+          <li>Same-Day Service</li>
+        </ul>
+        <a href="services.html" class="overview-btn"><i class="fas fa-arrow-right"></i> Learn More</a>
+      </div>
+    </div>
+
+    <!-- Laptop Repair -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/laptop-repair.jpg" alt="Expert laptop repair services in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-laptop"></i> Laptop Repair</h3>
+        <p class="overview-card-desc">Professional laptop repair services for all brands in Pune. Screen replacement, keyboard repair, battery replacement, motherboard repair, and software troubleshooting. We service HP, Dell, Lenovo, Acer, Apple, and more.</p>
+        <ul class="overview-features">
+          <li>Screen Replacement</li>
+          <li>Keyboard Repair</li>
+          <li>Battery Replacement</li>
+          <li>Software Troubleshooting</li>
+          <li>All Brands Serviced</li>
+        </ul>
+        <a href="services.html" class="overview-btn"><i class="fas fa-arrow-right"></i> Learn More</a>
+      </div>
+    </div>
+
+    <!-- Printer Repair -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/printer-service.jpg" alt="Professional printer repair services in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-print"></i> Printer Repair</h3>
+        <p class="overview-card-desc">Comprehensive printer repair and maintenance services in Pune. We handle all major brands including HP, Canon, Epson, and Samsung. Services include toner refilling, cartridge replacement, driver installation, and preventive maintenance.</p>
+        <ul class="overview-features">
+          <li>All Major Brands</li>
+          <li>Toner Refilling</li>
+          <li>Cartridge Replacement</li>
+          <li>Driver Installation</li>
+          <li>Preventive Maintenance</li>
+        </ul>
+        <a href="services.html" class="overview-btn"><i class="fas fa-arrow-right"></i> Learn More</a>
+      </div>
+    </div>
+
+    <!-- Toner Refill -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/toner.jpg" alt="Professional toner refill services in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-filled-bottle"></i> Toner Refill</h3>
+        <p class="overview-card-desc">Professional toner refill and cartridge services in Pune. We provide original and compatible toner cartridges for all major printer brands. Cost-effective printing solutions with consistent quality and reliable performance for your home and office.</p>
+        <ul class="overview-features">
+          <li>Original & Compatible</li>
+          <li>All Major Brands</li>
+          <li>Cost-Effective</li>
+          <li>Consistent Quality</li>
+        </ul>
+        <a href="services.html" class="overview-btn"><i class="fas fa-arrow-right"></i> Learn More</a>
+      </div>
+    </div>
+
+    <!-- Networking Solutions -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/networking.jpg" alt="Professional networking solutions in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-network-wired"></i> Networking Solutions</h3>
+        <p class="overview-card-desc">Complete networking solutions for home and office in Pune. Professional LAN cabling, network setup, router configuration, and network security implementation. Ensure seamless connectivity and secure network infrastructure for your business.</p>
+        <ul class="overview-features">
+          <li>LAN Cabling</li>
+          <li>Network Setup</li>
+          <li>Router Configuration</li>
+          <li>Network Security</li>
+        </ul>
+        <a href="services.html" class="overview-btn"><i class="fas fa-arrow-right"></i> Learn More</a>
+      </div>
+    </div>
+
+    <!-- Wi-Fi & Router Configuration -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/networking-kit.jpg" alt="WiFi router setup and configuration in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-wifi"></i> Wi-Fi & Router Setup</h3>
+        <p class="overview-card-desc">Professional Wi-Fi setup and router configuration services in Pune. We provide dual-band router installation, range extender setup, network optimization, and secure wireless network configuration for homes and offices.</p>
+        <ul class="overview-features">
+          <li>Dual-Band Router Setup</li>
+          <li>Range Extender Installation</li>
+          <li>Network Optimization</li>
+          <li>Secure Configuration</li>
+        </ul>
+        <a href="services.html" class="overview-btn"><i class="fas fa-arrow-right"></i> Learn More</a>
+      </div>
+    </div>
+
+    <!-- Firewall Solutions -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/networking.jpg" alt="Firewall configuration services in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-shield-alt"></i> Firewall Solutions</h3>
+        <p class="overview-card-desc">Professional firewall configuration and network security services in Pune. Protect your business network with enterprise-grade firewall solutions, intrusion detection, VPN setup, and comprehensive security policies for safe operations.</p>
+        <ul class="overview-features">
+          <li>Enterprise Firewall Setup</li>
+          <li>Intrusion Detection</li>
+          <li>VPN Configuration</li>
+          <li>Security Policies</li>
+        </ul>
+        <a href="services.html" class="overview-btn"><i class="fas fa-arrow-right"></i> Learn More</a>
+      </div>
+    </div>
+
+    <!-- Windows & Software Installation -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/computer-repair.jpg" alt="Windows and software installation services in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-windows"></i> Windows & Software Installation</h3>
+        <p class="overview-card-desc">Professional Windows OS and software installation services in Pune. We install Windows 10/11, MS Office, antivirus, and all essential software. Also provide system optimization, driver updates, and complete software setup for new systems.</p>
+        <ul class="overview-features">
+          <li>Windows 10/11 Installation</li>
+          <li>MS Office Setup</li>
+          <li>Antivirus Installation</li>
+          <li>Software Configuration</li>
+        </ul>
+        <a href="services.html" class="overview-btn"><i class="fas fa-arrow-right"></i> Learn More</a>
+      </div>
+    </div>
+
+    <!-- Data Backup & Recovery -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/computer-repair.jpg" alt="Data backup and recovery services in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-database"></i> Data Backup & Recovery</h3>
+        <p class="overview-card-desc">Professional data backup and recovery services in Pune. Protect your valuable data with automated backup solutions, cloud backup setup, and professional data recovery from damaged hard drives, SSDs, and storage devices.</p>
+        <ul class="overview-features">
+          <li>Automated Backup Solutions</li>
+          <li>Cloud Backup Setup</li>
+          <li>Data Recovery</li>
+          <li>Secure Storage</li>
+        </ul>
+        <a href="services.html" class="overview-btn"><i class="fas fa-arrow-right"></i> Learn More</a>
+      </div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/gaming-laptop.jpg" alt="Gallery of repair work and products at A F Computer Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-images"></i> Gallery</h3>
+        <p class="overview-card-desc">Browse our gallery showcasing completed repair work, product setups, CCTV installations, and computer configurations at our Nigdi & Chikhali branches. See the quality of our workmanship and the range of products we offer.</p>
+        <ul class="overview-features">
+          <li>Repair Work Showcase</li>
+          <li>Product Setups</li>
+          <li>CCTV Installations</li>
+          <li>Before & After</li>
+        </ul>
+        <a href="gallery.html" class="overview-btn"><i class="fas fa-arrow-right"></i> View Gallery</a>
+      </div>
+    </div>
+
+    <!-- Contact Us -->
+    <div class="overview-card">
+      <img src="https://avinash29asf.github.io/AFComputer/computer-repair-service.jpg" alt="Contact A F Computer for IT services in Pune" class="overview-card-img" loading="lazy" width="400" height="200">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-phone-alt"></i> Contact Us</h3>
+        <p class="overview-card-desc">Get in touch with A F Computer for all your IT needs in Pune. Visit our branches in Nigdi (Pimpri-Chinchwad) and Chikhali, call us at +91 7420806178, or send a message through our contact form. We're here Monday-Saturday 10AM-8PM.</p>
+        <ul class="overview-features">
+          <li>Two Convenient Branches</li>
+          <li>24/7 WhatsApp Support</li>
+          <li>Free Consultation</li>
+          <li>Quick Response</li>
+        </ul>
+        <a href="contact.html" class="overview-btn"><i class="fas fa-arrow-right"></i> Contact Us</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ========== PRODUCTS SECTION ========== -->
 <div class="products-section">
   <div class="section-header">
@@ -1531,7 +2017,7 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.service-card, .product-card, .branch-card').forEach(el => {
+document.querySelectorAll('.service-card, .product-card, .branch-card, .overview-card').forEach(el => {
   observer.observe(el);
 });
 
