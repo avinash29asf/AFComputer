@@ -263,9 +263,9 @@ nav {
 .hero h1 span{background:linear-gradient(90deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero p{font-size:1.1rem;color:var(--text-muted);line-height:1.7;margin-bottom:32px;max-width:520px}
 .hero-btns{display:flex;gap:16px;flex-wrap:wrap}
-.hero-image{flex:1;max-width:550px;position:relative}
+.hero-image{flex:1;max-width:550px;position:relative;aspect-ratio:3/2;overflow:hidden}
 .hero-image::before{content:"";position:absolute;width:200px;height:200px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:50%;filter:blur(80px);opacity:.2;top:50%;left:50%;transform:translate(-50%,-50%);z-index:-1}
-.hero-image img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow-lg);animation:float 6s ease-in-out infinite}
+.hero-image img{width:100%;height:100%;object-fit:contain;border-radius:var(--radius);box-shadow:var(--shadow-lg);display:block;animation:float 6s ease-in-out infinite}
 
 /* BUTTONS */
 .btn{padding:14px 32px;border-radius:var(--radius-sm);font-weight:600;font-size:.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:all var(--transition);-webkit-tap-highlight-color:transparent;border:none;cursor:pointer}
@@ -811,6 +811,32 @@ section{padding:60px 5%}
   </div>
 </section>
 
+<!-- HOW IT WORKS SECTION -->
+<section aria-labelledby="process-title">
+  <div class="section-header">
+    <span class="section-label">Simple Process</span>
+    <h2 class="section-title" id="process-title">How Domain Services Work</h2>
+    <p class="section-sub">Getting your domain name set up is quick and straightforward with our expert assistance.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;">
+    <div style="text-align:center;padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);">
+      <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.4rem;color:#fff;font-weight:800;">1</div>
+      <h4 style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text);margin-bottom:6px;">Choose Your Domain</h4>
+      <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.5;">Tell us your preferred domain name and extension (.com, .in, .org, etc.). We check availability and suggest alternatives if needed.</p>
+    </div>
+    <div style="text-align:center;padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);">
+      <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.4rem;color:#fff;font-weight:800;">2</div>
+      <h4 style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text);margin-bottom:6px;">We Handle Registration</h4>
+      <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.5;">Our team completes the registration process, configures DNS settings, and ensures your domain is active and pointing correctly.</p>
+    </div>
+    <div style="text-align:center;padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);">
+      <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.4rem;color:#fff;font-weight:800;">3</div>
+      <h4 style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text);margin-bottom:6px;">Connect & Manage</h4>
+      <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.5;">We connect your domain to your website hosting and email services. Ongoing management and renewal reminders included.</p>
+    </div>
+  </div>
+</section>
+
 <!-- NOTICE SECTION -->
 <section aria-labelledby="notice-title">
   <div class="notice-card">
@@ -973,13 +999,54 @@ section{padding:60px 5%}
     <div class="footer-col">
       <h4>Our Services</h4>
       <ul class="footer-links">
-        <li><a href="services.html">Computer Repair Pune</a></li>
-        <li><a href="services.html">Laptop Repair Pune</a></li>
-        <li><a href="services.html">Printer Repair Pune</a></li>
-        <li><a href="services.html">Desktop Repair Pune</a></li>
-        <li><a href="services.html">Networking Services Pune</a></li>
-        <li><a href="services.html">CCTV Installation Pune</a></li>
-        <li><a href="services.html">Computer AMC Pune</a></li>
+        <li><a href="website-development.html">Website Development</a></li>
+        <li><a href="web-hosting.html">Web Hosting</a></li>
+        <li><a href="domain-services.html">Domain Registration</a></li>
+        <li><a href="website-development.html">Website Maintenance</a></li>
+        <li><a href="website-development.html">Website Redesign</a></li>
+        <li><a href="website-development.html">E-Commerce Website</a></li>
+        <li><a href="website-development.html">Landing Page Design</a></li>
+        <li><a href="website-development.html">Custom Web Apps</a></li>
+        <li><a href="website-development.html">SEO Optimization</a></li>
+        <li><a href="website-development.html">Speed Optimization</a></li>
+        <li><a href="web-hosting.html">SSL Certificate</a></li>
+        <li><a href="web-hosting.html">Cloud Hosting</a></li>
+        <li><a href="services.html">Data Backup Solutions</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h4 style="opacity:0;visibility:hidden;">Services</h4>
+      <ul class="footer-links">
+        <li><a href="services.html">Computer Repair</a></li>
+        <li><a href="services.html">Laptop Repair</a></li>
+        <li><a href="services.html">Printer Repair</a></li>
+        <li><a href="services.html">Printer Installation</a></li>
+        <li><a href="services.html">Toner Refill</a></li>
+        <li><a href="product.html">Computer Sales</a></li>
+        <li><a href="product.html">Laptop Sales</a></li>
+        <li><a href="product.html">Custom PC Build</a></li>
+        <li><a href="services.html">CCTV Installation</a></li>
+        <li><a href="services.html">Networking Solutions</a></li>
+        <li><a href="services.html">Wi-Fi Setup</a></li>
+        <li><a href="services.html">Router Configuration</a></li>
+        <li><a href="services.html">Firewall Configuration</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h4 style="opacity:0;visibility:hidden;">More Services</h4>
+      <ul class="footer-links">
+        <li><a href="services.html">Windows Installation</a></li>
+        <li><a href="services.html">Software Installation</a></li>
+        <li><a href="services.html">MS Office Installation</a></li>
+        <li><a href="services.html">Antivirus Installation</a></li>
+        <li><a href="services.html">Data Recovery</a></li>
+        <li><a href="services.html">Business Email Setup</a></li>
+        <li><a href="services.html">Google Business Profile</a></li>
+        <li><a href="services.html">Computer AMC</a></li>
+        <li><a href="services.html">Remote Support</a></li>
+        <li><a href="services.html">IT Consulting</a></li>
       </ul>
     </div>
     
